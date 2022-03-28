@@ -1,3 +1,4 @@
+import 'sanitize.css';
 import '../public/styles/index.scss';
 
 /* View */
