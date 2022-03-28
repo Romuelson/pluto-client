@@ -1,0 +1,50 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"extends": [
+		"airbnb",
+		"airbnb-typescript",
+		"airbnb/hooks",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"plugin:prettier/recommended"
+	],
+	"parserOptions": {
+		"project": "tsconfig.json",
+		"sourceType": "module",
+		"ecmaVersion": 12,
+		"ecmaFeatures": { "jsx": true }
+	},
+	"plugins": ["prettier"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"rules": {
+		"no-param-reassign": [
+			"error",
+			{
+				"props": true,
+				"ignorePropertyModificationsFor": ["state"]
+			}
+		],
+		"jsx-a11y/label-has-associated-control" : [
+			2 ,
+			{
+				"assert" : "either"
+			}
+		],
+		"react/react-in-jsx-scope": "off",
+		"import/prefer-default-export": "off",
+		"no-console": "off",
+		"class-methods-use-this": [
+			"error",
+			{ "enforceForClassFields": false }
+		],
+		"@typescript-eslint/no-unused-vars" : "off"
+	}
+}
