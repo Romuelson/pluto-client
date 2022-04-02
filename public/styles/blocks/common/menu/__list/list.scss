@@ -1,0 +1,8 @@
+.menu__list {
+	display: flex;
+	min-height: 48px;
+}
+
+.menu__list .menu__item {
+	flex-grow: 1;
+}

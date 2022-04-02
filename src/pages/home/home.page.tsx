@@ -1,7 +1,11 @@
-import Header from '../../components/header/header.comp';
+// import Header from '../../components/header/header.comp';
 
 function HomePage() {
-	return <Header />;
+	return (
+		<div className="home">
+			<h1>Домашняя страница</h1>
+		</div>
+	);
 }
 
 export default HomePage;

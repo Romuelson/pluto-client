@@ -1,5 +1,17 @@
-header {
-	position: absolute;
-	text-align: center;
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+
+// .header {
+// 	display: grid;
+// 	justify-content: space-between;
+// 	grid-area: hd;
+// 	grid-template-areas: 'logo nav';
+// 	grid-template-columns: min-content min-content;
+// 	grid-template-rows: 48px max-content;
+// 	min-height: 48px;
+// }
+
+.header {
+	position: relative;
 	background-color: white;
+	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
 }

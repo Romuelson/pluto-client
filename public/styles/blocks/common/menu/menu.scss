@@ -1,0 +1,12 @@
+.menu {
+	position: fixed;
+	bottom: 0;
+	grid-area: menu;
+	width: 100%;
+	background-color: white;
+	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
+}
+
+.menu__title {
+	margin: 0;
+}

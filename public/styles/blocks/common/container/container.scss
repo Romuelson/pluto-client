@@ -1,0 +1,6 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+
+.container {
+	display: grid;
+	grid-template-areas: 'hd' 'home' 'ft';
+}

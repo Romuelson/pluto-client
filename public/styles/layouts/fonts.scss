@@ -1,0 +1,14 @@
+/* TT Norms */
+@font-face {
+	font-weight: 400;
+	font-family: 'TT Norms';
+	font-style: normal;
+	font-display: swap;
+	src: url('../fonts/tt-norms/tt-norms-regular.eot');
+	src: local('TT Norms Regular'), local('TTNorms-Regular'),
+		url('../fonts/tt-norms/tt-norms-regular.eot?#iefix')
+			format('embedded-opentype'),
+		url('../fonts/tt-norms/tt-norms-regular.woff2') format('woff2'),
+		url('../fonts/tt-norms/tt-norms-regular.woff') format('woff'),
+		url('../fonts/tt-norms/tt-norms-regular.ttf') format('truetype');
+}

@@ -25,6 +25,5 @@ export const createStore = (initialState = {}) => {
 export const store = createStore();
 
 export type AppStore = ReturnType<typeof store.getState>;
-// export type AppDispatch = AppStore['dispatch'];
 export type AppDispatch = typeof store.dispatch;
 export type AppReducer = ReturnType<typeof rootReducer>;

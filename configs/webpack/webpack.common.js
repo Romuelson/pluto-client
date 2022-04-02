@@ -32,7 +32,13 @@ module.exports = {
 		pathinfo: false
 	},
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.json', '.css','.scss', '.sass']
+		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.json', '.css','.scss', '.sass'],
+		alias: {
+			"@src": path.resolve(__dirname, '../../src'),
+			"@public": path.resolve(__dirname, '../../public'),
+			"@images": path.resolve(__dirname, '../../public/images'),
+			"@styles": path.resolve(__dirname, '../../public/styles')
+		}
 	},
 	devtool: false,
 	optimization: {
@@ -91,12 +97,25 @@ module.exports = {
 				}
 			},
 			{
-				test: /\.svg/,
-				use: {
-				  loader: "svg-url-loader",
-				  options: {}
-				}
+				test: /\.svg$/i,
+				issuer: /\.[jt]sx?$/,
+				resourceQuery: { not: [/url/] },
+				use: [
+					{
+						loader: '@svgr/webpack',
+						options: {
+							typescript: true,
+						}
+				 	}
+				],
 			}
+			// {
+			// 	test: /\.svg/,
+			// 	use: {
+			// 	  loader: "svg-url-loader",
+			// 	  options: {}
+			// 	}
+			// }
 		]
 	}
 }

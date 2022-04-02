@@ -2,13 +2,13 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 /* Store - Slices */
+import { appSlice } from '../../slices/app/app.slice';
 import { userSlice } from '../../slices/user/user.slice';
-// import { authSlice } from '../../slices/auth/auth.slice';
 
 /* Store - Enums */
 import { ReducerType } from '../../store.enum';
 
 export const rootReducer = combineReducers({
+	[ReducerType.app]: appSlice.reducer,
 	[ReducerType.user]: userSlice.reducer,
-	// [ReducerType.auth]: authSlice.reducer,
 });
