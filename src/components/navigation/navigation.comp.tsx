@@ -16,7 +16,9 @@ type NavigationProps = {
 function Navigation({ children }: NavigationProps) {
 	return (
 		<nav className="navigation">
-			<h3 className="visually-hidden">Навигация приложения</h3>
+			<h3 className="navigation__title visually-hidden">
+				Навигация приложения
+			</h3>
 			{children}
 		</nav>
 	);

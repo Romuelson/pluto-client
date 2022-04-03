@@ -3,9 +3,8 @@ import Navigation from '../navigation/navigation.comp';
 import Logo from '../logo/logo.comp';
 import Hamburger from '../hamburger/hamburger.comp';
 import Menu from '../menu/menu.comp';
-import { getNavigationStatus } from '../../store/slices/app/app.selectors';
-import { useAppSelector } from '../../hooks/use.redux';
 import NavigationList from '../navigation-list/navigation-list.comp';
+import Promo from '../promo/promo.comp';
 
 function Header() {
 	return (
@@ -19,6 +18,7 @@ function Header() {
 					<Menu />
 				</div>
 				<NavigationList />
+				<Promo />
 			</Navigation>
 		</header>
 	);

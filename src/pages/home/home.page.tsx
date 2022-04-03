@@ -1,9 +1,9 @@
-// import Header from '../../components/header/header.comp';
+import Promo from '../../components/promo/promo.comp';
 
 function HomePage() {
 	return (
 		<div className="home">
-			<h1>Домашняя страница</h1>
+			<h1 className="home__title visually-hidden">Домашняя страница</h1>
 		</div>
 	);
 }

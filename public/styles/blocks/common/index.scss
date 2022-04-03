@@ -11,24 +11,31 @@
 /* Header */
 @import './header/header.scss';
 
-/* Logo */
-@import './logo/logo.scss';
-
-/* Menu */
-@import './menu/menu.scss';
-@import './menu/__list/list.scss';
-@import './menu/__link/link.scss';
-
 /* Navigation */
 @import './navigation/navigation.scss';
 @import './navigation/__list/list.scss';
 @import './navigation/__link/link.scss';
+
+/* Logo */
+@import './logo/logo.scss';
 
 /* Hamburger */
 @import './hamburger/hamburger.scss';
 @import './hamburger/__box/box.scss';
 @import './hamburger/__inner/inner.scss';
 @import './hamburger/__title/title.scss';
+
+/* Menu */
+@import './menu/menu.scss';
+@import './menu/__list/list.scss';
+@import './menu/__link/link.scss';
+
+/* Promo */
+@import './promo/promo.scss';
+@import './promo/__item/item.scss';
+@import './promo/__title/title.scss';
+@import './promo/__description/description.scss';
+@import './promo/__link/link.scss';
 
 /* Footer */
 @import './footer/footer.scss';

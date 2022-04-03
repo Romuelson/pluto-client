@@ -1,0 +1,7 @@
+.promo__item:nth-child(1) .promo__link {
+	background-color: white;
+}
+
+.promo__link:not(.promo__item:nth-child(1) .promo__link) {
+	color: #fff;
+}

@@ -1,0 +1,19 @@
+.promo {
+	display: block;
+}
+
+.promo__item {
+	display: flex;
+	flex-direction: column;
+}
+
+.promo__item:nth-child(1) {
+	justify-content: center;
+	align-items: center;
+}
+
+.promo__item:nth-child(2),
+.promo__item:nth-child(3) {
+	justify-content: end;
+	align-items: flex-start;
+}

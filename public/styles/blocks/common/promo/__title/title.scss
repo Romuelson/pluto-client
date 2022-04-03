@@ -1,0 +1,13 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
+.promo__title {
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 32px;
+	font-family: 'Forum Regular';
+	color: #fff;
+}
+
+.promo__item:nth-child(1) .promo__title {
+	text-align: center;
+}

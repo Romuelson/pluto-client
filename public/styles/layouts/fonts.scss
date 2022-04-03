@@ -12,3 +12,17 @@
 		url('../fonts/tt-norms/tt-norms-regular.woff') format('woff'),
 		url('../fonts/tt-norms/tt-norms-regular.ttf') format('truetype');
 }
+
+/* Forum */
+@font-face {
+	font-weight: 400;
+	font-family: 'Forum Regular';
+	font-style: normal;
+	font-display: swap;
+	src: url('../fonts/forum/forum.eot');
+	src: local('Forum'),
+		url('../fonts/forum/forum.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/forum/forum.woff2') format('woff2'),
+		url('../fonts/forum/forum.woff') format('woff'),
+		url('../fonts/forum/forum.ttf') format('truetype');
+}

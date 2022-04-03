@@ -1,0 +1,41 @@
+/* stylelint-disable value-no-vendor-prefix */
+/* stylelint-disable declaration-block-no-duplicate-properties */
+
+.promo__item {
+	background-size: cover;
+	aspect-ratio: 1 / 1;
+}
+
+.promo__item:not(:last-child) {
+	margin-bottom: 1px;
+}
+
+.promo__item:nth-child(1) {
+	background-image: -webkit-image-set(
+		url('../images/mobile/promo-wom/promo-wom.jpg') 1x
+	);
+	background-image: image-set(
+		url('../images/mobile/promo-wom/promo-wom.webp') type('image/wepb') 1x,
+		url('../images/mobile/promo-wom/promo-wom.jpg') 1x
+	);
+}
+
+.promo__item:nth-child(2) {
+	background-image: -webkit-image-set(
+		url('../images/mobile/promo-men/promo-men.jpg') 1x
+	);
+	background-image: image-set(
+		url('../images/mobile/promo-men/promo-men.webp') type('image/wepb') 1x,
+		url('../images/mobile/promo-men/promo-men.jpg') 1x
+	);
+}
+
+.promo__item:nth-child(3) {
+	background-image: -webkit-image-set(
+		url('../images/mobile/promo-tec/promo-tec.jpg') 1x
+	);
+	background-image: image-set(
+		url('../images/mobile/promo-tec/promo-tec.webp') type('image/wepb') 1x,
+		url('../images/mobile/promo-tec/promo-tec.jpg') 1x
+	);
+}
