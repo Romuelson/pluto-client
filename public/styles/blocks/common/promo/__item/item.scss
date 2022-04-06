@@ -10,7 +10,15 @@
 	margin-bottom: 1px;
 }
 
+.promo__item:not(:first-child) {
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
+
 .promo__item:nth-child(1) {
+	padding-right: 28px;
+	padding-left: 28px;
+
 	background-image: -webkit-image-set(
 		url('../images/mobile/promo-wom/promo-wom.jpg') 1x
 	);

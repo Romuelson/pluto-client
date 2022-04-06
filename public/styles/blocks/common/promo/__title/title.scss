@@ -11,3 +11,9 @@
 .promo__item:nth-child(1) .promo__title {
 	text-align: center;
 }
+
+.promo__item:not(:nth-child(1)) .promo__title {
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+}

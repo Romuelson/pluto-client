@@ -1,5 +1,5 @@
 export enum DefaultRouteApp {
-	Root = '/',
+	Root = '/*',
 	Login = '/login',
 	NotFound = '*',
 }
