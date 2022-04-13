@@ -1,0 +1,9 @@
+.personal__container {
+	display: flex;
+	gap: 10px;
+	overflow-x: auto;
+}
+
+.personal__container::-webkit-scrollbar {
+	display: none;
+}

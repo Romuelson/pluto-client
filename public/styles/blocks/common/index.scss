@@ -39,6 +39,16 @@
 
 /* Personal */
 @import './personal/personal.scss';
+@import './personal/__list/list.scss';
+@import './personal/__item/item.scss';
+@import './personal/__link/link.scss';
+@import './personal/__novelties/novelties.scss';
+@import './personal/__container/container.scss';
+@import './personal/__card/card.scss';
+@import './personal/__description/description.scss';
+@import './personal/__cost/cost.scss';
+@import './personal/__button/button.scss';
+@import './personal/__wrapper/wrapper.scss';
 
 /* Footer */
 @import './footer/footer.scss';

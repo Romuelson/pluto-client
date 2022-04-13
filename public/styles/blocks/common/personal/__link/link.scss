@@ -1,0 +1,15 @@
+.personal__link {
+	display: flex;
+
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+
+	min-height: 34px;
+
+	border-bottom: 2px solid #e2e1db;
+}
+
+.personal__link--active {
+	border-bottom: 2px solid #d9a95e;
+}

@@ -1,7 +1,7 @@
-/* Global */
-// @import "./layouts/variables.scss";
-@import './layouts/base.scss';
+/* Layouts */
+@import './layouts/variables.scss';
 @import './layouts/fonts.scss';
+@import './layouts/base.scss';
 
 /* Library */
 @import './blocks/library/index.scss';
@@ -9,11 +9,5 @@
 /* Common */
 @import './blocks/common/index.scss';
 
-/* Desktop */
-// @import './blocks/desktop/index.scss';
-
-/* Mobile */
-// @import './blocks/mobile/index.scss';
-
-/* Touch */
-// @import './blocks/touch/index.scss';
+/* Resolution */
+@import './blocks/resolution/index.scss';

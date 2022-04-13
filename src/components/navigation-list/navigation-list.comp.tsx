@@ -7,70 +7,10 @@ import { getNavigationStatus } from '../../store/slices/app/app.selectors';
 function NavigationList() {
 	const status = useAppSelector(getNavigationStatus);
 
-	// useEffect(() => {
-	// 	if (!status) {
-	// 		const navigation = document.querySelector('.navigation__list');
-
-	// 		setTimeout(() => {
-	// 			// navigation?.classList.remove('visually-hidden');
-	// 			navigation?.classList.remove('navigation__list--open');
-	// 		}, 800);
-	// 	}
-	// }, [status]);
-
-	// return (
-	// 	<>
-	// 		{status ? (
-	// 			<ul className="navigation__list navigation__list--open list">
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Нижнее бельё
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Купальники
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Домашняя одежда
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Носочно-чулочные изделия
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Пляжная одежда
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Аксессуары
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Мужчинам
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						Детям
-	// 					</Link>
-	// 				</li>
-	// 				<li className="navigation__item list__item">
-	// 					<Link to="0" className="navigation__link link">
-	// 						SALE
-	// 					</Link>
-	// 				</li>
-	// 			</ul>
-	// 		) : null}
-	// 	</>
-	// );
+	/*
+		Произвести прогрессивную оптимизацию в сторону
+		взаимодействия react router dom
+	*/
 
 	useEffect(() => {
 		const nav = document.querySelector('.navigation__list');

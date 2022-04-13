@@ -1,32 +1,34 @@
 /* Routes */
-import { Link, Route, Routes } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PersonalRoute from '../../routes/personal/personal.route';
 
-/* Enums */
-import { DefaultRouteApp } from '../../routes/default/default.enum';
-import { PersonalRouteApp } from '../../routes/personal/personal.enum';
+type NavLinkTypes = {
+	isActive: boolean;
+};
 
 function Personal() {
+	const setActive = ({ isActive }: NavLinkTypes) =>
+		isActive
+			? 'personal__link personal__link--active link'
+			: 'personal__link link';
+
 	return (
 		<section className="home__personal personal">
 			<ul className="personal__list list">
 				<li className="personal__item list__item">
-					<Link to="/" className="personal__link link">
+					<NavLink to="/" className={setActive}>
 						Новинки
-					</Link>
+					</NavLink>
 				</li>
 				<li className="personal__item list__item">
-					<Link
-						to="/home/collections"
-						className="personal__link link"
-					>
+					<NavLink to="/home/collections" className={setActive}>
 						Коллекции
-					</Link>
+					</NavLink>
 				</li>
 				<li className="personal__item list__item">
-					<Link to="/home/sale" className="personal__link link">
+					<NavLink to="/home/sale" className={setActive}>
 						SALE
-					</Link>
+					</NavLink>
 				</li>
 			</ul>
 			<PersonalRoute />

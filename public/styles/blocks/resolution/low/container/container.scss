@@ -1,0 +1,6 @@
+@media (max-width: $max-medium-width) {
+	.container {
+		grid-template-areas: 'hd' 'home' 'ft';
+		grid-template-columns: minmax($min-low-width, $max-medium-width);
+	}
+}

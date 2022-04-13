@@ -1,0 +1,15 @@
+.personal__button {
+	flex-grow: 1;
+	min-height: 28px;
+}
+
+.personal__button--favorite {
+	max-width: 28px;
+
+	background-color: #fff;
+	border: 1px solid #e2e1db;
+}
+
+.personal__button--blind {
+	background-color: #a77d57;
+}

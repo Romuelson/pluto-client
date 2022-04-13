@@ -1,3 +1,8 @@
+// html {
+// 	margin-right: calc(-1 * (100vw - 100%));
+// 	overflow-x: hidden;
+// }
+
 html,
 body {
 	min-width: 320px;
@@ -6,6 +11,15 @@ body {
 	color: #000;
 	font-style: normal;
 	background-color: #fff;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+picture img {
+	vertical-align: middle;
 }
 
 .visually-hidden {

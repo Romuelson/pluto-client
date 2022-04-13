@@ -18,7 +18,6 @@ function Header() {
 					<Menu />
 				</div>
 				<NavigationList />
-				<Promo />
 			</Navigation>
 		</header>
 	);
