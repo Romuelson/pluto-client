@@ -1,6 +1,11 @@
 .personal__button {
 	flex-grow: 1;
 	min-height: 28px;
+
+	font-size: 11px;
+	line-height: 12px;
+	font-family: 'TT Norms', Arial, sans-serif;
+	color: #fff;
 }
 
 .personal__button--favorite {

@@ -1,6 +1,7 @@
 .menu {
 	position: fixed;
-	bottom: 0;
+	bottom: -1px;
+	z-index: 5;
 	grid-area: menu;
 	width: 100%;
 	background-color: white;

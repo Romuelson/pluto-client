@@ -3,7 +3,7 @@ import axios from 'axios';
 const REQUEST_TIMEOUT = 5000;
 const PORT = process.env.APP_PORT || 1488;
 
-const BACKEND_URL = 'http://localhost';
+const BACKEND_URL = 'http://192.168.0.101';
 const BASE_URL = `${BACKEND_URL}:${PORT}/`;
 
 export const createAxiosAPI = () => {
