@@ -1,3 +1,3 @@
 export enum DataPrefixType {
-	cards = 'data/getCards',
+	cards = 'data/getCardsThunk',
 }

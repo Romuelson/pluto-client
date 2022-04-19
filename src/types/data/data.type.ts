@@ -1,5 +1,5 @@
-import { CardTypes } from '../../mocks/data/card/card';
+import { CardsList } from '../../mocks/data/card/card';
 
-export type DataCardsTypes = {
-	data: CardTypes[];
+export type PayloadCardList = {
+	data: CardsList;
 };

@@ -15,18 +15,18 @@ import { AuthLoginForm, AuthLoginData } from '../../../types/auth/auth.type';
 import { DataPrefixType } from './data.enum';
 
 /* Types */
-import { DataCardsTypes } from '../../../types/data/data.type';
+import { PayloadCardList } from '../../../types/data/data.type';
+import { setCards } from './data.slice';
 
-export const dataGetCardsThunk = createAsyncThunk<
-	DataCardsTypes,
-	null,
+export const getCardsThunk = createAsyncThunk<
+	void,
+	undefined,
 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
 >(DataPrefixType.cards, async (_, api) => {
 	try {
-		const response: DataCardsTypes = await api.extra.get('cards');
-		console.log(response);
+		const response: PayloadCardList = await api.extra.get('cards');
 
-		return response;
+		api.dispatch(setCards(response.data));
 	} catch (error) {
 		throw new Error('dataGetCardsThunk');
 	}

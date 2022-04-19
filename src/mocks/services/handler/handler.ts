@@ -4,7 +4,7 @@ import { nanoid } from '@reduxjs/toolkit';
 // import { HandlerRouteApp } from './handler.enum';
 
 /* Mocks - Card */
-import cards from '../../data/card/card';
+import getMockCards from '../../data/card/card';
 
 const accessToken = nanoid();
 
@@ -30,6 +30,6 @@ export const handlers = [
 	}),
 
 	rest.get('cards', (req, res, ctx) => {
-		return res(ctx.delay(400), ctx.status(200), ctx.json({ cards }));
+		return res(ctx.delay(400), ctx.status(200), ctx.json(getMockCards()));
 	}),
 ];

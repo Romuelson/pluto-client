@@ -1,10 +1,10 @@
+import PersonalCards from '../personal-cards/personal-cards.comp';
+
 function PersonalCollections() {
 	return (
 		<div className="personal__сollections">
-			<div>
-				<img src="" alt="Изображение товара" />
-				<p>Коллекции</p>
-				<span>Цена товара</span>
+			<div className="personal__container">
+				<PersonalCards />
 			</div>
 		</div>
 	);

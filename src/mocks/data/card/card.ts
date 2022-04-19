@@ -1,6 +1,8 @@
+/* eslint-disable no-plusplus */
+
 import { faker } from '@faker-js/faker';
 
-export type CardTypes = {
+export type CardItem = {
 	id: string;
 	title: string;
 	description: string;
@@ -10,19 +12,26 @@ export type CardTypes = {
 	image: string;
 };
 
-const CARD_LENGTH = 16;
-const cards = new Array(CARD_LENGTH).fill({});
+export type CardsList = CardItem[];
 
-cards.forEach((item: CardTypes, index) => {
-	const card = item;
+function getMockCards(initialValue = 7): CardsList {
+	function createCard(index: number): CardItem {
+		return {
+			id: faker.datatype.uuid(),
+			title: faker.commerce.productAdjective(),
+			description: faker.commerce.productDescription(),
+			price: faker.commerce.price(2300, 3400, 2),
+			size: [32, 34, 40, 42],
+			color: ['red', 'blue'],
+			image: `gerl-${index + 1}`,
+		};
+	}
 
-	card.id = faker.datatype.uuid();
-	card.title = faker.commerce.productAdjective();
-	card.description = faker.commerce.productDescription();
-	card.price = faker.commerce.price(2300, 3400, 2, 'руб.');
-	card.size = [32, 34, 40, 42];
-	card.color = ['red', 'blue'];
-	card.image = `gerl-${index + 1}.jpg`;
-});
+	const cardList = new Array(initialValue)
+		.fill(null)
+		.map((_, index) => createCard(index));
 
-export default cards;
+	return cardList;
+}
+
+export default getMockCards;
