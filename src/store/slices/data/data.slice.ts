@@ -1,23 +1,24 @@
 /* Core */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-/* Mocks - Data */
-import { CardsList } from '../../../mocks/data/card/card';
-
 /* Types */
-import { PayloadCardList } from '../../../types/data/data.type';
+import { ProductCardList } from '../../../types/data/product-card/product-card.type';
 
 /* Store - Enums */
 import { DataActionType, ReducerType } from '../../store.enum';
 
-/* Store - Thunk actions */
-
 export type DataSlice = {
-	cards: CardsList;
+	cardList: ProductCardList;
+	cardNovelties: [];
+	cardCollections: [];
+	cardSale: [];
 };
 
 const initialState: DataSlice = {
-	cards: [],
+	cardList: [],
+	cardNovelties: [],
+	cardCollections: [],
+	cardSale: [],
 };
 
 export const dataSlice = createSlice({
@@ -26,9 +27,9 @@ export const dataSlice = createSlice({
 	reducers: {
 		[DataActionType.setCards]: (
 			state,
-			action: PayloadAction<CardsList>
+			action: PayloadAction<ProductCardList>
 		) => {
-			state.cards = action.payload;
+			state.cardList = action.payload;
 		},
 	},
 	extraReducers: (builder) => {},

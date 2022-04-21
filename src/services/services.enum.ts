@@ -1,6 +1,8 @@
 export enum AxiosAPI {
-	Login = 'login',
-	Logout = 'logout',
+	DataCardAll = '/api/data/card/all',
+	DataCardNovelties = 'api/data/card/novelties',
+	DataCardCollections = 'api/data/card/collections',
+	DataCardSale = 'api/data/card/collections',
 }
 
 export enum ReduxAPI {}

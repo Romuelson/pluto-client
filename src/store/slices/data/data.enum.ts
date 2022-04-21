@@ -1,3 +1,6 @@
 export enum DataPrefixType {
-	cards = 'data/getCardsThunk',
+	getCardAll = 'data/getCardAllThunk',
+	getCardNovelties = 'data/getCardNoveltiesThunk',
+	getCardCollections = 'data/getCardCollectionsThunk',
+	getCardSale = 'data/getCardSaleThunk',
 }

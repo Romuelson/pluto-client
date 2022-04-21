@@ -1,35 +1,47 @@
 import { rest } from 'msw';
-import { nanoid } from '@reduxjs/toolkit';
 
-// import { HandlerRouteApp } from './handler.enum';
+/* Services */
+import { AxiosAPI } from '../../../services/services.enum';
 
-/* Mocks - Card */
-import getMockCards from '../../data/card/card';
+/* Request Mock Data */
+import { getBrasCards } from '../../data/product-card/response/get-bras-cards';
+import { getUnderpantsCards } from '../../data/product-card/response/get-underpants-cards';
 
-const accessToken = nanoid();
+/* Types */
+import { IProductCard } from '../../../types/data/product-card/product-card.type';
+
+/* Enums */
+import { ELabelSections } from '../../../types/data/product-card/product-card.enum';
 
 export const handlers = [
-	rest.post('login', (req, res, ctx) => {
-		return res(
-			ctx.delay(400),
-			ctx.status(200),
-			ctx.json({
-				accessToken,
-			})
-		);
-	}),
+	rest.get(AxiosAPI.DataCardAll, (req, res, ctx) => {
+		const cardList = getBrasCards.concat(getUnderpantsCards);
 
-	rest.get('users', (req, res, ctx) => {
-		return res(
-			ctx.delay(400),
-			ctx.status(200),
-			ctx.json({
-				accessToken,
-			})
-		);
+		return res(ctx.delay(400), ctx.status(200), ctx.json(cardList));
 	}),
+	rest.get(AxiosAPI.DataCardNovelties, (req, res, ctx) => {
+		const cardList = getBrasCards.concat(getUnderpantsCards);
 
-	rest.get('cards', (req, res, ctx) => {
-		return res(ctx.delay(400), ctx.status(200), ctx.json(getMockCards()));
+		const findNoveltes = (item: ELabelSections) =>
+			item === ELabelSections.new;
+
+		const filterNoveltes = (item: IProductCard) =>
+			item.properties.labelList.sections.find(findNoveltes);
+
+		const cardNovelties = cardList.filter(filterNoveltes);
+
+		/* Произвести декомпозицию model, service, controller для product-card */
+
+		return res(ctx.delay(400), ctx.status(200), ctx.json(cardNovelties));
+	}),
+	rest.get(AxiosAPI.DataCardCollections, (req, res, ctx) => {
+		const cards = getBrasCards.concat(getUnderpantsCards);
+
+		return res(ctx.delay(400), ctx.status(200), ctx.json(cards));
+	}),
+	rest.get(AxiosAPI.DataCardSale, (req, res, ctx) => {
+		const cards = getBrasCards.concat(getUnderpantsCards);
+
+		return res(ctx.delay(400), ctx.status(200), ctx.json(cards));
 	}),
 ];

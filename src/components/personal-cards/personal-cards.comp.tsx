@@ -1,35 +1,37 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/use.redux';
-import { CardsList } from '../../mocks/data/card/card';
+// import { CardsList } from '../../mocks/data/card/card';
 
 import { getCards } from '../../store/slices/data/data.selectors';
-import { getCardsThunk } from '../../store/slices/data/data.thunk';
+import { getCardAllThunk } from '../../store/slices/data/data.thunk';
 
-import image from '../../../public/images/desktop/personal/gerl-1/gerl-1.jpg';
+// import image from '../../../public/images/desktop/personal/gerl-1/gerl-1.jpg';
+import { IProductCard } from '../../types/data/product-card/product-card.type';
 
 function PersonalCards() {
 	const blindHandler = () => {};
 	const favoriteHandler = () => {};
 
 	const dispatch = useAppDispatch();
-	const cards = useAppSelector(getCards);
+	const cardList = useAppSelector(getCards);
 
 	useEffect(() => {
-		if (!cards.length) {
-			dispatch(getCardsThunk());
+		if (!cardList.length) {
+			dispatch(getCardAllThunk());
 		}
 	}, []);
 
-	const card = (items: CardsList) =>
+	const card = (items: IProductCard[]) =>
 		items.map((item, index) => (
 			<div className="personal__card" key={item.id}>
 				<img
 					className="personal__image"
-					src={`./images/desktop/personal/${item.image}/${item.image}.jpg`}
+					src={`./images/desktop/personal/${item.properties.vendor}/${item.id}/${item.images.mainFront}.jpg`}
 					alt="Изображение товара"
 				/>
 				<svg
@@ -40,9 +42,9 @@ function PersonalCards() {
 					<use xlinkHref="#sprite_svg__favorites" />
 				</svg>
 				<p className="personal__description description">
-					{item.description}
+					{item.title}
 				</p>
-				<span className="personal__price">{`${item.price} руб.`}</span>
+				<span className="personal__price">{`${item.properties.priceList.price} ₽`}</span>
 				<div className="personal__wrapper">
 					<button
 						className="personal__button personal__button--favorite button"
@@ -74,7 +76,7 @@ function PersonalCards() {
 		</div>
 	);
 
-	return <>{cards ? card(cards) : loader()}</>;
+	return <>{cardList ? card(cardList) : loader()}</>;
 }
 
 export default PersonalCards;

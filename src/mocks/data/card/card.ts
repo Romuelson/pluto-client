@@ -19,8 +19,8 @@ function getMockCards(initialValue = 7): CardsList {
 		return {
 			id: faker.datatype.uuid(),
 			title: faker.commerce.productAdjective(),
-			description: faker.commerce.productDescription(),
-			price: faker.commerce.price(2300, 3400, 2),
+			description: faker.commerce.productName(),
+			price: faker.commerce.price(2300, 3400, 0),
 			size: [32, 34, 40, 42],
 			color: ['red', 'blue'],
 			image: `gerl-${index + 1}`,

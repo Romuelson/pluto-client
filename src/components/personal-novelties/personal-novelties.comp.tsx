@@ -7,12 +7,7 @@
 import { TouchEvent, MouseEvent, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/use.redux';
 
-import { getCards } from '../../store/slices/data/data.selectors';
-import { getCardsThunk } from '../../store/slices/data/data.thunk';
-
 import PersonalCards from '../personal-cards/personal-cards.comp';
-
-// import cardImage from '../../../public/images/desktop/personal/gerl-x/gerl-x.jpg';
 
 function PersonalNovelties() {
 	return (
