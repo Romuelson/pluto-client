@@ -38,7 +38,7 @@ export const getCardNoveltiesThunk = createAsyncThunk<
 >(DataPrefixType.getCardNovelties, async (_, api) => {
 	try {
 		const response: PayloadCardList = await api.extra.get(
-			AxiosAPI.DataCardNovelties
+			`${AxiosAPI.DataCardSection}/?section=novelties`
 		);
 
 		api.dispatch(setCards(response.data));
@@ -54,7 +54,7 @@ export const getCardCollectionsThunk = createAsyncThunk<
 >(DataPrefixType.getCardCollections, async (_, api) => {
 	try {
 		const response: PayloadCardList = await api.extra.get(
-			AxiosAPI.DataCardCollections
+			`${AxiosAPI.DataCardSection}/?section=collections`
 		);
 
 		api.dispatch(setCards(response.data));
@@ -70,7 +70,7 @@ export const getCardSaleThunk = createAsyncThunk<
 >(DataPrefixType.getCardSale, async (_, api) => {
 	try {
 		const response: PayloadCardList = await api.extra.get(
-			AxiosAPI.DataCardSale
+			`${AxiosAPI.DataCardSection}/?section=sale`
 		);
 
 		api.dispatch(setCards(response.data));

@@ -1,8 +1,9 @@
 export enum AxiosAPI {
 	DataCardAll = '/api/data/card/all',
-	DataCardNovelties = 'api/data/card/novelties',
-	DataCardCollections = 'api/data/card/collections',
-	DataCardSale = 'api/data/card/collections',
+	DataCardSection = 'api/data/card/section',
+	DataCardNovelties = 'api/data/card/?section=novelties',
+	DataCardCollections = 'api/data/card/?section=collections',
+	DataCardSale = 'api/data/card/?section=sale',
 }
 
 export enum ReduxAPI {}

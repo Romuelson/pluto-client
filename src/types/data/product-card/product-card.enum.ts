@@ -3,10 +3,22 @@ export enum ELabelCurrent {
 	underpants = 'Трусы',
 }
 
+// export enum ELabelSections {
+// 	new = 'Новинки',
+// 	collections = 'Коллекции',
+// 	sale = 'SALE',
+// }
+
 export enum ELabelSections {
-	new = 'Новинки',
-	collections = 'Коллекции',
-	sale = 'SALE',
+	new = 'novelties',
+	collections = 'collections',
+	sale = 'sale',
+}
+
+export enum ESectionsQuery {
+	novelties = 'novelties',
+	collections = 'collections',
+	sale = 'sale',
 }
 
 export enum ECardSize {
