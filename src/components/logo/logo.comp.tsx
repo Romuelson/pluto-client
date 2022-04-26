@@ -4,7 +4,7 @@ import ImageLogo from '../../../public/images/common/logo.svg';
 function Logo() {
 	return (
 		<div className="logo">
-			<Link className="logo__link" to="0">
+			<Link className="logo__link" to="/">
 				<ImageLogo className="logo__image" />
 			</Link>
 		</div>

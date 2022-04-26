@@ -4,30 +4,31 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/use.redux';
-// import { CardsList } from '../../mocks/data/card/card';
+import { useAppSelector } from '../../hooks/use.redux';
 
-import { getCards } from '../../store/slices/data/data.selectors';
-import { getCardAllThunk } from '../../store/slices/data/data.thunk';
+import { getAllCards } from '../../store/slices/data/data.selectors';
 
-// import image from '../../../public/images/desktop/personal/gerl-1/gerl-1.jpg';
-import { IProductCard } from '../../types/data/product-card/product-card.type';
+import { IProductCard, ProductCardList } from '../../types/data/product-card/product-card.type';
 
-function PersonalCards() {
+type PersonalCardsProps = {
+	getCards: () => void;
+	cards: ProductCardList;
+};
+
+function PersonalCards({getCards, cards}: PersonalCardsProps) {
 	const blindHandler = () => {};
 	const favoriteHandler = () => {};
 
-	const dispatch = useAppDispatch();
-	const cardList = useAppSelector(getCards);
+	console.log(cards);
 
 	useEffect(() => {
-		if (!cardList.length) {
-			dispatch(getCardAllThunk());
+		if (!cards.length) {
+			getCards();
 		}
-	}, []);
+	}, [cards]);
 
 	const card = (items: IProductCard[]) =>
-		items.map((item, index) => (
+		items.map((item) => (
 			<div className="personal__card" key={item.id}>
 				<img
 					className="personal__image"
@@ -70,13 +71,7 @@ function PersonalCards() {
 			</div>
 		));
 
-	const loader = () => (
-		<div>
-			<p>Loader...</p>
-		</div>
-	);
-
-	return <>{cardList ? card(cardList) : loader()}</>;
+	return <>{cards ? card(cards) : <p>Loader...</p>}</>;
 }
 
 export default PersonalCards;

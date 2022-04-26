@@ -68,4 +68,5 @@ export type ProductCardList = IProductCard[];
 
 export type PayloadCardList = {
 	data: ProductCardList;
+	type?: ELabelSections;
 };

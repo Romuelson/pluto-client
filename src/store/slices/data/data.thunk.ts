@@ -14,6 +14,7 @@ import { DataPrefixType } from './data.enum';
 
 /* Types */
 import { PayloadCardList } from '../../../types/data/product-card/product-card.type';
+import { ELabelSections } from '../../../types/data/product-card/product-card.enum';
 
 export const getCardAllThunk = createAsyncThunk<
 	void,
@@ -25,7 +26,11 @@ export const getCardAllThunk = createAsyncThunk<
 			AxiosAPI.DataCardAll
 		);
 
-		api.dispatch(setCards(response.data));
+		const cards: PayloadCardList = {
+			data: response.data,
+		};
+
+		api.dispatch(setCards(cards));
 	} catch (error) {
 		throw new Error('getCardAllThunk');
 	}
@@ -41,7 +46,12 @@ export const getCardNoveltiesThunk = createAsyncThunk<
 			`${AxiosAPI.DataCardSection}/?section=novelties`
 		);
 
-		api.dispatch(setCards(response.data));
+		const cards: PayloadCardList = {
+			data: response.data,
+			type: ELabelSections.new,
+		};
+
+		api.dispatch(setCards(cards));
 	} catch (error) {
 		throw new Error('getCardNoveltiesThunk');
 	}
@@ -57,7 +67,12 @@ export const getCardCollectionsThunk = createAsyncThunk<
 			`${AxiosAPI.DataCardSection}/?section=collections`
 		);
 
-		api.dispatch(setCards(response.data));
+		const cards: PayloadCardList = {
+			data: response.data,
+			type: ELabelSections.collections,
+		};
+
+		api.dispatch(setCards(cards));
 	} catch (error) {
 		throw new Error('getCardCollectionsThunk');
 	}
@@ -73,7 +88,12 @@ export const getCardSaleThunk = createAsyncThunk<
 			`${AxiosAPI.DataCardSection}/?section=sale`
 		);
 
-		api.dispatch(setCards(response.data));
+		const cards: PayloadCardList = {
+			data: response.data,
+			type: ELabelSections.sale,
+		};
+
+		api.dispatch(setCards(cards));
 	} catch (error) {
 		throw new Error('getCardSaleThunk');
 	}

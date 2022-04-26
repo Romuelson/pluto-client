@@ -1,13 +1,13 @@
-import { Pathname } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { ELabelSections } from '../../types/data/product-card/product-card.enum';
 
-interface WithPersonalProps {
-	pathname: Pathname;
+type PresonalSectionProps = {
 	children: JSX.Element;
-}
+};
 
-function WithPersonal({ pathname, children }: WithPersonalProps) {
-	const label = pathname.split('/').pop();
+function PersonalSection({ children }: PresonalSectionProps) {
+	const to = useLocation();
+	const label = to.pathname.split('/').pop();
 
 	return (
 		<div
@@ -20,4 +20,4 @@ function WithPersonal({ pathname, children }: WithPersonalProps) {
 	);
 }
 
-export default WithPersonal;
+export default PersonalSection;
