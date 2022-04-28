@@ -88,7 +88,7 @@ export const getBrasCards: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: [ELabelSections.new],
+				sections: [ELabelSections.novelties],
 			},
 			priceList: {
 				price: 1799,
@@ -150,7 +150,7 @@ export const getBrasCards: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: [ELabelSections.new],
+				sections: [ELabelSections.novelties],
 			},
 			priceList: {
 				price: 1999,
@@ -455,7 +455,7 @@ export const getBrasCards: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: [ELabelSections.new],
+				sections: [ELabelSections.novelties],
 			},
 			priceList: {
 				price: 1899,

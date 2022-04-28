@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* Core */
 import { AxiosInstance } from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
@@ -7,20 +8,23 @@ import { AxiosAPI } from '../../../services/services.enum';
 
 /* Store */
 import type { AppDispatch, AppStore } from '../../store';
-import { setCards } from './data.slice';
+import { IStatusCards, setCards, statusCards } from './data.slice';
 
 /* Store - Enums */
-import { DataPrefixType } from './data.enum';
+import { DataPrefixType, DataStatusType } from './data.enum';
 
 /* Types */
-import { PayloadCardList } from '../../../types/data/product-card/product-card.type';
+import {
+	PayloadCardList,
+	ResponceCardList,
+} from '../../../types/data/product-card/product-card.type';
 import { ELabelSections } from '../../../types/data/product-card/product-card.enum';
 
 export const getCardAllThunk = createAsyncThunk<
 	void,
 	undefined,
 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
->(DataPrefixType.getCardAll, async (_, api) => {
+>(DataPrefixType.getCardAll, async (_args, api) => {
 	try {
 		const response: PayloadCardList = await api.extra.get(
 			AxiosAPI.DataCardAll
@@ -36,65 +40,24 @@ export const getCardAllThunk = createAsyncThunk<
 	}
 });
 
-export const getCardNoveltiesThunk = createAsyncThunk<
+export const getCardType = createAsyncThunk<
 	void,
-	undefined,
+	{ type: ELabelSections },
 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
->(DataPrefixType.getCardNovelties, async (_, api) => {
+>(DataPrefixType.getCardNovelties, async ({ type }, api) => {
+	api.dispatch(statusCards({ type, status: DataStatusType.pending }));
+
 	try {
-		const response: PayloadCardList = await api.extra.get(
-			`${AxiosAPI.DataCardSection}/?section=novelties`
+		const { data }: ResponceCardList = await api.extra.get(
+			`${AxiosAPI.DataCardSection}/?section=${type}`
 		);
 
-		const cards: PayloadCardList = {
-			data: response.data,
-			type: ELabelSections.new,
-		};
+		const cards: PayloadCardList = { data, type };
 
 		api.dispatch(setCards(cards));
+		api.dispatch(statusCards({ type, status: DataStatusType.fulfilled }));
 	} catch (error) {
-		throw new Error('getCardNoveltiesThunk');
-	}
-});
-
-export const getCardCollectionsThunk = createAsyncThunk<
-	void,
-	undefined,
-	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
->(DataPrefixType.getCardCollections, async (_, api) => {
-	try {
-		const response: PayloadCardList = await api.extra.get(
-			`${AxiosAPI.DataCardSection}/?section=collections`
-		);
-
-		const cards: PayloadCardList = {
-			data: response.data,
-			type: ELabelSections.collections,
-		};
-
-		api.dispatch(setCards(cards));
-	} catch (error) {
-		throw new Error('getCardCollectionsThunk');
-	}
-});
-
-export const getCardSaleThunk = createAsyncThunk<
-	void,
-	undefined,
-	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
->(DataPrefixType.getCardSale, async (_, api) => {
-	try {
-		const response: PayloadCardList = await api.extra.get(
-			`${AxiosAPI.DataCardSection}/?section=sale`
-		);
-
-		const cards: PayloadCardList = {
-			data: response.data,
-			type: ELabelSections.sale,
-		};
-
-		api.dispatch(setCards(cards));
-	} catch (error) {
-		throw new Error('getCardSaleThunk');
+		api.dispatch(statusCards({ type, status: DataStatusType.rejected }));
+		throw new Error('getCardType');
 	}
 });

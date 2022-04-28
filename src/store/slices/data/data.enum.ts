@@ -4,3 +4,10 @@ export enum DataPrefixType {
 	getCardCollections = 'data/getCardCollectionsThunk',
 	getCardSale = 'data/getCardSaleThunk',
 }
+
+export enum DataStatusType {
+	pending = 'Pending',
+	fulfilled = 'Fulfilled',
+	rejected = 'Rejected',
+	sleeping = 'Sleeping',
+}

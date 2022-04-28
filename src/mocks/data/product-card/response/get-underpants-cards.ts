@@ -89,7 +89,7 @@ export const getUnderpantsCards: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: [ELabelSections.new],
+				sections: [ELabelSections.novelties],
 			},
 			priceList: {
 				price: 799,

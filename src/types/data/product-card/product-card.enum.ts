@@ -10,16 +10,17 @@ export enum ELabelCurrent {
 // }
 
 export enum ELabelSections {
-	new = 'novelties',
-	collections = 'collections',
-	sale = 'sale',
-}
-
-export enum ESectionsQuery {
+	all = 'all',
 	novelties = 'novelties',
 	collections = 'collections',
 	sale = 'sale',
 }
+
+// export enum ESectionsQuery {
+// 	novelties = 'novelties',
+// 	collections = 'collections',
+// 	sale = 'sale',
+// }
 
 export enum ECardSize {
 	XXS = '32',

@@ -11,7 +11,7 @@ import ProductCardDto from './product-card.dto';
 class ProductCardController {
 	getAllCard(req: RestRequest<never, PathParams>, res: ResponseComposition<DefaultRequestBody>, ctx: RestContext) {
 		const cards = ProductCardService.getAll();
-		console.log(req.url.searchParams.get('section'));
+		// console.log(req.url.searchParams.get('section'));
 
 		return res(ctx.delay(400), ctx.status(200), ctx.json(cards));
 	}

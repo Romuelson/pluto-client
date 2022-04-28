@@ -4,37 +4,47 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useEffect } from 'react';
-import { useAppSelector } from '../../hooks/use.redux';
+import { useAppDispatch, useAppSelector } from '../../hooks/use.redux';
 
-import { getAllCards } from '../../store/slices/data/data.selectors';
+import { getCardType } from '../../store/slices/data/data.thunk';
 
-import { IProductCard, ProductCardList } from '../../types/data/product-card/product-card.type';
+import { IProductCard} from '../../types/data/product-card/product-card.type';
+import { ELabelSections } from '../../types/data/product-card/product-card.enum';
+import { takeCardsStatus, takeCardsType } from '../../store/slices/data/data.selectors';
+import { DataStatusType } from '../../store/slices/data/data.enum';
 
 type PersonalCardsProps = {
-	getCards: () => void;
-	cards: ProductCardList;
+	type: ELabelSections;
 };
 
-function PersonalCards({getCards, cards}: PersonalCardsProps) {
+function PersonalCards({type}: PersonalCardsProps) {
+	const dispatch = useAppDispatch();
+
+	const cards = useAppSelector((state) => takeCardsType(state, type));
+	const status = useAppSelector((state) => takeCardsStatus(state, type));
+
 	const blindHandler = () => {};
 	const favoriteHandler = () => {};
 
-	console.log(cards);
-
 	useEffect(() => {
-		if (!cards.length) {
-			getCards();
+		if (status === DataStatusType.sleeping) {
+			dispatch(getCardType({ type }));
 		}
 	}, [cards]);
 
 	const card = (items: IProductCard[]) =>
 		items.map((item) => (
 			<div className="personal__card" key={item.id}>
-				<img
-					className="personal__image"
-					src={`./images/desktop/personal/${item.properties.vendor}/${item.id}/${item.images.mainFront}.jpg`}
-					alt="Изображение товара"
-				/>
+				<picture>
+					<source
+						media='(min-width: 1366px)'
+						srcSet={`./images/desktop/personal/${item.properties.vendor}/${item.id}/${item.images.mainFront}.jpg`} />
+					<img
+						className="personal__image"
+						src={`./images/mobile/personal/${item.properties.vendor}/${item.id}/${item.images.mainFront}.jpg`}
+						alt="Изображение товара"
+					/>
+				</picture>
 				<svg
 					width="19"
 					height="17"

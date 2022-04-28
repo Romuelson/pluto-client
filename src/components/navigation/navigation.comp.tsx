@@ -1,14 +1,3 @@
-/* Core */
-import { useAppSelector } from '../../hooks/use.redux';
-
-/* Components */
-import Logo from '../logo/logo.comp';
-import Hamburger from '../hamburger/hamburger.comp';
-import Menu from '../menu/menu.comp';
-
-/* Store - Selectors */
-import { getNavigationStatus } from '../../store/slices/app/app.selectors';
-
 /* SVG Sprite */
 import MenuSprite from '../../../public/images/common/sprite.svg';
 

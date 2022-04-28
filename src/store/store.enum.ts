@@ -13,6 +13,7 @@ export enum ActionType {
 
 export enum DataActionType {
 	setCards = 'setCards',
+	statusCards = 'statusCards',
 }
 
 export enum ThunkType {

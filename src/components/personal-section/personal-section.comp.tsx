@@ -12,7 +12,9 @@ function PersonalSection({ children }: PresonalSectionProps) {
 	return (
 		<div
 			className={
-				label ? `personal__${label}` : `personal__${ELabelSections.new}`
+				label
+					? `personal__${label}`
+					: `personal__${ELabelSections.novelties}`
 			}
 		>
 			<div className="personal__container">{children}</div>

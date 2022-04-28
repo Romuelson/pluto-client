@@ -4,7 +4,6 @@ import Logo from '../logo/logo.comp';
 import Hamburger from '../hamburger/hamburger.comp';
 import Menu from '../menu/menu.comp';
 import NavigationList from '../navigation-list/navigation-list.comp';
-import Promo from '../promo/promo.comp';
 
 function Header() {
 	return (

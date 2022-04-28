@@ -70,3 +70,7 @@ export type PayloadCardList = {
 	data: ProductCardList;
 	type?: ELabelSections;
 };
+
+export type ResponceCardList = {
+	data: ProductCardList;
+};
