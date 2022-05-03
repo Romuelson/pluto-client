@@ -3,7 +3,7 @@
 
 .promo__item {
 	background-size: cover;
-	aspect-ratio: 1 / 1;
+	aspect-ratio: 1 / 0.875;
 }
 
 .promo__item:not(:last-child) {
@@ -20,30 +20,33 @@
 	padding-left: 28px;
 
 	background-image: -webkit-image-set(
-		url('../images/mobile/promo-wom/promo-wom.jpg') 1x
+		url('../images/mobile/promo/promo-wom/promo-wom.jpg') 1x
 	);
 	background-image: image-set(
-		url('../images/mobile/promo-wom/promo-wom.webp') type('image/wepb') 1x,
-		url('../images/mobile/promo-wom/promo-wom.jpg') 1x
+		url('../images/mobile/promo/promo-wom/promo-wom.webp')
+			type('image/wepb') 1x,
+		url('../images/mobile/promo/promo-wom/promo-wom.jpg') 1x
 	);
 }
 
 .promo__item:nth-child(2) {
 	background-image: -webkit-image-set(
-		url('../images/mobile/promo-men/promo-men.jpg') 1x
+		url('../images/mobile/promo/promo-men/promo-men.jpg') 1x
 	);
 	background-image: image-set(
-		url('../images/mobile/promo-men/promo-men.webp') type('image/wepb') 1x,
-		url('../images/mobile/promo-men/promo-men.jpg') 1x
+		url('../images/mobile/promo/promo-men/promo-men.webp')
+			type('image/wepb') 1x,
+		url('../images/mobile/promo/promo-men/promo-men.jpg') 1x
 	);
 }
 
 .promo__item:nth-child(3) {
 	background-image: -webkit-image-set(
-		url('../images/mobile/promo-tec/promo-tec.jpg') 1x
+		url('../images/mobile/promo/promo-tec/promo-tec.jpg') 1x
 	);
 	background-image: image-set(
-		url('../images/mobile/promo-tec/promo-tec.webp') type('image/wepb') 1x,
-		url('../images/mobile/promo-tec/promo-tec.jpg') 1x
+		url('../images/mobile/promo/promo-tec/promo-tec.webp')
+			type('image/wepb') 1x,
+		url('../images/mobile/promo/promo-tec/promo-tec.jpg') 1x
 	);
 }

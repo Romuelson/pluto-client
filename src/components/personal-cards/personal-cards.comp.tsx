@@ -63,8 +63,6 @@ function PersonalCards({type}: PersonalCardsProps) {
 						onClick={favoriteHandler}
 					>
 						<svg
-							width="11"
-							height="11"
 							className="personal__icon favorites"
 						>
 							<use xlinkHref="#sprite_svg__favorites" />

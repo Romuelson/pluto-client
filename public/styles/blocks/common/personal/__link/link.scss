@@ -4,8 +4,12 @@
 	flex-grow: 1;
 	justify-content: center;
 	align-items: center;
+	// align-items: flex-start; перенести на tablet
 
-	min-height: 34px;
+	// min-height: 34px;
+	min-height: linear-equations($min-low-width, $min-medium-width, 34, 43);
+
+	// font-size: linear-equations($min-low-width, $min-medium-width, 16, 26);
 
 	border-bottom: 2px solid #e2e1db;
 }

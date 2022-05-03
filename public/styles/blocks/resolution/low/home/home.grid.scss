@@ -1,0 +1,30 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+
+@media (max-width: #{$max-medium-width}px) {
+	.home {
+		display: grid;
+		grid-template-areas: 'promo' 'personal' 'special';
+		grid-template-columns: minmax(
+			#{$min-low-width}px,
+			#{$max-medium-width}px
+		);
+		grid-template-rows: auto auto;
+	}
+
+	/* 1. Всмонить и повторить вариант с адаптивностью отностительно linear scaling */
+	/*	  найти начальные и конечне входные данные для свойств элемента */
+	/* В смотреть позже откинул новые примеры аналоги моему решению, взять лучшее решение */
+	/* calc(262.428vw + 2.24px) */
+
+	.home__promo {
+		grid-area: promo;
+	}
+
+	.home__personal {
+		grid-area: personal;
+	}
+
+	.home__special {
+		grid-area: special;
+	}
+}

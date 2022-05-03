@@ -8,3 +8,17 @@
 	right: 20px;
 	fill: #d9a95e;
 }
+
+@media (max-width: #{$max-low-width}px) {
+	.personal__icon.favorites {
+		width: 12px;
+		height: 10px;
+	}
+}
+
+@media (min-width: #{$min-low-width}px) {
+	.personal__icon.favorites {
+		width: linear-equations($min-low-width, $min-medium-width, 12, 19);
+		height: linear-equations($min-low-width, $min-medium-width, 10, 17);
+	}
+}

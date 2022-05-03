@@ -1,0 +1,26 @@
+.special {
+	position: relative;
+
+	margin-top: 150px;
+	padding-top: 207px;
+
+	background-image: url('../images/common/special/special-background.svg');
+	background-size: 100%;
+}
+
+.special::before {
+	content: '';
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	display: block;
+	width: math.div(286 * 100%, 320);
+	min-height: 297px;
+	margin-top: -90px;
+	margin-left: math.div(25 * 100%, 320);
+
+	background-image: url('../images/mobile/special/main-model/main-model.png');
+	background-size: 100% auto;
+}

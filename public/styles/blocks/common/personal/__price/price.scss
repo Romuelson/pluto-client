@@ -1,6 +1,27 @@
 .personal__price {
 	display: block;
-	padding-bottom: 12px;
+}
 
-	line-height: 18px;
+@media (max-width: #{$max-low-width}px) {
+	.personal__price {
+		padding-bottom: 12px;
+		line-height: 18px;
+	}
+}
+
+@media (min-width: #{$min-low-width}px) {
+	.personal__price {
+		padding-bottom: linear-equations(
+			$min-low-width,
+			$min-medium-width,
+			12,
+			18
+		);
+		line-height: linear-equations(
+			$min-low-width,
+			$min-medium-width,
+			18,
+			26
+		);
+	}
 }

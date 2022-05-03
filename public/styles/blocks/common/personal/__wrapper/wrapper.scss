@@ -1,6 +1,6 @@
 .personal__wrapper {
 	display: flex;
 	flex-direction: row;
-	gap: 6px;
+	gap: linear-equations($min-low-width, $min-medium-width, 6, 12);
 	align-items: flex-start;
 }

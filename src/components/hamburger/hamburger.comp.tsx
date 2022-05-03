@@ -26,8 +26,8 @@ function Hamburger() {
 		<button
 			className={
 				status
-					? 'hamburger hamburger--collapse hamburger--open'
-					: 'hamburger hamburger--collapse'
+					? 'hamburger hamburger--collapse hamburger--open button'
+					: 'hamburger hamburger--collapse button'
 			}
 			type="button"
 			onClick={(evt) => {
@@ -38,7 +38,7 @@ function Hamburger() {
 			<span className="hamburger__box">
 				<span className="hamburger__inner" />
 			</span>
-			<h4 className="hamburger__title">Меню</h4>
+			<h4 className="hamburger__title title">Меню</h4>
 		</button>
 	);
 }

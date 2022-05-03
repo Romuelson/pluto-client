@@ -1,5 +1,6 @@
 .personal__card {
 	position: relative;
+	width: linear-equations($min-low-width, $min-medium-width, 184, 240);
+
 	min-width: 184px;
-	max-width: 184px;
 }

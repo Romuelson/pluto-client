@@ -1,0 +1,11 @@
+@function prc($x, $y) {
+	@return math.div($x, $y) * 100%;
+}
+
+@function rem($x, $y: 16) {
+	@return math.div($x, $y) + rem;
+}
+
+@function em($x, $y: 16) {
+	@return math.div($x, $y) + em;
+}

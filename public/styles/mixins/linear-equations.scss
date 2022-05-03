@@ -1,0 +1,8 @@
+@function linear-equations($lower, $upper, $start, $end) {
+	$load: $end - $start;
+	$diff: $upper - $lower;
+
+	@return calc(
+		#{$start + px} + #{$load} * ((100vw - #{$lower}px) / #{$diff})
+	);
+}

@@ -1,6 +1,5 @@
 .personal__container {
 	display: flex;
-	gap: 16px;
 	padding-right: 16px;
 	padding-bottom: 6px;
 	padding-left: 16px;
@@ -9,4 +8,22 @@
 
 .personal__container::-webkit-scrollbar {
 	display: none;
+}
+
+@media (max-width: #{$max-low-width}px) {
+	.personal__container {
+		gap: 16px;
+	}
+}
+
+@media (min-width: #{$min-low-width}px) {
+	.personal__container {
+		gap: linear-equations($min-low-width, $min-medium-width, 16, 32);
+	}
+}
+
+@media (min-width: 816px) {
+	.personal__container {
+		justify-content: center;
+	}
 }

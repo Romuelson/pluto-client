@@ -1,16 +1,10 @@
-// html {
-// 	margin-right: calc(-1 * (100vw - 100%));
-// 	overflow-x: hidden;
-// }
-
 html,
 body {
 	min-width: 320px;
-	font-size: 13px;
-	font-family: 'TT Norms', Arial, sans-serif;
-	color: #000;
-	font-style: normal;
-	background-color: #fff;
+
+	font-family: $base-font-family;
+	color: $base-font-color;
+	font-style: $base-font-style;
 }
 
 img {
@@ -33,4 +27,51 @@ picture img {
 	border: 0;
 	clip: rect(0 0 0 0);
 	clip-path: inset(100%);
+}
+
+/* Ultra-low */
+@media (max-width: #{$max-low-width}px) {
+	html,
+	body {
+		font-size: $low-font-size;
+	}
+}
+
+/* Low */
+@media (min-width: #{$min-low-width}px) and (max-width: #{$max-medium-width}px) {
+	html,
+	body {
+		font-size: linear-equations(
+			$min-low-width,
+			$min-medium-width,
+			$low-font-size,
+			$medium-font-size
+		);
+	}
+}
+
+/* Medium */
+@media (min-width: #{$min-medium-width}px) and (max-width: #{$max-high-width}px) {
+	html,
+	body {
+		font-size: linear-equations(
+			$min-medium-width,
+			$min-high-width,
+			$low-font-size,
+			$medium-font-size
+		);
+	}
+}
+
+/* Hight */
+@media (min-width: #{$min-high-width}px) {
+	html,
+	body {
+		font-size: linear-equations(
+			$min-high-width,
+			$min-ultra-width,
+			$low-font-size,
+			$medium-font-size
+		);
+	}
 }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Promo() {
 	return (
-		<div className="navigation__promo promo">
+		<section className="home__promo promo">
 			<ul className="promo__list list">
 				<li className="promo__item">
 					<h4 className="promo__title title">
@@ -29,7 +29,7 @@ function Promo() {
 					</Link>
 				</li>
 			</ul>
-		</div>
+		</section>
 	);
 }
 

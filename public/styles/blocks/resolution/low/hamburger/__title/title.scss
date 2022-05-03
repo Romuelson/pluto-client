@@ -1,0 +1,6 @@
+.hamburger__title {
+	font-size: rem(13, $low-font-size);
+	// font-size: linear-equations(320, 1366, 13, 30);
+	// font-size: #{base-scale(10)};
+	// font-size: calc(13px * (clamp(320px, 100vw, 1366px) / 320px));
+}

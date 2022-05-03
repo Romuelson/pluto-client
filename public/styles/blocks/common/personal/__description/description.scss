@@ -1,12 +1,42 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 
 .personal__description {
-	padding-top: 12px;
-	padding-bottom: 12px;
-
 	font-weight: 400;
-	font-size: 14px;
-	line-height: 18px;
-	font-family: 'Forum Regular';
+	font-family: $font-forum-regular;
 	color: #000;
+}
+
+@media (max-width: #{$max-low-width}px) {
+	.personal__description {
+		padding-top: 12px;
+		padding-bottom: 12px;
+
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+
+@media (min-width: #{$min-low-width}px) {
+	.personal__description {
+		padding-top: linear-equations(
+			$min-low-width,
+			$min-medium-width,
+			12,
+			18
+		);
+		padding-bottom: linear-equations(
+			$min-low-width,
+			$min-medium-width,
+			12,
+			18
+		);
+
+		font-size: linear-equations($min-low-width, $min-medium-width, 14, 20);
+		line-height: linear-equations(
+			$min-low-width,
+			$min-medium-width,
+			18,
+			26
+		);
+	}
 }

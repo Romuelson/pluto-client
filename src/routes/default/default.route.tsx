@@ -9,7 +9,7 @@ import NotFound from '../../pages/not-found/not-found.page';
 
 /* Components */
 import Header from '../../components/header/header.comp';
-import Footer from '../../components/footer/footer.comp';
+// import Footer from '../../components/footer/footer.comp';
 
 function DefaultRoute() {
 	return (
@@ -20,7 +20,6 @@ function DefaultRoute() {
 				<Route path={DefaultRouteApp.Login} element={<LoginPage />} />
 				<Route path={DefaultRouteApp.NotFound} element={<NotFound />} />
 			</Routes>
-			<Footer />
 		</div>
 	);
 }

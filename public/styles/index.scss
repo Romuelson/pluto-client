@@ -1,5 +1,14 @@
-/* Layouts */
+@use 'sass:math';
+
+/* Variables */
 @import './layouts/variables.scss';
+
+/* Mixins */
+@import './mixins/units.scss';
+@import './mixins/base-scale.scss';
+@import './mixins/linear-equations.scss';
+
+/* Layouts */
 @import './layouts/fonts.scss';
 @import './layouts/base.scss';
 
