@@ -1,0 +1,62 @@
+html,
+body {
+	min-width: 320px;
+
+	font-family: $font-base-family;
+	color: $font-base-color;
+	font-style: $font-base-style;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+picture img {
+	vertical-align: middle;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+}
+
+/* Ultra-low */
+@include mix-media(ultra-low) {
+	html,
+	body {
+		font-size: $font-size-low;
+	}
+}
+
+/* Low */
+@include mix-media(ultra-low) {
+	html,
+	body {
+		font-size: mix-linear($font-size-low, $font-size-medium);
+	}
+}
+
+/* Medium */
+@include mix-media(ultra-low) {
+	html,
+	body {
+		font-size: fn-linear($font-size-low, $font-size-medium, 2);
+	}
+}
+
+/* Hight */
+@include mix-media(ultra-low) {
+	html,
+	body {
+		font-size: fn-linear($font-size-low, $font-size-medium, 3);
+	}
+}

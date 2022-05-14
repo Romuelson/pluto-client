@@ -1,0 +1,32 @@
+/* TT Norms */
+@font-face {
+	font-weight: 400;
+	font-family: 'TT Norms';
+	font-style: normal;
+	font-display: swap;
+	src: url('../../../public/assets/fonts/tt-norms/tt-norms-regular.eot');
+	src: local('TT Norms Regular'), local('TTNorms-Regular'),
+		url('../../../public/assets/fonts/tt-norms/tt-norms-regular.eot?#iefix')
+			format('embedded-opentype'),
+		url('../../../public/assets/fonts/tt-norms/tt-norms-regular.woff2')
+			format('woff2'),
+		url('../../../public/assets/fonts/tt-norms/tt-norms-regular.woff')
+			format('woff'),
+		url('../../../public/assets/fonts/tt-norms/tt-norms-regular.ttf')
+			format('truetype');
+}
+
+/* Forum */
+@font-face {
+	font-weight: 400;
+	font-family: 'Forum Regular';
+	font-style: normal;
+	font-display: swap;
+	src: url('../../../public/assets/fonts/forum/forum.eot');
+	src: local('Forum'),
+		url('../../../public/assets/fonts/forum/forum.eot?#iefix')
+			format('embedded-opentype'),
+		url('../../../public/assets/fonts/forum/forum.woff2') format('woff2'),
+		url('../../../public/assets/fonts/forum/forum.woff') format('woff'),
+		url('../../../public/assets/fonts/forum/forum.ttf') format('truetype');
+}

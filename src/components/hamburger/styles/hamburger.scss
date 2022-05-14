@@ -1,0 +1,21 @@
+.hamburger {
+	display: flex;
+
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	grid-area: hmbr;
+
+	min-width: 62px;
+
+	overflow: visible;
+
+	text-transform: none;
+
+	background-color: transparent;
+	cursor: pointer;
+
+	transition-timing-function: linear;
+	transition-duration: 0.15s;
+	transition-property: opacity, filter;
+}

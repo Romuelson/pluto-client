@@ -13,14 +13,14 @@ import Header from '../../components/header/header.comp';
 
 function DefaultRoute() {
 	return (
-		<div className="container">
+		<>
 			<Header />
 			<Routes>
 				<Route path={DefaultRouteApp.Root} element={<HomePage />} />
 				<Route path={DefaultRouteApp.Login} element={<LoginPage />} />
 				<Route path={DefaultRouteApp.NotFound} element={<NotFound />} />
 			</Routes>
-		</div>
+		</>
 	);
 }
 

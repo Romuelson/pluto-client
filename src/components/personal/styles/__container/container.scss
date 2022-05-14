@@ -1,0 +1,29 @@
+.personal__container {
+	display: flex;
+	padding-right: 16px;
+	padding-bottom: 6px;
+	padding-left: 16px;
+	overflow-x: auto;
+}
+
+.personal__container::-webkit-scrollbar {
+	display: none;
+}
+
+@include mix-media(ultra-low) {
+	.personal__container {
+		gap: 16px;
+	}
+}
+
+@include mix-media(low) {
+	.personal__container {
+		gap: fn-linear(16, 32);
+	}
+}
+
+@media (min-width: 816px) {
+	.personal__container {
+		justify-content: center;
+	}
+}

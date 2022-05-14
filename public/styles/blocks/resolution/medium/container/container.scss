@@ -1,5 +1,0 @@
-@media (min-width: #{$min-medium-width}px) and (max-width: #{$max-high-width}px) {
-	.container {
-		grid-template-areas: 'hd' 'home' 'ft';
-	}
-}

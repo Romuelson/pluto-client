@@ -1,39 +1,17 @@
-/* Hooks */
-import { useAppDispatch, useAppSelector } from '../../hooks/use.redux';
-import { getNavigationStatus } from '../../store/slices/app/app.selectors';
+/* Styles */
+import './styles/index.scss';
 
-/* Store - Actions */
-import { navigationStatus } from '../../store/slices/app/app.slice';
+/* Hooks */
+import { useHamburger } from '../../hooks/hamburger/use.hamburger';
 
 function Hamburger() {
-	const dispath = useAppDispatch();
-	const status = useAppSelector(getNavigationStatus);
-
-	// const foo = async () => {
-	// 	const navigation = document.querySelector('.navigation__list');
-	// 	if (status) {
-	// 		// navigation?.classList.remove('visually-hidden');
-	// 		navigation?.classList.remove('navigation__list--closed');
-	// 		navigation?.classList.add('navigation__list--open');
-	// 	} else {
-	// 		navigation?.classList.remove('navigation__list--open');
-	// 		navigation?.classList.add('navigation__list--closed');
-	// 	}
-	// 	return console.log('zbs');
-	// };
+	const { setClassName, setNavigationStatus, getStatus } = useHamburger();
 
 	return (
 		<button
-			className={
-				status
-					? 'hamburger hamburger--collapse hamburger--open button'
-					: 'hamburger hamburger--collapse button'
-			}
+			className={setClassName(getStatus)}
 			type="button"
-			onClick={(evt) => {
-				evt.preventDefault();
-				dispath(navigationStatus(!status));
-			}}
+			onClick={(evt) => setNavigationStatus(evt, getStatus)}
 		>
 			<span className="hamburger__box">
 				<span className="hamburger__inner" />

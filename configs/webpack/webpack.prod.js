@@ -15,8 +15,8 @@ module.exports = {
 			}
 		}),
 		new MiniCssExtractPlugin({
-			filename: './styles/[name].[contenthash].min.css',
-			chunkFilename: 'styles/[id].[contenthash].min.css'
+			filename: './assets/styles/[name].[contenthash].min.css',
+			chunkFilename: './assets/styles/[id].[contenthash].min.css'
 		})
 	],
 	output: {
@@ -53,24 +53,26 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpg|jpeg|gif)$/i,
+				test: /\.(png|jpg|jpeg|gif|webp|avif)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'images/[contenthash].min[ext][query]'
+					filename: './assets/images/inline-css/[name].[contenthash].min[ext][query]'
 				}
 			},
-			// {
-			// 	test: /\.svg/,
-			// 	type: 'asset/inline',
-			// 	generator: {
-			// 		filename: 'images/svg/[contenthash].min[ext][query]'
-			// 	}
-			// },
+			{
+				test: /\.svg/,
+				issuer: /\.(css|s[ac]ss)$/,
+				use: 'svgo-loader',
+				type: 'asset/resource',
+				generator: {
+					filename: './assets/images/inline-css/svg/[name].[contenthash].min[ext][query]'
+				}
+			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'fonts/[contenthash][ext][query]'
+					filename: './assets/fonts/[name].[contenthash][ext][query]'
 				}
 			}
 		]

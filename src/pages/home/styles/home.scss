@@ -1,0 +1,35 @@
+.home {
+	background-color: $color-white;
+}
+
+.home__promo {
+	grid-area: promo;
+}
+
+.home__personal {
+	grid-area: personal;
+}
+
+.home__special {
+	grid-area: special;
+}
+
+@include mix-media(ultra-low) {
+	.home {
+		padding-bottom: 48px;
+	}
+}
+
+@include mix-media(low) {
+	.home {
+		display: grid;
+		grid-template-areas: 'promo' 'personal' 'special';
+		grid-template-columns: minmax(
+			#{$grid-min-low}px,
+			#{$grid-max-medium}px
+		);
+		grid-template-rows: auto auto;
+
+		padding-bottom: 48px;
+	}
+}

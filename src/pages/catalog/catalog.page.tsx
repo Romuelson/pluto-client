@@ -1,8 +1,8 @@
 function Catalog() {
 	return (
-		<div>
+		<main>
 			<h1>Каталог</h1>
-		</div>
+		</main>
 	);
 }
 

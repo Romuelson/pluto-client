@@ -1,3 +1,6 @@
+/* Styles */
+import './styles/index.scss';
+
 function Footer() {
 	return (
 		<div className="container__footer footer">

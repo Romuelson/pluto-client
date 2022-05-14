@@ -1,0 +1,26 @@
+.personal__link {
+	display: flex;
+
+	flex-grow: 1;
+	justify-content: center;
+	align-items: center;
+	// align-items: flex-start; перенести на tablet
+
+	border-bottom: 2px solid $color-base-border;
+}
+
+.personal__link--active {
+	border-bottom: 2px solid $color-gold;
+}
+
+@include mix-media(ultra-low) {
+	.personal__link {
+		min-height: 34px;
+	}
+}
+
+@include mix-media(low) {
+	.personal__link {
+		min-height: fn-linear(34, 43);
+	}
+}

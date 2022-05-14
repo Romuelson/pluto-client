@@ -9,6 +9,7 @@ export enum ReducerType {
 export enum ActionType {
 	authentication = 'authentication',
 	navigationStatus = 'navigationStatus',
+	navigationState = 'navigationState',
 }
 
 export enum DataActionType {

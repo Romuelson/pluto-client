@@ -1,0 +1,21 @@
+.navigation {
+	display: grid;
+	grid-template-areas: 'n-wrap' 'n-list';
+	grid-template-rows: fn-linear(48, 62) min-content;
+}
+
+.navigation__wrapper {
+	display: flex;
+	justify-content: space-between;
+
+	grid-area: n-wrap;
+}
+
+.navigation__list {
+	grid-area: n-list;
+}
+
+.navigation__link {
+	display: flex;
+	align-items: center;
+}

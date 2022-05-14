@@ -1,5 +1,11 @@
+/* Modules */
 import { Link } from 'react-router-dom';
-import ImageLogo from '../../../public/images/common/logo/logo.svg';
+
+/* Styles */
+import './styles/index.scss';
+
+/* Images */
+import ImageLogo from '../../../public/assets/images/common/logo/logo.svg';
 
 function Logo() {
 	return (

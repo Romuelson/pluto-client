@@ -1,8 +1,8 @@
 function NotFound() {
 	return (
-		<div>
+		<main>
 			<h1>404. Страница не найдена</h1>
-		</div>
+		</main>
 	);
 }
 

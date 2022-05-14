@@ -1,5 +1,6 @@
+/* Styles */
 import 'sanitize.css';
-import '../public/styles/index.scss';
+import './assets/styles/index.scss';
 
 /* View */
 import { StrictMode } from 'react';

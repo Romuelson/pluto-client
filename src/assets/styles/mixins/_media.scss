@@ -1,0 +1,39 @@
+@use '../variables/grid' as *;
+
+@mixin media($breakpoint) {
+	@if $breakpoint == ultra-low {
+		@media (max-width: #{$max-low}px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == low {
+		@media (min-width: #{$min-low}px) and (max-width: #{$max-medium}px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == medium {
+		@media (min-width: #{$min-medium}px) and (max-width: #{$max-high}px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == high {
+		@media (min-width: #{$min-high}px) and (max-width: #{$max-ultra}px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == ultra {
+		@media (min-width: #{$min-ultra}px) and (max-width: #{$max-extreme}px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == extreme {
+		@media (min-width: #{$min-extreme}px) {
+			@content;
+		}
+	}
+}

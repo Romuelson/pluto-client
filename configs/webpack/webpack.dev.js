@@ -15,8 +15,8 @@ const pluginService = (SERVE) => {
 			template: './public/index.html'
 		}),
 		new MiniCssExtractPlugin({
-			filename: './styles/[name].css',
-			chunkFilename: 'styles/[id].css'
+			filename: './assets/styles/[name].css',
+			chunkFilename: './assets/styles/[id].css'
 		}),
 		new webpack.SourceMapDevToolPlugin({
 			filename: './[file].map',
@@ -44,24 +44,26 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(png|jpg|jpeg|gif)$/i,
+				test: /\.(png|jpg|jpeg|gif|webp|avif)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'images/[reso]/[name][ext][query]'
+					filename: './assets/images/inline-css/[name][ext][query]'
 				}
 			},
-			// {
-			// 	test: /\.svg/,
-			// 	type: 'asset/inline',
-			// 	generator: {
-			// 		filename: 'images/svg/[name][ext][query]'
-			// 	}
-			// },
+			{
+				test: /\.svg/,
+				issuer: /\.(css|s[ac]ss)$/,
+				use: 'svgo-loader',
+				type: 'asset/resource',
+				generator: {
+					filename: './assets/images/inline-css/svg/[name][ext][query]'
+				}
+			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf)$/i,
 				type: 'asset/resource',
 				generator: {
-					filename: 'fonts/[name][ext][query]'
+					filename: './assets/fonts/[name][ext][query]'
 				}
 			},
 			{

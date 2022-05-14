@@ -1,9 +1,12 @@
+/* Styles */
+import './styles/index.scss';
+
 /* Components */
 import Navigation from '../navigation/navigation.comp';
 import Logo from '../logo/logo.comp';
 import Hamburger from '../hamburger/hamburger.comp';
 import Menu from '../menu/menu.comp';
-import NavigationList from '../navigation-list/navigation-list.comp';
+import NavigationList from '../navigation/elements/navigation-list/navigation-list.comp';
 
 function Header() {
 	return (

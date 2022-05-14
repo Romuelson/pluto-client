@@ -1,5 +1,8 @@
-/* SVG Sprite */
-import MenuSprite from '../../../public/images/common/sprite.svg';
+/* Styles */
+import './styles/index.scss';
+
+/* Images */
+import Sprite from '../../../public/assets/images/common/sprite.svg';
 
 type NavigationProps = {
 	children: React.ReactNode;
@@ -8,7 +11,7 @@ type NavigationProps = {
 function Navigation({ children }: NavigationProps) {
 	return (
 		<>
-			<MenuSprite className="visually-hidden" />
+			<Sprite className="visually-hidden" />
 			<nav className="navigation">
 				<h3 className="navigation__title visually-hidden">
 					Навигация приложения

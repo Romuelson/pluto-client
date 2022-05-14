@@ -1,4 +1,8 @@
+/* Modules */
 import { Link } from 'react-router-dom';
+
+/* Styles */
+import './styles/index.scss';
 
 function Special() {
 	return (

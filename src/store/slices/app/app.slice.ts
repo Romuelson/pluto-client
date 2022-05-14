@@ -1,5 +1,6 @@
 /* Core */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { NavigationStatusType } from '../../../types/app/app.enum';
 
 /* Types */
 import { NavigationStatus } from '../../../types/app/app.type';
@@ -8,11 +9,11 @@ import { NavigationStatus } from '../../../types/app/app.type';
 import { ActionType, ReducerType } from '../../store.enum';
 
 export type AppSlice = {
-	navigationStatus: NavigationStatus;
+	isNavActive: NavigationStatus;
 };
 
 const initialState: AppSlice = {
-	navigationStatus: false,
+	isNavActive: NavigationStatusType.sleeping,
 };
 
 export const appSlice = createSlice({
@@ -23,7 +24,7 @@ export const appSlice = createSlice({
 			state,
 			action: PayloadAction<NavigationStatus>
 		) => {
-			state.navigationStatus = action.payload;
+			state.isNavActive = action.payload;
 		},
 	},
 });

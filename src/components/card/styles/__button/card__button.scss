@@ -1,0 +1,29 @@
+.card__button {
+	flex-grow: 1;
+}
+
+@include mix-media(ultra-low) {
+	.card__button {
+		min-height: 28px;
+
+		font-size: 11px;
+		line-height: 12px;
+	}
+
+	.card__button.button--favorite {
+		max-width: 28px;
+	}
+}
+
+@include mix-media(low) {
+	.card__button {
+		min-height: fn-linear(28, 46);
+
+		font-size: fn-linear(11, 16);
+		line-height: 12px;
+	}
+
+	.card__button.button--favorite {
+		max-width: fn-linear(28, 46);
+	}
+}

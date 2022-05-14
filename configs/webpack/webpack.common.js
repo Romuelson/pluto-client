@@ -1,9 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugin');
+
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
@@ -36,8 +38,6 @@ module.exports = {
 		alias: {
 			"@src": path.resolve(__dirname, '../../src'),
 			"@public": path.resolve(__dirname, '../../public'),
-			"@images": path.resolve(__dirname, '../../public/images'),
-			"@styles": path.resolve(__dirname, '../../public/styles')
 		}
 	},
 	devtool: false,
@@ -63,22 +63,22 @@ module.exports = {
 						loader: 'css-loader'
 					},
 					{
-					loader: 'postcss-loader',
-					options: {
-						postcssOptions: {
-							plugins: [
-								[
-									'postcss-preset-env', {}
+						loader: 'postcss-loader',
+						options: {
+							postcssOptions: {
+								plugins: [
+									[
+										'postcss-preset-env', {}
+									]
 								]
-							]
+							}
 						}
-					}
-				},
-				'sass-loader'
-				]
+					},
+					'sass-loader'
+				],
 			},
 			{
-				test: /\.(js|jsx)$/,
+				test: /\.([jt]s|[jt]sx)$/,
 				exclude: /node_modules/,
 				use: {
 					loader: 'babel-loader',
@@ -109,13 +109,6 @@ module.exports = {
 				 	}
 				],
 			},
-			// {
-			// 	test: /\.svg/,
-			// 	use: {
-			// 	  loader: "svg-url-loader",
-			// 	  options: {}
-			// 	}
-			// }
 		]
 	}
 }

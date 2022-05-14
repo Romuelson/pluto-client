@@ -1,0 +1,15 @@
+@use './colors' as color;
+
+/* Font family */
+$family-tt-norms: 'TT Norms', 'Arial', sans-serif;
+$family-forum-regular: 'Forum Regular', 'Arial', sans-serif;
+
+/* Font sizes */
+$size-low: 13;
+$size-medium: 16;
+$size-high: 28;
+
+/* Font settings */
+$base-family: $family-tt-norms;
+$base-color: color.$black;
+$base-style: normal;

@@ -1,0 +1,10 @@
+@use '../../../assets/styles/forwarded' as *;
+
+@import './personal';
+
+@import './__list/list';
+@import './__item/item';
+@import './__link/link';
+
+@import './__container/container';
+// @import './__novelties/novelties';

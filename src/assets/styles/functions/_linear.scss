@@ -1,0 +1,22 @@
+@use '../variables/grid' as *;
+
+@function linear($start, $end, $type: 1, $lower: 0, $upper: 0) {
+	@if $type == 1 {
+		@return linear($start, $end, 0, $max-low, $max-medium);
+	}
+
+	@if $type == 2 {
+		@return linear($start, $end, 0, $max-medium, $max-high);
+	}
+
+	@if $type == 3 {
+		@return linear($start, $end, 0, $max-high, $max-ultra);
+	}
+
+	$load: $end - $start;
+	$diff: $upper - $lower;
+
+	@return calc(
+		#{$start + px} + #{$load} * ((100vw - #{$lower}px) / #{$diff})
+	);
+}

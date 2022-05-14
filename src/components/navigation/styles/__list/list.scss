@@ -1,0 +1,36 @@
+.navigation__list {
+	margin-top: -496px;
+	padding-top: 10px;
+}
+
+.navigation__list.navigation__list--open {
+	margin-top: 0;
+	animation-name: navigation-open;
+	animation-duration: 0.8s;
+}
+
+.navigation__list.navigation__list--closed {
+	margin-top: -496px;
+	animation-name: navigation-closed;
+	animation-duration: 0.8s;
+}
+
+@keyframes navigation-open {
+	from {
+		margin-top: -496px;
+	}
+
+	to {
+		margin-top: 0;
+	}
+}
+
+@keyframes navigation-closed {
+	from {
+		margin-top: 0;
+	}
+
+	to {
+		margin-top: -496px;
+	}
+}
