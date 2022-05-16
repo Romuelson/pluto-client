@@ -2,7 +2,7 @@
 import './styles/index.scss';
 
 /* Hooks */
-import { useHamburger } from '../../hooks/hamburger/use.hamburger';
+import { useHamburger } from '../../hooks/components/hamburger/use.hamburger';
 
 function Hamburger() {
 	const { setClassName, setNavigationStatus, getStatus } = useHamburger();

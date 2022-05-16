@@ -1,13 +1,30 @@
 .menu {
-	position: fixed;
 	bottom: -1px;
 	z-index: 5;
+
 	grid-area: menu;
-	width: 100%;
+
+	min-width: 70px;
+
 	background-color: $color-white;
 	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
 }
 
 .menu__title {
 	margin: 0;
+}
+
+@media (max-width: 1199.98px) {
+	.menu {
+		position: fixed;
+
+		width: 100%;
+		// width: 304px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.menu {
+		width: min-content;
+	}
 }

@@ -1,24 +1,24 @@
 import { useEffect } from 'react';
 
 /* Components */
-import Card from '../../components/card/card.comp';
+import Card from '../../../components/card/card.comp';
 
 /* Hocs */
-import withCardList from '../../hocs/card/with.card-list';
+import withCardList from '../../../hocs/card/with.card-list';
 
 /* Hooks */
-import { useAppDispatch, useAppSelector } from '../redux/use.redux';
+import { useAppDispatch, useAppSelector } from '../../store/redux/use.redux';
 
 /* Store */
 import {
 	takeCardsType,
 	takeCardsStatus,
-} from '../../store/slices/data/data.selectors';
-import { DataStatusType } from '../../store/slices/data/data.enum';
-import { getCardType } from '../../store/slices/data/data.thunk';
+} from '../../../store/slices/data/data.selectors';
+import { DataStatusType } from '../../../store/slices/data/data.enum';
+import { getCardType } from '../../../store/slices/data/data.thunk';
 
 /* Types */
-import { ELabelSections } from '../../types/data/product-card/product-card.enum';
+import { ELabelSections } from '../../../types/data/product-card/product-card.enum';
 
 type UseCaradListProps = {
 	type: ELabelSections;

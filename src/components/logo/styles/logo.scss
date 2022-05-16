@@ -1,6 +1,11 @@
 .logo {
 	display: flex;
+
 	align-items: center;
 	grid-area: logo;
+
+	padding-right: 16px;
 	padding-left: 16px;
+
+	outline: 1px solid green;
 }

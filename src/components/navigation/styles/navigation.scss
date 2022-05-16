@@ -19,3 +19,14 @@
 	display: flex;
 	align-items: center;
 }
+
+@media (min-width: 1200px) {
+	.navigation {
+		display: grid;
+	}
+
+	.navigation__list {
+		display: flex;
+		justify-content: space-between;
+	}
+}

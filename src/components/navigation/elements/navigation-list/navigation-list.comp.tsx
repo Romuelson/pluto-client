@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 /* Hooks */
-import { useNavigationList } from '../../../../hooks/navigation/use.navigation-list';
+import { useNavigationList } from '../../../../hooks/components/navigation/use.navigation-list';
 
 function NavigationList() {
 	const { setClassName, getStatus, data } = useNavigationList();

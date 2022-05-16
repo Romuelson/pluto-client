@@ -38,7 +38,7 @@ picture img {
 }
 
 /* Low */
-@include mix-media(ultra-low) {
+@include mix-media(low) {
 	html,
 	body {
 		font-size: mix-linear($font-size-low, $font-size-medium);
@@ -46,7 +46,7 @@ picture img {
 }
 
 /* Medium */
-@include mix-media(ultra-low) {
+@include mix-media(medium) {
 	html,
 	body {
 		font-size: fn-linear($font-size-low, $font-size-medium, 2);
@@ -54,7 +54,7 @@ picture img {
 }
 
 /* Hight */
-@include mix-media(ultra-low) {
+@include mix-media(high) {
 	html,
 	body {
 		font-size: fn-linear($font-size-low, $font-size-medium, 3);

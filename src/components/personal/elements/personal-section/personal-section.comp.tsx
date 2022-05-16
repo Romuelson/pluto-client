@@ -1,5 +1,5 @@
 /* Hooks */
-import { useCardList } from '../../../../hooks/card/use.card-list';
+import { useCardList } from '../../../../hooks/components/card/use.card-list';
 
 /* Types */
 import { ELabelSections } from '../../../../types/data/product-card/product-card.enum';

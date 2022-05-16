@@ -5,7 +5,7 @@ import { FormEvent, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 /* Hooks */
-import { useAppDispatch } from '../../hooks/redux/use.redux';
+import { useAppDispatch } from '../../hooks/store/redux/use.redux';
 
 /* Auth */
 import { authLoginThunk } from '../../store/slices/auth/auth.thunk';

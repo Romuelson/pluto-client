@@ -2,7 +2,7 @@
 import { NavLink } from 'react-router-dom';
 
 /* Hooks */
-import { usePersonalList } from '../../../../hooks/personal/use.personal-list';
+import { usePersonalList } from '../../../../hooks/components/personal/use.personal-list';
 
 function PersonalList() {
 	const { setRouterActive, data } = usePersonalList();

@@ -12,7 +12,7 @@ function Navigation({ children }: NavigationProps) {
 	return (
 		<>
 			<Sprite className="visually-hidden" />
-			<nav className="navigation">
+			<nav className="header__navigation navigation">
 				<h3 className="navigation__title visually-hidden">
 					Навигация приложения
 				</h3>

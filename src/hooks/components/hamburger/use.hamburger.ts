@@ -2,15 +2,15 @@
 import { SyntheticEvent } from 'react';
 
 /* Hooks */
-import { useAppDispatch, useAppSelector } from '../redux/use.redux';
+import { useAppDispatch, useAppSelector } from '../../store/redux/use.redux';
 
 /* Store */
-import { getNavigationStatus } from '../../store/slices/app/app.selectors';
-import { navigationStatus } from '../../store/slices/app/app.slice';
+import { getNavigationStatus } from '../../../store/slices/app/app.selectors';
+import { navigationStatus } from '../../../store/slices/app/app.slice';
 
 /* Types */
-import { NavigationStatusType } from '../../types/app/app.enum';
-import { NavigationStatus } from '../../types/app/app.type';
+import { NavigationStatusType } from '../../../types/app/app.enum';
+import { NavigationStatus } from '../../../types/app/app.type';
 
 export const useHamburger = () => {
 	const dispath = useAppDispatch();
