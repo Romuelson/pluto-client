@@ -4,6 +4,7 @@ export enum ReducerType {
 	auth = 'auth',
 	data = 'data',
 	favorite = 'favorite',
+	info = 'info',
 }
 
 export enum ActionType {

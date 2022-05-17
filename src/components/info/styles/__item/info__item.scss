@@ -1,0 +1,7 @@
+.info__item {
+	display: inline-block;
+}
+
+.navigation__info .info__item:not(:first-child) {
+	padding-left: 8px;
+}

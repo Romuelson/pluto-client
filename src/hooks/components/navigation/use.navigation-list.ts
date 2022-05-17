@@ -19,7 +19,7 @@ import { navigationMock } from '../../../mocks/data/navigation/navigation.mock';
 export const useNavigationList = () => {
 	const ANIMATION_DELAY = 800;
 
-	const isLowScreen = useMediaQuery({ maxWidth: 1199.98 });
+	const isLowScreen = useMediaQuery({ maxWidth: 1210.98 });
 
 	const getStatus = useAppSelector(getNavigationStatus);
 	const dispatch = useAppDispatch();

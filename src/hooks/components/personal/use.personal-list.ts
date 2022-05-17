@@ -1,6 +1,6 @@
 import { personalMock } from '../../../mocks/data/personal/personal.mock';
 
-export type SetRouterActive = {
+type SetRouterActive = {
 	isActive: boolean;
 };
 

@@ -3,9 +3,12 @@ import { useMediaQuery } from 'react-responsive';
 
 /* Components */
 import Navigation from '../navigation/navigation.comp';
+
+import Info from '../info/info.comp';
 import Logo from '../logo/logo.comp';
 import Hamburger from '../hamburger/hamburger.comp';
 import Menu from '../menu/menu.comp';
+
 import NavigationList from '../navigation/elements/navigation-list/navigation-list.comp';
 
 /* Constants */
@@ -16,8 +19,10 @@ import './styles/index.scss';
 
 function Header() {
 	const isLowScreen = useMediaQuery({
-		maxWidth: 1199.98,
+		maxWidth: 1210.98,
 	});
+
+	const isMediumScreen = useMediaQuery({ minWidth: 1211 });
 
 	return (
 		<header className="container__header header">
@@ -25,6 +30,7 @@ function Header() {
 			<h2 className="visually-hidden">Главная страница</h2>
 			<Navigation>
 				<div className="navigation__wrapper">
+					{isMediumScreen ? <Info /> : null}
 					<Logo />
 					{isLowScreen ? <Hamburger /> : null}
 					<Menu />

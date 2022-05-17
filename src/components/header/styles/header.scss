@@ -6,11 +6,13 @@
 }
 
 /* 1710 - Ширина nav > desktop */
-@media (min-width: 1200px) and (max-width: 1709.98px) {
+@media (min-width: 1211px) and (max-width: 1709.98px) {
 	.header {
 		display: grid;
 
 		justify-content: center;
 		grid-template-columns: 1156px;
+
+		padding-top: 15px;
 	}
 }
