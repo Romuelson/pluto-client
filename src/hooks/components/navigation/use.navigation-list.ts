@@ -17,7 +17,7 @@ import { NavigationStatus } from '../../../types/app/app.type';
 import { navigationMock } from '../../../mocks/data/navigation/navigation.mock';
 
 export const useNavigationList = () => {
-	const ANIMATION_DELAY = 800;
+	const ANIMATION_DELAY = 1300;
 
 	const isLowScreen = useMediaQuery({ maxWidth: 1210.98 });
 
@@ -35,16 +35,16 @@ export const useNavigationList = () => {
 		if (isLowScreen) {
 			switch (status) {
 				case NavigationStatusType.opened:
-					return 'navigation__list navigation__list--open list';
+					return 'navigation__container navigation__container--open';
 				case NavigationStatusType.closed:
 					setNavigationStatus();
-					return 'navigation__list navigation__list--closed list';
+					return 'navigation__container navigation__container--closed';
 				default:
-					return 'navigation__list list visually-hidden';
+					return 'navigation__container visually-hidden';
 			}
 		}
 
-		return 'navigation__list list';
+		return 'navigation__container';
 	};
 
 	return { setClassName, getStatus, data };

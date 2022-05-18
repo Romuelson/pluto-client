@@ -11,8 +11,8 @@ import Menu from '../menu/menu.comp';
 
 import NavigationList from '../navigation/elements/navigation-list/navigation-list.comp';
 
-/* Constants */
-import { SizeMediaQuery } from '../../index.enum';
+/* Enums */
+import { InfoTypeStyle } from '../info/info.enum';
 
 /* Styles */
 import './styles/index.scss';
@@ -30,12 +30,14 @@ function Header() {
 			<h2 className="visually-hidden">Главная страница</h2>
 			<Navigation>
 				<div className="navigation__wrapper">
-					{isMediumScreen ? <Info /> : null}
+					{isMediumScreen ? <Info type={InfoTypeStyle.B} /> : null}
 					<Logo />
 					{isLowScreen ? <Hamburger /> : null}
 					<Menu />
 				</div>
-				<NavigationList />
+				<NavigationList>
+					{isLowScreen ? <Info type={InfoTypeStyle.A} /> : null}
+				</NavigationList>
 			</Navigation>
 		</header>
 	);

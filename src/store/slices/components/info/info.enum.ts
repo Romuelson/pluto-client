@@ -5,6 +5,7 @@ export enum InfoAxiosAPI {
 export enum InfoActions {
 	setActiveButton = 'setActiveIndex',
 	setDataInfo = 'setDataInfo',
+	setListType = 'setListType',
 }
 
 export enum InfoPrefixThunk {

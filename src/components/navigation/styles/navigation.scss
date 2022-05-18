@@ -1,6 +1,6 @@
 .navigation {
 	display: grid;
-	grid-template-areas: 'n-wrap' 'n-list';
+	grid-template-areas: 'n-wrap' 'n-cont';
 	grid-template-rows: fn-linear(48, 62) min-content;
 }
 
@@ -11,8 +11,8 @@
 	grid-area: n-wrap;
 }
 
-.navigation__list {
-	grid-area: n-list;
+.navigation__container {
+	grid-area: n-cont;
 }
 
 .navigation__link {

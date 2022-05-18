@@ -1,3 +1,5 @@
+import { InfoTypeStyle } from '../../../../components/info/info.enum';
+
 export type InfoAddressData = {
 	street: string;
 	phone: string;
@@ -19,6 +21,7 @@ export type ResponseDataInfo = {
 };
 
 export type InfoSlice = {
+	listType: InfoTypeStyle;
 	listAddress: InfoListAddress;
 	activeButton: InfoActiveButton;
 };

@@ -1,8 +1,4 @@
-import { InfoAddressContent } from '../../../../store/slices/components/info/info.type';
-
-export type InfoAddressProps = {
-	currentAddress: InfoAddressContent;
-};
+import { InfoAddressProps } from '../../info.type';
 
 function InfoAddress(props: InfoAddressProps) {
 	const { currentAddress } = props;

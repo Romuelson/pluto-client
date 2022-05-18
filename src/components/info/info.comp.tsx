@@ -6,22 +6,39 @@ import InfoList from './elements/info-list/info-list.comp';
 import InfoAddress from './elements/info-address/info-address.comp';
 
 /* Thunks */
-import { useInfo } from '../../hooks/components/info/use.info';
+import { useInfoSelector } from '../../hooks/components/info/use.info.selector';
+import { InfoProps } from './info.type';
 
-function Info() {
-	const { addressList, activeButton, dispathActiveIndex, currentAddress } =
-		useInfo();
+/* Enums */
+import { InfoTypeStyle } from './info.enum';
 
-	return (
-		<div className="navigation__info info">
-			<InfoList
-				addressList={addressList}
-				activeButton={activeButton}
-				setActiveIndex={dispathActiveIndex}
-			/>
-			<InfoAddress currentAddress={currentAddress} />
-		</div>
-	);
+/* Hooks */
+import { useInfoMount } from '../../hooks/components/info/use.info.mount';
+
+function Info({ type }: InfoProps) {
+	useInfoMount(type);
+
+	const { currentAddress } = useInfoSelector();
+
+	const defineType = (typeStyle: InfoTypeStyle) => {
+		switch (typeStyle) {
+			case InfoTypeStyle.A:
+				return (
+					<InfoList>
+						<InfoAddress />
+					</InfoList>
+				);
+			default:
+				return (
+					<>
+						<InfoList />
+						<InfoAddress currentAddress={currentAddress} />
+					</>
+				);
+		}
+	};
+
+	return <div className="navigation__info info">{defineType(type)}</div>;
 }
 
 export default Info;

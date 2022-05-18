@@ -46,6 +46,7 @@
 		"class-methods-use-this": "off",
 		"react/jsx-no-useless-fragment": "off",
 		"@typescript-eslint/no-unused-vars" : "off",
-		"@typescript-eslint/no-floating-promises": "off"
+		"@typescript-eslint/no-floating-promises": "off",
+		"react/require-default-props": "off"
 	}
 }

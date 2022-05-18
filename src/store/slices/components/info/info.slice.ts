@@ -7,8 +7,10 @@ import { InfoSlice, InfoListAddress } from './info.type';
 /* Constants */
 import { ReducerType } from '../../../store.enum';
 import { InfoActions } from './info.enum';
+import { InfoTypeStyle } from '../../../../components/info/info.enum';
 
 const initialState: InfoSlice = {
+	listType: InfoTypeStyle.B,
 	listAddress: [],
 	activeButton: 0,
 };
@@ -29,7 +31,13 @@ export const infoSlice = createSlice({
 		) => {
 			state.activeButton = action.payload;
 		},
+		[InfoActions.setListType]: (
+			state,
+			action: PayloadAction<InfoTypeStyle>
+		) => {
+			state.listType = action.payload;
+		},
 	},
 });
 
-export const { setDataInfo, setActiveIndex } = infoSlice.actions;
+export const { setDataInfo, setActiveIndex, setListType } = infoSlice.actions;

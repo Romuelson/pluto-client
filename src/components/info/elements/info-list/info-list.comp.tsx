@@ -1,33 +1,31 @@
-/* Types */
-import {
-	InfoActiveButton,
-	InfoListAddress,
-} from '../../../../store/slices/components/info/info.type';
+/* eslint-disable react/require-default-props */
+
+/* Modules */
+import { cloneElement } from 'react';
+
+/* Elements */
+import InfoTitle from '../info-title/info-title.comp';
+
+/* Hooks */
+import { useInfoSelector } from '../../../../hooks/components/info/use.info.selector';
 
 export type InfoListProps = {
-	addressList: InfoListAddress;
-	activeButton: InfoActiveButton;
-	setActiveIndex: (index: number) => void;
+	children?: JSX.Element;
 };
 
-function InfoList(props: InfoListProps) {
-	const { addressList, activeButton, setActiveIndex } = props;
+function InfoList({ children }: InfoListProps) {
+	const { addressList } = useInfoSelector();
 
 	return (
 		<ul className="info__list list">
 			{addressList.map((item, index) => (
 				<li key={item.id} className="info__item list__item">
-					<button
-						className={
-							activeButton === index
-								? 'info__button info__button--active button'
-								: 'info__button button'
-						}
-						type="button"
-						onClick={() => setActiveIndex(index)}
-					>
-						{item.title}
-					</button>
+					<InfoTitle item={item} index={index} />
+					{children
+						? cloneElement(children, {
+								currentAddress: addressList[index],
+						  })
+						: null}
 				</li>
 			))}
 		</ul>

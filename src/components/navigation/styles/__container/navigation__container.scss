@@ -1,0 +1,35 @@
+.nvigation__container {
+	transition-timing-function: ease-in-out;
+}
+
+.navigation__container.navigation__container--open {
+	margin-top: 0;
+	animation-name: navigation-open;
+	animation-duration: 1.3s;
+}
+
+.navigation__container.navigation__container--closed {
+	margin-top: -100vh;
+	animation-name: navigation-closed;
+	animation-duration: 1.3s;
+}
+
+@keyframes navigation-open {
+	from {
+		margin-top: -100vh;
+	}
+
+	to {
+		margin-top: 0;
+	}
+}
+
+@keyframes navigation-closed {
+	from {
+		margin-top: 0;
+	}
+
+	to {
+		margin-top: -100vh;
+	}
+}
