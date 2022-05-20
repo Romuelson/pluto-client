@@ -1,4 +1,5 @@
-.nvigation__container {
+.navigation__container {
+	padding-bottom: fn-linear(48, 62);
 	transition-timing-function: ease-in-out;
 }
 
@@ -9,14 +10,14 @@
 }
 
 .navigation__container.navigation__container--closed {
-	margin-top: -100vh;
+	margin-top: -100%;
 	animation-name: navigation-closed;
 	animation-duration: 1.3s;
 }
 
 @keyframes navigation-open {
 	from {
-		margin-top: -100vh;
+		margin-top: -722px;
 	}
 
 	to {
@@ -30,6 +31,6 @@
 	}
 
 	to {
-		margin-top: -100vh;
+		margin-top: -722px;
 	}
 }

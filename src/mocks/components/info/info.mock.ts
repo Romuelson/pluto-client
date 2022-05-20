@@ -12,7 +12,7 @@ export const infoMock = () => {
 			link: '0',
 			address: {
 				street: 'Нижний Тагил ул. 9 мая 77 ТРЦ «Комета»',
-				phone: '+79126689013',
+				phone: '+7 (912) 668-90-13',
 			},
 		},
 		{
@@ -21,7 +21,7 @@ export const infoMock = () => {
 			link: '0',
 			address: {
 				street: 'Екатеринбург ул. 8 марта 66 ТРЦ «Точка»',
-				phone: '+79220336796',
+				phone: '+7 (922) 033-67-96',
 			},
 		},
 	];

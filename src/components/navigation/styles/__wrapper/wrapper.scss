@@ -1,5 +1,8 @@
 .navigation__wrapper {
 	position: relative;
 
+	// width: 100%;
+	height: fn-linear(48, 62);
+
 	background-color: $color-white;
 }

@@ -16,7 +16,7 @@ function Navigation({ children }: NavigationProps) {
 				<h3 className="navigation__title visually-hidden">
 					Навигация приложения
 				</h3>
-				{children}
+				<div className="navigation__content">{children}</div>
 			</nav>
 		</>
 	);

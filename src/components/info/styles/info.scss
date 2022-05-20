@@ -1,14 +1,20 @@
 .info {
+	padding-left: 20px;
+
 	font-size: 13px;
 	line-height: 16px;
 
-	outline: 1px solid fuchsia;
+	// outline: 1px solid fuchsia;
 }
 
-.navigation__info {
-	min-width: 260px;
+@media (max-width: 1210.98px) {
+	.navigation__info {
+		width: 172px;
+	}
 }
 
-.footer__info {
-	min-width: 142px;
+@media (min-width: 1211px) {
+	.navigation__info {
+		min-width: 260px;
+	}
 }
