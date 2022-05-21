@@ -6,14 +6,34 @@
 	display: grid;
 	grid-template-areas: 'n-wrap' 'n-cont';
 	grid-template-columns: 100vw;
-	grid-template-rows: 100vh;
+	// grid-template-rows: 100vh;
 
-	// grid-template-rows: auto;
+	grid-template-rows: auto;
 
 	// grid-template-rows: fn-linear(48, 62) min-content;
 
 	overflow-y: auto;
 	background-color: $color-white;
+}
+
+.navigation--open {
+	grid-template-rows: 100vh;
+
+	background-color: rgba($color: $color-white, $alpha: 100%);
+
+	transition-timing-function: ease-in-out;
+	animation-name: navigation-opened;
+	animation-duration: 1s;
+}
+
+@keyframes navigation-opened {
+	from {
+		background-color: rgba($color: $color-white, $alpha: 50%);
+	}
+
+	to {
+		background-color: rgba($color: $color-white, $alpha: 100%);
+	}
 }
 
 .navigation__wrapper {

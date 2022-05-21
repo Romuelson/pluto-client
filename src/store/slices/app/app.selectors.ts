@@ -1,7 +1,11 @@
+/* Store */
 import { AppStore } from '../../store';
-import { ReducerType } from '../../store.enum';
 
-import { NavigationStatus } from '../../../types/app/app.type';
+/* Enums */
+import { NavigationStatus } from './app.enum';
 
-export const getNavigationStatus = (state: AppStore): NavigationStatus =>
-	state[ReducerType.app].isNavActive;
+export const takeBodyOverflowHidden = (store: AppStore): boolean =>
+	store.app.bodyOverflowHidden;
+
+export const takeNavigationStatus = (state: AppStore): NavigationStatus =>
+	state.app.navigationStatus;

@@ -14,7 +14,7 @@ type InfoTitleProps = {
 };
 
 function InfoTitle({ item, index }: InfoTitleProps) {
-	const { dispathActiveIndex } = useInfoDispath();
+	const { dispatchActiveIndex } = useInfoDispath();
 	const { listType, activeButton } = useInfoSelector();
 
 	const defineListType = () => {
@@ -30,7 +30,7 @@ function InfoTitle({ item, index }: InfoTitleProps) {
 								: 'info__button button'
 						}
 						type="button"
-						onClick={() => dispathActiveIndex(index)}
+						onClick={() => dispatchActiveIndex(index)}
 					>
 						{item.title}
 					</button>

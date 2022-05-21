@@ -5,11 +5,11 @@ import { useAppDispatch } from '../../store/redux/use.redux';
 import { setActiveIndex } from '../../../store/slices/components/info/info.slice';
 
 export const useInfoDispath = () => {
-	const dispath = useAppDispatch();
+	const dispatch = useAppDispatch();
 
-	const dispathActiveIndex = (index: number) => {
-		dispath(setActiveIndex(index));
+	const dispatchActiveIndex = (index: number) => {
+		dispatch(setActiveIndex(index));
 	};
 
-	return { dispathActiveIndex };
+	return { dispatchActiveIndex };
 };

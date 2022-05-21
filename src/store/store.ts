@@ -1,4 +1,6 @@
-/* Core */
+/* eslint-disable import/no-cycle */
+
+/* Modules */
 import { configureStore } from '@reduxjs/toolkit';
 
 /* Services */

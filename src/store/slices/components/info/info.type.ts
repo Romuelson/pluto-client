@@ -1,4 +1,5 @@
 import { InfoTypeStyle } from '../../../../components/info/info.enum';
+import { Loading } from '../../../store.type';
 
 export type InfoAddressData = {
 	street: string;
@@ -21,6 +22,7 @@ export type ResponseDataInfo = {
 };
 
 export type InfoSlice = {
+	loading: Loading;
 	listType: InfoTypeStyle;
 	listAddress: InfoListAddress;
 	activeButton: InfoActiveButton;

@@ -7,10 +7,15 @@ export enum ReducerType {
 	info = 'info',
 }
 
+export enum LoadingStatus {
+	idle = 'idle',
+	loading = 'loading',
+	succeeded = 'succeeded',
+	failed = 'failed',
+}
+
 export enum ActionType {
 	authentication = 'authentication',
-	navigationStatus = 'navigationStatus',
-	navigationState = 'navigationState',
 }
 
 export enum DataActionType {

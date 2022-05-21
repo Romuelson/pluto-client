@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+
 /* Modules */
 import { combineReducers } from '@reduxjs/toolkit';
 

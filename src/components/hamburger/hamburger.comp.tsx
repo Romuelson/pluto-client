@@ -3,15 +3,17 @@ import './styles/index.scss';
 
 /* Hooks */
 import { useHamburger } from '../../hooks/components/hamburger/use.hamburger';
+import { useApp } from '../../hooks/components/app/use.app';
 
 function Hamburger() {
-	const { setClassName, setNavigationStatus, getStatus } = useHamburger();
+	const { reverseNavigationStatus, navigationStatus } = useApp();
+	const { setClassName } = useHamburger();
 
 	return (
 		<button
-			className={setClassName(getStatus)}
+			className={setClassName(navigationStatus)}
 			type="button"
-			onClick={(evt) => setNavigationStatus(evt, getStatus)}
+			onClick={() => reverseNavigationStatus(navigationStatus)}
 		>
 			<span className="hamburger__box">
 				<span className="hamburger__inner" />

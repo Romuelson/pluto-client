@@ -3,17 +3,16 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
 /* Store */
-import { AppDispatch, AppStore } from '../../../store';
-import { setDataInfo } from './info.slice';
+import type { AppDispatch, AppStore } from '../../../store';
 
 /* Enums */
 import { InfoAxiosAPI, InfoPrefixThunk } from './info.enum';
 
 /* Types */
-import { ResponseDataInfo } from './info.type';
+import { InfoListAddress, ResponseDataInfo } from './info.type';
 
 export const getListAddressThunk = createAsyncThunk<
-	void,
+	InfoListAddress,
 	undefined,
 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
 >(InfoPrefixThunk.getListAddress, async (_args, api) => {
@@ -22,7 +21,7 @@ export const getListAddressThunk = createAsyncThunk<
 			InfoAxiosAPI.requestListAddress
 		);
 
-		api.dispatch(setDataInfo(data));
+		return data;
 	} catch (error) {
 		throw new Error('getListAddressThunk');
 	}

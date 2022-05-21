@@ -4,12 +4,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 /* Types */
 import { InfoSlice, InfoListAddress } from './info.type';
 
-/* Constants */
-import { ReducerType } from '../../../store.enum';
+/* Enums */
+import { LoadingStatus, ReducerType } from '../../../store.enum';
 import { InfoActions } from './info.enum';
 import { InfoTypeStyle } from '../../../../components/info/info.enum';
 
+import { getListAddressThunk } from './info.thunk';
+
 const initialState: InfoSlice = {
+	loading: { status: LoadingStatus.idle, error: undefined },
 	listType: InfoTypeStyle.B,
 	listAddress: [],
 	activeButton: 0,
@@ -19,12 +22,6 @@ export const infoSlice = createSlice({
 	name: ReducerType.info,
 	initialState,
 	reducers: {
-		[InfoActions.setDataInfo]: (
-			state,
-			action: PayloadAction<InfoListAddress>
-		) => {
-			state.listAddress = action.payload;
-		},
 		[InfoActions.setActiveButton]: (
 			state,
 			action: PayloadAction<number>
@@ -38,6 +35,20 @@ export const infoSlice = createSlice({
 			state.listType = action.payload;
 		},
 	},
+	extraReducers: (builder) => {
+		builder
+			.addCase(getListAddressThunk.pending, (state) => {
+				state.loading.status = LoadingStatus.loading;
+			})
+			.addCase(getListAddressThunk.fulfilled, (state, action) => {
+				state.loading.status = LoadingStatus.succeeded;
+				state.listAddress = action.payload;
+			})
+			.addCase(getListAddressThunk.rejected, (state, action) => {
+				state.loading.status = LoadingStatus.failed;
+				state.loading.error = action.error.message;
+			});
+	},
 });
 
-export const { setDataInfo, setActiveIndex, setListType } = infoSlice.actions;
+export const { setActiveIndex, setListType } = infoSlice.actions;

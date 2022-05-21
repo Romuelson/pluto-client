@@ -1,51 +1,38 @@
 /* Hooks */
 import { useMediaQuery } from 'react-responsive';
-import { useAppSelector, useAppDispatch } from '../../store/redux/use.redux';
-
-/* Constants */
-import { SizeMediaQuery } from '../../../index.enum';
-
-/* Store */
-import { getNavigationStatus } from '../../../store/slices/app/app.selectors';
-import { navigationStatus } from '../../../store/slices/app/app.slice';
 
 /* Types */
-import { NavigationStatusType } from '../../../types/app/app.enum';
-import { NavigationStatus } from '../../../types/app/app.type';
+import { NavigationStatus } from '../../../store/slices/app/app.enum';
 
 /* Mocks */
 import { navigationMock } from '../../../mocks/data/navigation/navigation.mock';
+import { useApp } from '../app/use.app';
 
 export const useNavigationList = () => {
-	const ANIMATION_DELAY = 1300;
-
-	const isLowScreen = useMediaQuery({ maxWidth: 1210.98 });
-
-	const getStatus = useAppSelector(getNavigationStatus);
-	const dispatch = useAppDispatch();
-
 	const { data } = navigationMock();
 
-	const setNavigationStatus = () =>
-		setTimeout(() => {
-			dispatch(navigationStatus(NavigationStatusType.sleeping));
-		}, ANIMATION_DELAY);
+	const navAnimationDelay = () => 1000;
+
+	const { sleepingNavigationStatus } = useApp();
+
+	const isLowScreen = useMediaQuery({ maxWidth: 1210.98 });
 
 	const setClassName = (status: NavigationStatus) => {
 		if (isLowScreen) {
 			switch (status) {
-				case NavigationStatusType.opened:
+				case NavigationStatus.opened:
 					return 'navigation__container navigation__container--open';
-				case NavigationStatusType.closed:
-					setNavigationStatus();
+				case NavigationStatus.closed:
+					sleepingNavigationStatus(navAnimationDelay());
+
 					return 'navigation__container navigation__container--closed';
 				default:
-					return 'navigation__container visually-hidden';
+					return 'navigation__container';
 			}
 		}
 
 		return 'navigation__container';
 	};
 
-	return { setClassName, getStatus, data };
+	return { setClassName, data };
 };

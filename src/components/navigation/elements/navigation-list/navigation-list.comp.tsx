@@ -9,10 +9,10 @@ type NavigationListProps = {
 };
 
 function NavigationList({ children }: NavigationListProps) {
-	const { setClassName, getStatus, data } = useNavigationList();
+	const { data } = useNavigationList();
 
 	return (
-		<div className={setClassName(getStatus)}>
+		<>
 			<ul className="navigation__list list">
 				{data.map((item) => (
 					<li key={item.id} className="navigation__item list__item">
@@ -23,7 +23,7 @@ function NavigationList({ children }: NavigationListProps) {
 				))}
 			</ul>
 			{children}
-		</div>
+		</>
 	);
 }
 

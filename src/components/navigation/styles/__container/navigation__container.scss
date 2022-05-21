@@ -6,13 +6,13 @@
 .navigation__container.navigation__container--open {
 	margin-top: 0;
 	animation-name: navigation-open;
-	animation-duration: 1.3s;
+	animation-duration: 1s;
 }
 
 .navigation__container.navigation__container--closed {
 	margin-top: -100%;
 	animation-name: navigation-closed;
-	animation-duration: 1.3s;
+	animation-duration: 1s;
 }
 
 @keyframes navigation-open {
