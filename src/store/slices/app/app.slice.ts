@@ -7,6 +7,8 @@ import { AppSlice } from './app.type';
 /* Enums */
 import { ReducerType } from '../../store.enum';
 import { AppActions, NavigationStatus } from './app.enum';
+import { setListType } from '../components/info/info.slice';
+import { InfoTypeStyle } from '../../../components/info/info.enum';
 
 const initialState: AppSlice = {
 	bodyOverflowHidden: false,
@@ -29,6 +31,16 @@ export const appSlice = createSlice({
 		) => {
 			state.navigationStatus = action.payload;
 		},
+	},
+	extraReducers: (builder) => {
+		builder.addCase(setListType, (state, action) => {
+			if (
+				action.payload === InfoTypeStyle.B &&
+				state.navigationStatus === NavigationStatus.opened
+			) {
+				state.navigationStatus = NavigationStatus.closed;
+			}
+		});
 	},
 });
 

@@ -45,7 +45,7 @@ picture img {
 @include mix-media(low) {
 	html,
 	body {
-		font-size: mix-linear($font-size-low, $font-size-medium);
+		font-size: fn-linear($font-size-low, $font-size-medium);
 	}
 }
 

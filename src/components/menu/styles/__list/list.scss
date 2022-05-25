@@ -3,8 +3,10 @@
 	height: 100%;
 }
 
-.menu__list .menu__item {
-	flex-grow: 1;
+@media (max-width: 1210.98px) {
+	.menu__list .menu__item {
+		flex-grow: 1;
+	}
 }
 
 @media (min-width: 1211px) {

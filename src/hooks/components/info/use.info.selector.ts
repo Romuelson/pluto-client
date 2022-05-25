@@ -9,6 +9,8 @@ import {
 	takeLoading,
 } from '../../../store/slices/components/info/info.selector';
 
+import { takeNavigationStatus } from '../../../store/slices/app/app.selectors';
+
 export const useInfoSelector = () => {
 	const loading = useAppSelector(takeLoading);
 	const addressList = useAppSelector(takeListAddress);

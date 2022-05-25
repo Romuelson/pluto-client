@@ -1,11 +1,36 @@
 .logo {
-	display: flex;
+	// display: flex;
 
-	align-items: center;
+	// align-items: center;
 	grid-area: logo;
 
 	padding-right: 16px;
 	padding-left: 16px;
 
-	outline: 1px solid green;
+	// outline: 1px solid green;
+}
+
+@media (min-width: 640px) and (max-width: 1210.98px) {
+	.logo {
+		flex-grow: 1;
+	}
+}
+
+@media (min-width: 1211px) {
+	.logo__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		height: 100%;
+	}
+
+	.logo__image {
+		margin: 0 auto;
+	}
+
+	.logo__label {
+		display: block;
+	}
 }

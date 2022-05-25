@@ -1,6 +1,4 @@
 .info {
-	padding-left: 20px;
-
 	font-size: 13px;
 	line-height: 16px;
 
@@ -10,6 +8,8 @@
 @media (max-width: 1210.98px) {
 	.navigation__info {
 		width: 172px;
+
+		padding-left: 20px;
 	}
 }
 

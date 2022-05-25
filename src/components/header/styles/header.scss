@@ -1,17 +1,21 @@
 .header {
-	height: fn-linear(48, 62);
 	background-color: $color-white;
-	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
+}
+
+@media (max-width: 1210.98px) {
+	.header {
+		height: fn-linear(48, 62);
+	}
 }
 
 /* 1710 - Ширина nav > desktop */
 @media (min-width: 1211px) and (max-width: 1709.98px) {
 	.header {
-		display: grid;
+		// display: grid;
 
-		justify-content: center;
-		grid-template-columns: 1156px;
+		// justify-content: center;
+		// grid-template-columns: 1156px;
 
-		padding-top: 15px;
+		height: fn-linear(121, 135);
 	}
 }

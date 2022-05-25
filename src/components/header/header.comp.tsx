@@ -36,12 +36,14 @@ function Header() {
 		switch (navigationStatus) {
 			case NavigationStatus.opened:
 				return (
-					<div className={setClassName(navigationStatus)}>
-						<NavigationList>
-							{isLowScreen ? (
-								<Info type={InfoTypeStyle.A} />
-							) : null}
-						</NavigationList>
+					<div className="navigation__content">
+						<div className={setClassName(navigationStatus)}>
+							<NavigationList>
+								{isLowScreen ? (
+									<Info type={InfoTypeStyle.A} />
+								) : null}
+							</NavigationList>
+						</div>
 					</div>
 				);
 
@@ -49,6 +51,9 @@ function Header() {
 				return null;
 		}
 	};
+
+	// Прокинуть type по аналогии с info в logo
+	// В info собрать инструкцию для type в зависимости от resolution
 
 	return (
 		<header className="container__header header">

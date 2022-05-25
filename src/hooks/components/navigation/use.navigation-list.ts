@@ -11,7 +11,7 @@ import { useApp } from '../app/use.app';
 export const useNavigationList = () => {
 	const { data } = navigationMock();
 
-	const navAnimationDelay = () => 1000;
+	const navAnimationDelay = () => 800;
 
 	const { sleepingNavigationStatus } = useApp();
 

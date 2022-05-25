@@ -19,3 +19,12 @@
 	transition-duration: 0.15s;
 	transition-property: opacity, filter;
 }
+
+@media (min-width: 640px) and (max-width: 1210.98px) {
+	.hamburger {
+		order: 3;
+
+		min-width: 80px;
+		padding-top: 5.5px;
+	}
+}
