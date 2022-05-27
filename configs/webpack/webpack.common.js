@@ -40,7 +40,14 @@ module.exports = {
 			"@public": path.resolve(__dirname, '../../public'),
 		}
 	},
+	cache: {
+		type: 'filesystem',
+	},
 	devtool: false,
+	watchOptions: {
+		ignored: [/node_modules/],
+		followSymlinks: true,
+	},
 	optimization: {
 		moduleIds: 'deterministic',
 		runtimeChunk: 'single',
