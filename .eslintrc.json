@@ -39,15 +39,19 @@
 				"assert" : "either"
 			}
 		],
+		"no-console": "off",
+		"no-restricted-exports": "off",
+		"class-methods-use-this": "off",
 		"react/react-in-jsx-scope": "off",
+		"react/require-default-props": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-no-useless-fragment": "off",
 		"import/prefer-default-export": "off",
 		"import/no-extraneous-dependencies": "off",
-		"no-restricted-exports": "off",
-		"no-console": "off",
-		"class-methods-use-this": "off",
-		"react/jsx-no-useless-fragment": "off",
 		"@typescript-eslint/no-unused-vars" : "off",
+		"@typescript-eslint/no-unsafe-argument": "off",
+		"@typescript-eslint/no-unsafe-assignment": "off",
 		"@typescript-eslint/no-floating-promises": "off",
-		"react/require-default-props": "off"
+		"@typescript-eslint/restrict-template-expressions": "off"
 	}
 }

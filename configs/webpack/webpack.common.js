@@ -9,6 +9,8 @@ const FriendlyErrorsWebpackPlugin = require('@soda/friendly-errors-webpack-plugi
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
 const env = dotenv.config().parsed || {};
 const envKeys = Object.keys(env).reduce((prev, next) => {
 	prev[`process.env.${next}`] = JSON.stringify(env[next]);
@@ -26,7 +28,8 @@ module.exports = {
 		new ESLintPlugin({
 			extensions: ['js', 'jsx','ts', 'tsx']
 		}),
-		new StylelintPlugin()
+		new SpriteLoaderPlugin(),
+		new StylelintPlugin(),
 	],
 	output: {
 		path: path.resolve(__dirname, '../../dist'),
@@ -38,16 +41,13 @@ module.exports = {
 		alias: {
 			"@src": path.resolve(__dirname, '../../src'),
 			"@public": path.resolve(__dirname, '../../public'),
+			"@svg": path.resolve(__dirname, '../../public/assets/images/common/icons/svg'),
 		}
 	},
 	cache: {
 		type: 'filesystem',
 	},
 	devtool: false,
-	watchOptions: {
-		ignored: [/node_modules/],
-		followSymlinks: true,
-	},
 	optimization: {
 		moduleIds: 'deterministic',
 		runtimeChunk: 'single',
@@ -103,19 +103,27 @@ module.exports = {
 					transpileOnly : true
 				}
 			},
+			// {
+			// 	test: /\.svg$/i,
+			// 	issuer: /\.[jt]sx?$/,
+			// 	resourceQuery: { not: [/url/] },
+			// 	use: [
+			// 		{
+			// 			loader: '@svgr/webpack',
+			// 			options: {
+			// 				typescript: true,
+			// 			}
+			// 	 	}
+			// 	],
+			// },
 			{
-				test: /\.svg$/i,
+				test: /\.svg$/,
 				issuer: /\.[jt]sx?$/,
-				resourceQuery: { not: [/url/] },
 				use: [
-					{
-						loader: '@svgr/webpack',
-						options: {
-							typescript: true,
-						}
-				 	}
-				],
-			},
+					'svg-sprite-loader',
+					'svgo-loader'
+				]
+			}
 		]
 	}
 }

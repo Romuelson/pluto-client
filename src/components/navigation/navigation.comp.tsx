@@ -25,7 +25,7 @@ function Navigation({ children }: NavigationProps) {
 
 	return (
 		<>
-			<Sprite className="visually-hidden" />
+			{/* <Sprite className="visually-hidden" /> */}
 			<nav className={setClassName()}>
 				<h3 className="navigation__title visually-hidden">
 					Навигация приложения
