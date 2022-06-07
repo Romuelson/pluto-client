@@ -1,5 +1,4 @@
 /* Styles */
-import 'sanitize.css';
 import './assets/styles/index.scss';
 
 /* View */

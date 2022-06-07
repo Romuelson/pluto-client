@@ -1,13 +1,23 @@
 import './styles/index.scss';
 
-export type TextProps = {
-	value: number;
-};
+import { otherPropsToString } from '@utils/components/props';
+
+import { TextProps } from './text.type';
+import { TextAsEnum } from './text.enum';
 
 function Text(props: TextProps) {
-	const { value } = props;
+	const { children, as = TextAsEnum.div, className, ...otherProps } = props;
 
-	return <p>value</p>;
+	const Tag = as;
+
+	const defaultProps = ['text'];
+	const setClassName = otherPropsToString(
+		otherProps,
+		defaultProps,
+		className
+	);
+
+	return <Tag className={setClassName}>{children}</Tag>;
 }
 
 export default Text;

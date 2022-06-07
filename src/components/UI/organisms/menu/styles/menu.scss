@@ -1,0 +1,35 @@
+.menu {
+	width: 320px;
+
+	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
+}
+
+.menu__list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	min-height: 48px;
+
+	margin-right: 16px;
+	margin-left: 16px;
+}
+
+.menu__link {
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+
+	font-size: 10px;
+	color: $color-tooltip;
+
+	gap: 2px;
+
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.15s;
+}
+
+.menu__link:hover {
+	color: $color-brand;
+}

@@ -1,1 +1,15 @@
+@use '../../../../../assets/styles/forwarded' as *;
+
 @import './text';
+@import './text-weight/text-weight';
+@import './text-font/text-font';
+@import './text-size/text-size';
+@import './text-line-height/text-line-height';
+@import './text-color/text-color';
+@import './text-letter-spacing/text-letter-spacing';
+@import './text-transform/text-transform';
+@import './text-align/text-align';
+@import './text-cursor/text-cursor';
+@import './text-decoration/text-decoration';
+@import './text-display/text-display';
+@import './text-style/text-style';

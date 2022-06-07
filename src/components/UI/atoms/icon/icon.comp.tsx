@@ -1,6 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import './styles/index.scss';
 
-import withIcon from '../../../../hocs/icon/with.icon';
-import searchSvg from '../../../../../public/assets/images/common/icons/svg/search.svg';
+import { BrowserSVGElement } from './icon.type';
 
-export default withIcon(searchSvg);
+function Icon(props: BrowserSVGElement) {
+	const { glyph, viewBox, className } = props;
+
+	return (
+		<svg viewBox={viewBox} className={className}>
+			<use xlinkHref={`#${glyph}`} />
+		</svg>
+	);
+}
+
+export default Icon;

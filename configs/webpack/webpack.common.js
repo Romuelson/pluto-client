@@ -40,8 +40,20 @@ module.exports = {
 		extensions: ['', '.js', '.jsx', '.ts', '.tsx', '.json', '.css','.scss', '.sass'],
 		alias: {
 			"@src": path.resolve(__dirname, '../../src'),
+			"@styles": path.resolve(__dirname, '../../src/assets/styles'),
+			"@components": path.resolve(__dirname, '../../src/components'),
+			"@hocs": path.resolve(__dirname, '../../src/hocs'),
+			"@hooks": path.resolve(__dirname, '../../src/hooks'),
+			"@mocks": path.resolve(__dirname, '../../src/mocks'),
+			"@pages": path.resolve(__dirname, '../../src/pages'),
+			"@routes": path.resolve(__dirname, '../../src/routes'),
+			"@services": path.resolve(__dirname, '../../src/services'),
+			"@store": path.resolve(__dirname, '../../src/store'),
+			"@types": path.resolve(__dirname, '../../src/types'),
+			"@utils": path.resolve(__dirname, '../../src/utils'),
 			"@public": path.resolve(__dirname, '../../public'),
-			"@svg": path.resolve(__dirname, '../../public/assets/images/common/icons/svg'),
+			"@images": path.resolve(__dirname, '../../public/assets/images'),
+			"@icons": path.resolve(__dirname, '../../public/assets/images/common/icons'),
 		}
 	},
 	cache: {
