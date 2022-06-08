@@ -1,0 +1,23 @@
+.knob__link {
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+
+	width: min-content;
+
+	font-size: 10px;
+	color: $color-tooltip;
+
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.15s;
+}
+
+.knob__link:hover {
+	color: $color-brand;
+}
+
+// .knob__icon {}
+
+// .knob__text {}
