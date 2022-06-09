@@ -1,7 +1,7 @@
 import useLogos from '@src/hooks/components/logos/use.logos';
-import { WithProps } from '../../logo.type';
+import { LogoProps } from '../../logo.type';
 
-function LogoStories(props: WithProps) {
+function LogoStories(props: LogoProps) {
 	const { Brand } = useLogos();
 
 	return (

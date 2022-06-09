@@ -7,6 +7,7 @@ import LogoStories from './elements/logo-stories/logo-stories.comp';
 
 /* Components */
 import Logo from './logo.comp';
+import { LogoChildrenEnum, LogoSizeEnum } from './logo.enum';
 
 export default {
 	title: 'Components/Molecules/Logo',
@@ -27,7 +28,5 @@ const Template: ComponentStory<typeof Logo> = (args) => (
 export const Playground = Template.bind({});
 
 Playground.args = {
-	children: 'Жизнь - яркая штука!',
 	className: 'logo__icon',
-	logoColor: IconColorEnum.Brand,
 };

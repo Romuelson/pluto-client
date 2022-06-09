@@ -1,35 +1,65 @@
-import Icon from '@components/UI/atoms/icon/icon.comp';
 import Text from '@components/UI/atoms/text/text.comp';
-import Link from '@src/components/UI/atoms/link/link.comp';
+import Icon from '@components/UI/atoms/icon/icon.comp';
+import Link from '@components/UI/atoms/link/link.comp';
 
-import Logo from '../../logo.comp';
+import {
+	TextAsEnum,
+	TextFontEnum,
+	TextAlignEnum,
+	TextSizeEnum,
+	TextLineHeightEnum,
+	TextColorEnum,
+} from '@components/UI/atoms/text/text.enum';
 
-function LogoDefault() {
+import { IconColorEnum } from '@components/UI/atoms/icon/icon.enum';
+
+import { LogoSizeEnum } from '../../logo.enum';
+import { LogoProps } from '../../logo.type';
+
+function LogoDefault(props: LogoProps) {
+	const {
+		glyph,
+		viewBox,
+
+		children,
+		className,
+
+		logoIconSize = LogoSizeEnum.S,
+		logoIconColor = IconColorEnum.Brand,
+
+		logoTextSize = TextSizeEnum.SXXS,
+		logoTextLineHeight = TextLineHeightEnum.SXXS,
+		logoTextColor = TextColorEnum.Tooltip,
+
+		...otherProps
+	} = props;
+
 	return (
-		<Logo>
-			<Link to="/" className="logo__link">
-				<>
-					<Icon
-						glyph={glyph}
-						viewBox={viewBox}
-						className={className}
-						color={logoColor}
-						{...otherProps}
-					/>
-					{children ? (
-						<Text
-							as={TextAsEnum.span}
-							className="logo__text"
-							font={TextFontEnum.TypeTypeNorms}
-							// color={TextColorEnum.Brand}
-							// textDecoration={TextDecorationEnum.underline}
-						>
-							{children}
-						</Text>
-					) : null}
-				</>
-			</Link>
-		</Logo>
+		<Link to="/" className="logo__link">
+			<>
+				<Icon
+					glyph={glyph}
+					viewBox={viewBox}
+					className={className}
+					size={logoIconSize}
+					color={logoIconColor}
+					{...otherProps}
+				/>
+				{children ? (
+					<Text
+						as={TextAsEnum.span}
+						className="logo__text"
+						font={TextFontEnum.TypeTypeNorms}
+						size={logoTextSize}
+						lineHeight={logoTextLineHeight}
+						textAlign={TextAlignEnum.center}
+						color={logoTextColor}
+					>
+						{children}
+					</Text>
+				) : null}
+			</>
+		</Link>
 	);
 }
 

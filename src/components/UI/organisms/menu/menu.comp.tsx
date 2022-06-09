@@ -2,7 +2,9 @@ import './styles/index.scss';
 
 import useKnob from '@hooks/components/knob/use.knob';
 
-function Menu() {
+import { MenuProps } from './menu.type';
+
+function Menu({ children }: MenuProps) {
 	const { collections } = useKnob();
 
 	const knobs = [
@@ -11,6 +13,10 @@ function Menu() {
 		collections.KnobHeart,
 		collections.KnobShop,
 	];
+
+	if (children) {
+		knobs.push(children);
+	}
 
 	return (
 		<div className="menu">

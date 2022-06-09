@@ -1,5 +1,7 @@
 import * as IconEnum from './icon.enum';
 
+import { LogoSizeEnum } from '../../molecules/logo/logo.enum';
+
 export type BrowserSpriteSymbol = {
 	id: string;
 	viewBox: string;
@@ -8,7 +10,7 @@ export type BrowserSpriteSymbol = {
 };
 
 export type BrowserSVG = {
-	size?: IconEnum.IconSizeEnum;
+	size?: IconEnum.IconSizeEnum | LogoSizeEnum;
 	color?: IconEnum.IconColorEnum;
 	glyph?: string;
 	className?: string;

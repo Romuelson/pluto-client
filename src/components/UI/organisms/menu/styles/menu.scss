@@ -1,16 +1,25 @@
-.menu {
-	width: 320px;
-
-	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
-}
-
 .menu__list {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	min-height: 48px;
+}
 
-	margin-right: 16px;
-	margin-left: 16px;
+@media (max-width: 639.98px) {
+	.menu {
+		width: 320px;
+
+		box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
+	}
+
+	.menu__list {
+		margin: 0 16px;
+	}
+}
+
+@media (min-width: 640px) {
+	.menu {
+		width: 304px;
+	}
 }

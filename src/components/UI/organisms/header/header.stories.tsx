@@ -21,3 +21,7 @@ const Template: ComponentStory<typeof Header> = (args) => <Header />;
 export const Playground = Template.bind({});
 
 Playground.args = {};
+
+Playground.parameters = {
+	layout: 'fullscreen',
+};

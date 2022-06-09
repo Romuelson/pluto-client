@@ -4,3 +4,7 @@ export const enum LogoSizeEnum {
 	L = 'logo-size--l',
 	XL = 'logo-size--xl',
 }
+
+export const enum LogoChildrenEnum {
+	default = 'Жизнь - яркая штука!',
+}

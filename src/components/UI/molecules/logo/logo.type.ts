@@ -1,13 +1,26 @@
 import { IconColorEnum } from '@components/UI/atoms/icon/icon.enum';
-import { LogoSizeEnum } from './logo.enum';
+
+import {
+	TextColorEnum,
+	TextLineHeightEnum,
+	TextSizeEnum,
+} from '@components/UI/atoms/text/text.enum';
+
+import { LogoChildrenEnum, LogoSizeEnum } from './logo.enum';
 
 export type LogoProps = {
 	glyph?: string;
 	viewBox?: string;
-	children?: string;
+
+	children?: LogoChildrenEnum | string;
 	className?: string;
-	logoSize?: LogoSizeEnum;
-	logoColor?: IconColorEnum;
+
+	logoIconSize?: LogoSizeEnum;
+	logoIconColor?: IconColorEnum;
+
+	logoTextSize?: TextSizeEnum;
+	logoTextLineHeight?: TextLineHeightEnum;
+	logoTextColor?: TextColorEnum;
 };
 
 export type WithProps = {
