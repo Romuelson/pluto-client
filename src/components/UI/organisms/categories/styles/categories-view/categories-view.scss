@@ -1,0 +1,27 @@
+// .categories--sidebar {
+
+// }
+
+// .categories--navigation {
+
+// }
+
+.categories--sidebar .categories__list {
+	display: block;
+
+	width: 320px;
+
+	background-color: $color-white;
+}
+
+.categories--sidebar .categories__item {
+	padding-left: 20px;
+
+	line-height: 0;
+}
+
+.categories--navigation .categories__list {
+	display: flex;
+
+	justify-content: space-between;
+}

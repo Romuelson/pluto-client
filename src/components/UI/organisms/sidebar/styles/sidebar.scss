@@ -1,0 +1,107 @@
+.sidebar {
+	position: fixed;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: flex;
+
+	justify-content: flex-end;
+}
+
+.sidebar__overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background-color: rgba($color: $color-black, $alpha: 70%);
+}
+
+.sidebar__window {
+	position: relative;
+
+	overflow: hidden auto;
+}
+
+/* CSSTransition */
+
+/* Sidebar - Window */
+
+.sidebar-enter .sidebar__window {
+	opacity: 0;
+}
+
+.sidebar-enter-active .sidebar__window {
+	opacity: 1;
+	transition: opacity 2000ms;
+}
+
+.sidebar-exit .sidebar__window {
+	opacity: 1;
+}
+
+.sidebar-exit-active .sidebar__window {
+	opacity: 0;
+	transition: opacity 2000ms;
+}
+
+/* Sidebar - Overlay */
+
+.sidebar-enter .sidebar__overlay {
+	opacity: 0;
+}
+
+.sidebar-enter-active .sidebar__overlay {
+	opacity: 1;
+	transition: opacity 2000ms;
+}
+
+.sidebar-exit .sidebar__overlay {
+	opacity: 1;
+}
+
+.sidebar-exit-active .sidebar__overlay {
+	opacity: 0;
+	transition: opacity 2000ms;
+}
+
+// @keyframes sidebar-open {
+// 	from {
+// 		margin-right: -100%;
+// 	}
+
+// 	to {
+// 		margin-right: 0;
+// 	}
+// }
+
+// @keyframes sidebar-closed {
+// 	from {
+// 		margin-right: 0;
+// 	}
+
+// 	to {
+// 		margin-right: -100%;
+// 	}
+// }
+
+// .navigation__container {
+// 	background-color: $color-white;
+// 	transition-timing-function: ease-in-out;
+// }
+
+// .navigation__container.navigation__container--open {
+// 	margin-right: 0;
+// 	animation-name: navigation-open;
+// 	animation-duration: 0.8s;
+// }
+
+// .navigation__container.navigation__container--closed {
+// 	margin-right: -100%;
+// 	animation-name: navigation-closed;
+// 	animation-duration: 0.4s;
+// }

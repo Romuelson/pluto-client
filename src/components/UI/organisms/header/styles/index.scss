@@ -1,1 +1,7 @@
+@use '../../../../../assets/styles/forwarded' as *;
+
 @import './header';
+@import './__navigation/header__navigation';
+@import './__hamburger/header__hamburger';
+@import './__categories/header__categories';
+@import './__sidebar/header__sidebar';

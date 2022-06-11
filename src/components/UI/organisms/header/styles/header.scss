@@ -1,24 +1,11 @@
 .header {
-	display: flex;
-
-	justify-content: space-between;
-	align-items: center;
-
-	min-height: 48px;
-
-	padding: 0 16px;
-
+	background-color: $color-white;
 	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
 }
-
-// .header .knob__link {
-// 	gap: 0;
-// }
 
 @media (max-width: 639.98px) {
 	.header .menu {
 		position: fixed;
-
 		bottom: -1px;
 		left: 0;
 
@@ -27,29 +14,30 @@
 }
 
 @media (min-width: 1156px) {
-	.header {
-		display: grid;
-
-		justify-content: space-between;
-		align-items: center;
-		grid-template-columns: 1fr 1fr 1fr;
-
-		min-height: 48px;
-
-		padding: 0 16px;
-
-		box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
-	}
-
-	.header .knob__menu {
-		order: -1;
-	}
-
 	.header .logo {
 		justify-self: center;
 	}
 
 	.header .menu {
 		justify-self: flex-end;
+	}
+}
+
+@media (max-width: 1187.98px) {
+	.header {
+		padding: 0 16px;
+	}
+}
+
+@media (min-width: 1366px) {
+	.header {
+		padding-top: 15px;
+	}
+}
+
+@media (min-width: 1366px) and (max-width: 1919.98px) {
+	.header {
+		padding-right: 105px;
+		padding-left: 105px;
 	}
 }

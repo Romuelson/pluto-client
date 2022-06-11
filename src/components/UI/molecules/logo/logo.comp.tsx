@@ -2,8 +2,7 @@
 
 import './styles/index.scss';
 
-import useComponentQuery from '@hooks/utils/component-query/use.component-query';
-
+import { useSingleMediaQuery } from '@hooks/utils/single-media-query/use.single-media-query';
 import LogoDefault from './views/logo-default/logo-default.comp';
 
 import { LogoProps } from './logo.type';
@@ -13,21 +12,27 @@ import { TextLineHeightEnum, TextSizeEnum } from '../../atoms/text/text.enum';
 function Logo(props: LogoProps) {
 	const { children, ...otherProps } = props;
 
-	const { MaxLow, SwitchMeduim, Medium } = useComponentQuery();
+	const { isMaxSwitchMedium, isMaxMedium } = useSingleMediaQuery();
+	const isSwitchAndMedium = !isMaxSwitchMedium && isMaxMedium;
 
 	return (
 		<div className="logo">
-			<MaxLow>
+			{/* maxWidth: 1155.98 */}
+			{!isMaxSwitchMedium || (
 				<LogoDefault children={children} {...otherProps} />
-			</MaxLow>
-			<SwitchMeduim>
+			)}
+
+			{/* minWidth: 1156, maxWidth: 1365.98 */}
+			{!isSwitchAndMedium || (
 				<LogoDefault
 					children={children}
 					logoIconSize={LogoSizeEnum.M}
 					{...otherProps}
 				/>
-			</SwitchMeduim>
-			<Medium>
+			)}
+
+			{/* minWidth: 1366 */}
+			{isMaxMedium || (
 				<LogoDefault
 					children={children || LogoChildrenEnum.default}
 					logoIconSize={LogoSizeEnum.XL}
@@ -35,7 +40,7 @@ function Logo(props: LogoProps) {
 					logoTextLineHeight={TextLineHeightEnum.XXS}
 					{...otherProps}
 				/>
-			</Medium>
+			)}
 		</div>
 	);
 }

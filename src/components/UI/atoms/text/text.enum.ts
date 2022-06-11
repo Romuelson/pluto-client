@@ -18,6 +18,7 @@ export const enum TextSizeEnum {
 	SM = 'text-size--sm',
 	M = 'text-size--m',
 	ML = 'text-size--ml',
+	MLS = 'text-size--mls',
 	L = 'text-size--l',
 	LXL = 'text-size--lxl',
 	XL = 'text-size--xl',

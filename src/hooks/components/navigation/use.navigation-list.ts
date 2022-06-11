@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 import { NavigationStatus } from '../../../store/slices/app/app.enum';
 
 /* Mocks */
-import { navigationMock } from '../../../mocks/data/navigation/navigation.mock';
+import { navigationMock } from '../../../mocks/data/categories/categories.mock';
 import { useApp } from '../app/use.app';
 
 export const useNavigationList = () => {

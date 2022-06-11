@@ -1,4 +1,4 @@
-.knob__link {
+.knob {
 	display: flex;
 
 	flex-direction: column;
@@ -13,26 +13,29 @@
 	transition-duration: 0.15s;
 }
 
-.knob__link:hover {
+.knob:hover {
 	color: $color-brand;
 }
 
+/* Переработать утсановку значений fz, lh */
+/* Компонент knob имеет два состояния link и div */
+
 @media (max-width: 1155.98px) {
-	.knob__link {
+	.knob {
 		font-size: 10px;
 		line-height: 12px;
 	}
 }
 
 @media (min-width: 1156px) and (max-width: 1365.98px) {
-	.knob__link {
+	.knob {
 		font-size: 12px;
 		line-height: 14px;
 	}
 }
 
 @media (min-width: 1366px) {
-	.knob__link {
+	.knob {
 		font-size: 13px;
 		line-height: 16px;
 	}

@@ -2,29 +2,43 @@
 
 import './styles/index.scss';
 
-import { useMediaQuery } from 'react-responsive';
-
 import useLogos from '@hooks/components/logos/use.logos';
-import useKnob from '@hooks/components/knob/use.knob';
+import { useSingleMediaQuery } from '@hooks/utils/single-media-query/use.single-media-query';
+
+import Hamburger from '@components/UI/molecules/hamburger/hamburger.comp';
 
 import Menu from '../menu/menu.comp';
+import Sidebar from '../sidebar/sidebar.comp';
+import Categories from '../categories/categories.comp';
+
+import { CategoriesViewEnum } from '../categories/categories.enum';
 
 function Header() {
 	const { Brand } = useLogos();
 
-	const { collections } = useKnob();
-	const { KnobMenu } = collections;
+	const { isMaxSwitchLow, isMaxSwitchMedium, isMinMedium } =
+		useSingleMediaQuery();
 
-	const isLowScreen = useMediaQuery({ maxWidth: 639.98 });
-	const isMediumScreen = useMediaQuery({ maxWidth: 1155.98 });
-
-	const isKnobMenu = !isLowScreen && isMediumScreen;
+	/* minWidth: 640, maxWidth: 1155.98 */
+	const isHamburger = !isMaxSwitchLow && isMaxSwitchMedium;
 
 	return (
 		<header className="header">
-			<Brand />
-			{!isKnobMenu ? <KnobMenu /> : null}
-			<Menu children={isKnobMenu ? KnobMenu : undefined} />
+			<nav className="header__navigation">
+				<Brand />
+
+				{isHamburger || <Hamburger className="header__hamburger" />}
+				<Menu children={isHamburger ? Hamburger : undefined} />
+
+				{!isMinMedium || <Categories className="header__categories" />}
+			</nav>
+
+			{/* maxWidth: 1365.98 */}
+			{isMinMedium || (
+				<Sidebar className="header__sidebar">
+					<Categories view={CategoriesViewEnum.sidebar} />
+				</Sidebar>
+			)}
 		</header>
 	);
 }

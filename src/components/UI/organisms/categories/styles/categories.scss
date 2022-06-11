@@ -1,0 +1,32 @@
+// .categories {
+// }
+
+// .categories__item {
+// 	padding-left: 20px;
+
+// 	line-height: 0;
+// }
+
+.categories__text {
+	line-height: 58px;
+}
+
+@media (max-width: 1210.98px) {
+	.categories__list {
+		padding-top: 10px;
+		padding-bottom: 18px;
+	}
+}
+
+@media (max-width: 1210.98px) {
+	.categories__item {
+		border-top: 1px solid $color-timber;
+	}
+
+	.categories__item:last-child {
+		border-bottom: 1px solid $color-timber;
+	}
+}
+
+// @media (min-width: 1211px) {
+// }

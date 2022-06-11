@@ -13,6 +13,7 @@ import { InfoTypeStyle } from '../../../components/info/info.enum';
 const initialState: AppSlice = {
 	bodyOverflowHidden: false,
 	navigationStatus: NavigationStatus.sleeping,
+	categoriesStatus: false,
 };
 
 export const appSlice = createSlice({
@@ -31,6 +32,12 @@ export const appSlice = createSlice({
 		) => {
 			state.navigationStatus = action.payload;
 		},
+		[AppActions.setCategoriesStatus]: (
+			state,
+			action: PayloadAction<boolean>
+		) => {
+			state.categoriesStatus = action.payload;
+		},
 	},
 	extraReducers: (builder) => {
 		builder.addCase(setListType, (state, action) => {
@@ -44,4 +51,8 @@ export const appSlice = createSlice({
 	},
 });
 
-export const { setBodyOverflowHidden, setNavigationStatus } = appSlice.actions;
+export const {
+	setBodyOverflowHidden,
+	setNavigationStatus,
+	setCategoriesStatus,
+} = appSlice.actions;

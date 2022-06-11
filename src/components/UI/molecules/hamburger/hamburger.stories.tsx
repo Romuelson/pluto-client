@@ -6,11 +6,11 @@ import { store } from '@store/store';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import Header from './header.comp';
+import Hamburger from './hamburger.comp';
 
 export default {
-	title: 'Components/Organisms/Header',
-	component: Header,
+	title: 'Components/Molecules/Hamburger',
+	component: Hamburger,
 	decorators: [
 		(Story) => (
 			<Provider store={store}>
@@ -20,14 +20,12 @@ export default {
 			</Provider>
 		),
 	],
-} as ComponentMeta<typeof Header>;
+} as ComponentMeta<typeof Hamburger>;
 
-const Template: ComponentStory<typeof Header> = (args) => <Header />;
+const Template: ComponentStory<typeof Hamburger> = (args) => (
+	<Hamburger {...args} />
+);
 
 export const Playground = Template.bind({});
 
 Playground.args = {};
-
-Playground.parameters = {
-	layout: 'fullscreen',
-};

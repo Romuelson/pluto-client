@@ -1,7 +1,5 @@
-/* Store */
 import { AppStore } from '../../store';
 
-/* Enums */
 import { NavigationStatus } from './app.enum';
 
 export const takeBodyOverflowHidden = (store: AppStore): boolean =>
@@ -9,3 +7,6 @@ export const takeBodyOverflowHidden = (store: AppStore): boolean =>
 
 export const takeNavigationStatus = (state: AppStore): NavigationStatus =>
 	state.app.navigationStatus;
+
+export const takeCategoriesStatus = (store: AppStore): boolean =>
+	store.app.categoriesStatus;

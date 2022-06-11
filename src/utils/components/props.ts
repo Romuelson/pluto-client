@@ -1,11 +1,9 @@
 export const otherPropsToString = (
-	otherProps: object,
+	otherProps?: object,
 	defaultProps?: string[],
 	className?: string
 ): string => {
 	const initialArray = [];
-
-	const values: string[] = Object.values(otherProps);
 
 	if (className) {
 		initialArray.push(className);
@@ -15,7 +13,9 @@ export const otherPropsToString = (
 		initialArray.push(defaultProps);
 	}
 
-	initialArray.push(values);
+	if (otherProps) {
+		initialArray.push(Object.values(otherProps));
+	}
 
 	const result = initialArray.flat().join(' ');
 
