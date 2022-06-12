@@ -13,18 +13,25 @@ import { takeCategoriesStatus } from '@store/slices/app/app.selectors';
 import { otherPropsToString } from '@utils/components/props';
 
 import { SidebarProps } from './sidebar.type';
+import { SidebarPositionEnum } from './sidebar.enum';
 
 /* 1. Настроить плавную анимацию, которая зависит от props */
 /* 2. Добавить две анимации для состояния left, right */
 
 function Sidebar(props: SidebarProps) {
-	const { children, className, status, ...otherProps } = props;
+	const {
+		children,
+		className,
+		status,
+		position = SidebarPositionEnum.right,
+		...otherProps
+	} = props;
 
 	const categoriesStatus = useAppSelector(takeCategoriesStatus);
 
-	const CSSTransitionDuration = 2000;
+	const CSSTransitionDuration = 800;
 
-	const defaultProps = ['sidebar'];
+	const defaultProps = ['sidebar', position];
 	const setClassName = otherPropsToString(
 		otherProps,
 		defaultProps,

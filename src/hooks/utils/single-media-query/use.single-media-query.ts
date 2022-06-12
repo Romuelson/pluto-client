@@ -11,6 +11,11 @@ export const useSingleMediaQuery = () => {
 		isMinSwitchMedium: useMediaQuery({ minWidth: 1156 }),
 		isMaxSwitchMedium: useMediaQuery({ maxWidth: 1155.98 }),
 
+		isUnionSwitchMedium: useMediaQuery({
+			minWidth: 1156,
+			maxWidth: 1365.98,
+		}),
+
 		isMinMedium: useMediaQuery({ minWidth: 1366 }),
 		isMaxMedium: useMediaQuery({ maxWidth: 1365.98 }),
 

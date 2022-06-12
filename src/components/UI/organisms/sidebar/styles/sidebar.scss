@@ -8,7 +8,7 @@
 
 	display: flex;
 
-	justify-content: flex-end;
+	transition-timing-function: ease-in-out;
 }
 
 .sidebar__overlay {
@@ -23,31 +23,38 @@
 
 .sidebar__window {
 	position: relative;
-
 	overflow: hidden auto;
+}
+
+.sidebar-enter-active .sidebar__window,
+.sidebar-enter-active .sidebar__overlay {
+	transition: 800ms;
+}
+
+.sidebar-exit-active .sidebar__window,
+.sidebar-exit-active .sidebar__overlay {
+	transition: 400ms;
 }
 
 /* CSSTransition */
 
 /* Sidebar - Window */
 
-.sidebar-enter .sidebar__window {
-	opacity: 0;
-}
+// .sidebar-enter .sidebar__window {
+// 	opacity: 0;
+// }
 
-.sidebar-enter-active .sidebar__window {
-	opacity: 1;
-	transition: opacity 2000ms;
-}
+// .sidebar-enter-active .sidebar__window {
+// 	opacity: 1;
+// }
 
-.sidebar-exit .sidebar__window {
-	opacity: 1;
-}
+// .sidebar-exit .sidebar__window {
+// 	opacity: 1;
+// }
 
-.sidebar-exit-active .sidebar__window {
-	opacity: 0;
-	transition: opacity 2000ms;
-}
+// .sidebar-exit-active .sidebar__window {
+// 	opacity: 0;
+// }
 
 /* Sidebar - Overlay */
 
@@ -57,7 +64,6 @@
 
 .sidebar-enter-active .sidebar__overlay {
 	opacity: 1;
-	transition: opacity 2000ms;
 }
 
 .sidebar-exit .sidebar__overlay {
@@ -66,7 +72,6 @@
 
 .sidebar-exit-active .sidebar__overlay {
 	opacity: 0;
-	transition: opacity 2000ms;
 }
 
 // @keyframes sidebar-open {
