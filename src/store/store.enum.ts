@@ -5,6 +5,7 @@ export enum ReducerType {
 	data = 'data',
 	favorite = 'favorite',
 	info = 'info',
+	categories = 'categories',
 }
 
 export enum LoadingStatus {

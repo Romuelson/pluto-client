@@ -1,30 +1,23 @@
 import './styles/index.scss';
 
-import Link from '@components/UI/atoms/link/link.comp';
-import Text from '@components/UI/atoms/text/text.comp';
-
 import { otherPropsToString } from '@utils/components/props';
 
-import { CategoriesProps } from './categories.type';
-import { categoriesMock } from './categories.mock';
+import { useCategories } from './use.categories';
+import CategoriesList from './elements/categories-list/categories-list.comp';
 
-import {
-	TextAsEnum,
-	TextFontEnum,
-	TextLineHeightEnum,
-	TextSizeEnum,
-} from '../../atoms/text/text.enum';
-import { CategoriesViewEnum } from './categories.enum';
+import { CategoriesProps } from './categories.type';
+import { CategoriesDataEnum, CategoriesViewEnum } from './categories.enum';
 
 function Categories(props: CategoriesProps) {
 	const {
 		children,
 		className,
 		view = CategoriesViewEnum.navigation,
+		data = CategoriesDataEnum.header,
 		...otherProps
 	} = props;
 
-	const { data } = categoriesMock();
+	const { responce } = useCategories({ data });
 
 	const defaultProps = ['categories', view];
 	const setClassName = otherPropsToString(
@@ -35,23 +28,11 @@ function Categories(props: CategoriesProps) {
 
 	return (
 		<div className={setClassName}>
-			<ul className="categories__list list">
-				{data.map((item) => (
-					<li key={item.id} className="categories__item list__item">
-						<Link to={item.link} className="categories__link link">
-							<Text
-								className="categories__text"
-								as={TextAsEnum.span}
-								font={TextFontEnum.ForumRegular}
-								size={TextSizeEnum.MLS}
-								lineHeight={TextLineHeightEnum.XS}
-							>
-								{item.title}
-							</Text>
-						</Link>
-					</li>
-				))}
-			</ul>
+			{data === CategoriesDataEnum.footer ? (
+				<CategoriesList data={responce.footer.data} />
+			) : (
+				<CategoriesList data={responce.header.data} />
+			)}
 			{children}
 		</div>
 	);

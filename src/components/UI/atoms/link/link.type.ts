@@ -1,7 +1,7 @@
 import * as LinkEnum from './link.enum';
 
 export type LinkProps = {
-	children: JSX.Element;
+	children: JSX.Element | string;
 	as?: LinkEnum.LinkAsEnum;
 	to: string;
 	className?: string;

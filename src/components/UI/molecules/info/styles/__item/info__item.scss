@@ -1,0 +1,19 @@
+@media (max-width: 1365.98px) {
+	.info__item {
+		display: block;
+	}
+
+	.navigation__info .info__item {
+		padding-bottom: 40px;
+	}
+}
+
+@media (min-width: 1366px) {
+	.info__item {
+		display: inline-block;
+	}
+
+	.navigation__info .info__item:not(:first-child) {
+		padding-left: 8px;
+	}
+}

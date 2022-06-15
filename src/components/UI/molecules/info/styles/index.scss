@@ -1,0 +1,8 @@
+@use '../../../../../assets/styles/forwarded' as *;
+
+@import './info';
+@import './__list/info__list';
+@import './__item/info__item';
+@import './__title/info__title';
+@import './__button/info__button';
+@import './__address/info__address';

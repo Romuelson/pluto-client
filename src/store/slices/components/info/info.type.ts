@@ -1,4 +1,4 @@
-import { InfoTypeStyle } from '../../../../components/info/info.enum';
+import { InfoTypeEnums } from '@components/UI/molecules/info/info.enum';
 import { Loading } from '../../../store.type';
 
 export type InfoAddressData = {
@@ -23,7 +23,7 @@ export type ResponseDataInfo = {
 
 export type InfoSlice = {
 	loading: Loading;
-	listType: InfoTypeStyle;
+	listType: InfoTypeEnums;
 	listAddress: InfoListAddress;
 	activeButton: InfoActiveButton;
 };

@@ -8,7 +8,6 @@
 
 .categories--sidebar .categories__list {
 	display: block;
-
 	width: 320px;
 
 	background-color: $color-white;
@@ -18,6 +17,18 @@
 	padding-left: 20px;
 
 	line-height: 0;
+}
+
+@media (max-width: 1155.98px) {
+	.categories--sidebar .categories__item {
+		padding-left: 20px;
+	}
+}
+
+@media (min-width: 1156px) {
+	.categories--sidebar .categories__item {
+		padding-left: 16px;
+	}
 }
 
 .categories--navigation .categories__list {

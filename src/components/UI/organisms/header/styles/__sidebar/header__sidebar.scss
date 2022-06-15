@@ -29,6 +29,18 @@
 	}
 }
 
+@media (min-width: 1188px) and (max-width: 1365.98px) {
+	.header__sidebar.sidebar {
+		display: grid;
+
+		grid-template-columns: 1fr 320px 868px 1fr;
+	}
+
+	.header__sidebar .sidebar__window {
+		grid-column: 2 / 3;
+	}
+}
+
 @media (min-width: 1156px) and (max-width: 1365.98px) {
 	.header__sidebar {
 		margin-top: 62px;

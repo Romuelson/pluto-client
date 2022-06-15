@@ -1,0 +1,26 @@
+.info {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+@media (max-width: 1210.98px) {
+	.navigation__info {
+		width: 172px;
+	}
+}
+
+@media (min-width: 1211px) {
+	.navigation__info {
+		min-width: 260px;
+	}
+}
+
+@media (max-width: 1365.98px) {
+	.info {
+		width: 100%;
+
+		padding-left: 20px;
+
+		background-color: $color-white;
+	}
+}

@@ -29,7 +29,7 @@ function Sidebar(props: SidebarProps) {
 
 	const categoriesStatus = useAppSelector(takeCategoriesStatus);
 
-	const CSSTransitionDuration = 800;
+	const CSSTransitionDuration = categoriesStatus ? 800 : 400;
 
 	const defaultProps = ['sidebar', position];
 	const setClassName = otherPropsToString(

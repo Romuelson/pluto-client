@@ -1,19 +1,16 @@
-/* Modules */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-/* Types */
-import { InfoSlice, InfoListAddress } from './info.type';
+import { InfoTypeEnums } from '@components/UI/molecules/info/info.enum';
+import { InfoSlice } from './info.type';
 
-/* Enums */
 import { LoadingStatus, ReducerType } from '../../../store.enum';
 import { InfoActions } from './info.enum';
-import { InfoTypeStyle } from '../../../../components/info/info.enum';
 
 import { getListAddressThunk } from './info.thunk';
 
 const initialState: InfoSlice = {
 	loading: { status: LoadingStatus.idle, error: undefined },
-	listType: InfoTypeStyle.B,
+	listType: InfoTypeEnums.categories,
 	listAddress: [],
 	activeButton: 0,
 };
@@ -30,7 +27,7 @@ export const infoSlice = createSlice({
 		},
 		[InfoActions.setListType]: (
 			state,
-			action: PayloadAction<InfoTypeStyle>
+			action: PayloadAction<InfoTypeEnums>
 		) => {
 			state.listType = action.payload;
 		},

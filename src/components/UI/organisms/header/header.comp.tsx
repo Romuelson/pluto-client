@@ -6,6 +6,8 @@ import useLogos from '@hooks/components/logos/use.logos';
 import { useSingleMediaQuery } from '@hooks/utils/single-media-query/use.single-media-query';
 
 import Hamburger from '@components/UI/molecules/hamburger/hamburger.comp';
+import Info from '@components/UI/molecules/info/info.comp';
+import { InfoTypeEnums } from '@components/UI/molecules/info/info.enum';
 
 import Menu from '../menu/menu.comp';
 import Sidebar from '../sidebar/sidebar.comp';
@@ -21,30 +23,33 @@ function Header() {
 		isMaxSwitchLow,
 		isMaxSwitchMedium,
 		isMinMedium,
+		isUnionSwitchLow,
 		isUnionSwitchMedium,
 	} = useSingleMediaQuery();
-
-	/* minWidth: 640, maxWidth: 1155.98 */
-	const isHamburger = !isMaxSwitchLow && isMaxSwitchMedium;
-
-	/* minWidth: 1156, maxWidth: 1365.98 */
-	// const isSidebar = isMaxSwitchMedium && isMaxMedium;
 
 	return (
 		<header className="header">
 			<nav className="header__navigation">
+				{!isMinMedium || <Info />}
+
 				<Brand />
 
-				{isHamburger || <Hamburger className="header__hamburger" />}
-				<Menu children={isHamburger ? Hamburger : undefined} />
+				{/* maxWidth: 640, (min-width: 1156, maxWidth: 1365.98 */}
+				{(!isMaxSwitchLow && !isUnionSwitchMedium) || (
+					<Hamburger className="header__hamburger" />
+				)}
 
+				{/* min-width: 640, maxWidth: 1155.98 */}
+				<Menu children={isUnionSwitchLow ? Hamburger : undefined} />
 				{!isMinMedium || <Categories className="header__categories" />}
 			</nav>
 
 			{/* maxWidth: 1155.98 */}
 			{!isMaxSwitchMedium || (
 				<Sidebar className="header__sidebar">
-					<Categories view={CategoriesViewEnum.sidebar} />
+					<Categories view={CategoriesViewEnum.sidebar}>
+						<Info type={InfoTypeEnums.categories} />
+					</Categories>
 				</Sidebar>
 			)}
 
@@ -52,9 +57,11 @@ function Header() {
 			{!isUnionSwitchMedium || (
 				<Sidebar
 					className="header__sidebar"
-					position={SidebarPositionEnum.left}
+					position={SidebarPositionEnum.top}
 				>
-					<Categories view={CategoriesViewEnum.sidebar} />
+					<Categories view={CategoriesViewEnum.sidebar}>
+						<Info type={InfoTypeEnums.categories} />
+					</Categories>
 				</Sidebar>
 			)}
 		</header>

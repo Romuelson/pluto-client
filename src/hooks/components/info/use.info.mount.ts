@@ -1,21 +1,18 @@
-/* Modules */
 import { useEffect } from 'react';
 
-/* Thunks */
+import { InfoTypeEnums } from '@components/UI/molecules/info/info.enum';
+
 import { getListAddressThunk } from '../../../store/slices/components/info/info.thunk';
 
-/* Hooks */
 import { useAppDispatch } from '../../store/redux/use.redux';
 
-/* Enums */
 import { InfoTypeStyle } from '../../../components/info/info.enum';
 import { setListType } from '../../../store/slices/components/info/info.slice';
 
-/* Selectors */
 import { useInfoSelector } from './use.info.selector';
 import { LoadingStatus } from '../../../store/store.enum';
 
-export const useInfoMount = (type?: InfoTypeStyle) => {
+export const useInfoMount = (type: InfoTypeEnums) => {
 	const { loading } = useInfoSelector();
 	const dispath = useAppDispatch();
 
@@ -24,8 +21,6 @@ export const useInfoMount = (type?: InfoTypeStyle) => {
 			dispath(getListAddressThunk());
 		}
 
-		if (type) {
-			dispath(setListType(type));
-		}
+		dispath(setListType(type));
 	}, [dispath, loading.status, type]);
 };

@@ -1,3 +1,25 @@
+/* Top */
+
+.sidebar--position-top {
+	justify-content: flex-end;
+}
+
+.sidebar-enter.sidebar--position-top .sidebar__window {
+	transform: translateY(-100%);
+}
+
+.sidebar-enter-active.sidebar--position-top .sidebar__window {
+	transform: translateY(0);
+}
+
+.sidebar-exit.sidebar--position-top .sidebar__window {
+	transform: translateY(0);
+}
+
+.sidebar-exit-active.sidebar--position-top .sidebar__window {
+	transform: translateY(-100%);
+}
+
 /* Right */
 
 .sidebar--position-right {
