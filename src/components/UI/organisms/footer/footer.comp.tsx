@@ -1,20 +1,21 @@
 import './styles/index.scss';
 
-import useLogos from '@hooks/components/logos/use.logos';
-
-import Categories from '../categories/categories.comp';
+import Legal from '@components/UI/molecules/legal/legal.comp';
+import FooterInfo from './elements/footer-info/footer-info.comp';
+import FooterLogo from './elements/footer-logo/footer-logo.comp';
+import FooterSocial from './elements/footer-social/footer-social.comp';
+import FooterCategories from './elements/footer-categories/footer-categories.comp';
 
 import { FooterProps } from './footer.type';
-import { CategoriesViewEnum } from '../categories/categories.enum';
 
 function Footer(props: FooterProps) {
-	const { Brand } = useLogos();
-
 	return (
 		<div className="footer">
-			<Brand />
-
-			<Categories view={CategoriesViewEnum.sidebar} />
+			<FooterLogo />
+			<FooterCategories />
+			<FooterSocial />
+			<FooterInfo />
+			<Legal className="footer__legal" />
 		</div>
 	);
 }

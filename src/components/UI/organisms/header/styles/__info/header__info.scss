@@ -1,0 +1,16 @@
+@media (max-width: 1365.98px) {
+	.header__info .info__item {
+		display: block;
+		padding-bottom: 40px;
+	}
+}
+
+@media (min-width: 1366px) {
+	.header__info .info__item {
+		display: inline-block;
+	}
+
+	.header__info .info__item:not(:first-child) {
+		padding-left: 8px;
+	}
+}

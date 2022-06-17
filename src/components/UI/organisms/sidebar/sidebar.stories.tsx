@@ -1,6 +1,9 @@
 /* Modules */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Provider } from 'react-redux';
+
 import { MemoryRouter } from 'react-router-dom';
+import { store } from '@store/store';
 
 import Sidebar from './sidebar.comp';
 
@@ -9,9 +12,11 @@ export default {
 	component: Sidebar,
 	decorators: [
 		(Story) => (
-			<MemoryRouter>
-				<Story />
-			</MemoryRouter>
+			<Provider store={store}>
+				<MemoryRouter>
+					<Story />
+				</MemoryRouter>
+			</Provider>
 		),
 	],
 } as ComponentMeta<typeof Sidebar>;

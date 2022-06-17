@@ -37,7 +37,7 @@ function Link(props: LinkProps) {
 
 	const Tag = setTag();
 
-	const defaultProps = [linkDecoration, linkColor];
+	const defaultProps = ['link', linkDecoration, linkColor];
 	const setClassName = otherPropsToString(
 		otherProps,
 		defaultProps,

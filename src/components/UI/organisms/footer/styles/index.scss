@@ -1,3 +1,7 @@
 @use '../../../../../assets/styles/forwarded' as *;
 
 @import './footer';
+@import './__info/footer__info';
+@import './__social/footer__social';
+@import './__categories/footer__categories';
+@import './__legal/footer__legal';

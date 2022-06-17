@@ -7,6 +7,7 @@ import { store } from '@store/store';
 import { infoRouter } from '@mocks/components/info/info.router';
 
 import Footer from './footer.comp';
+import { categoriesRouter } from '../categories/mocks/categories.router';
 
 export default {
 	title: 'Components/Organisms/Footer',
@@ -31,6 +32,6 @@ Playground.args = {};
 Playground.parameters = {
 	layout: 'fullscreen',
 	msw: {
-		handlers: infoRouter,
+		handlers: [infoRouter, categoriesRouter],
 	},
 };

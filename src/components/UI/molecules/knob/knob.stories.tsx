@@ -7,7 +7,7 @@ import { MemoryRouter } from 'react-router-dom';
 import useKnob from '@hooks/components/knob/use.knob';
 
 /* Components */
-import useIcons from '@src/hooks/components/icons/use.icons';
+import useIcons from '@hooks/components/icons/use.icons';
 import Knob from './knob.comp';
 
 export default {
@@ -32,5 +32,4 @@ export const Playground = Template.bind({});
 Playground.args = {
 	Icon: Search,
 	children: 'Поиск',
-	to: '/',
 };

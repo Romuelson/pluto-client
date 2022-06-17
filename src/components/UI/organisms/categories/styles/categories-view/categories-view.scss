@@ -1,38 +1,36 @@
-// .categories--sidebar {
-
-// }
-
-// .categories--navigation {
-
-// }
+/* Не очень хорошо подобрал имена классов, в ходе рефакторинга классы стали использоватся снаружи предполагаемой области */
+/* sidebar => column, navigation => row */
 
 .categories--sidebar .categories__list {
-	display: block;
-	width: 320px;
-
 	background-color: $color-white;
 }
 
 .categories--sidebar .categories__item {
-	padding-left: 20px;
-
 	line-height: 0;
 }
 
-@media (max-width: 1155.98px) {
-	.categories--sidebar .categories__item {
-		padding-left: 20px;
-	}
-}
+// @media (max-width: 1155.98px) {
+// 	.categories--sidebar .categories__item {
+// 		padding-left: 20px;
+// 	}
+// }
 
-@media (min-width: 1156px) {
+// @media (min-width: 1156px) {
+// 	.categories--sidebar .categories__item {
+// 		padding-left: 16px;
+// 	}
+// }
+
+@media (max-width: 1210.98px) {
 	.categories--sidebar .categories__item {
-		padding-left: 16px;
+		border-top: 1px solid $color-timber;
+	}
+
+	.categories--sidebar .categories__item:last-child {
+		border-bottom: 1px solid $color-timber;
 	}
 }
 
 .categories--navigation .categories__list {
-	display: flex;
-
 	justify-content: space-between;
 }

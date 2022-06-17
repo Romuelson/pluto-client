@@ -1,3 +1,26 @@
+.header__categories {
+	min-width: 320px;
+}
+
+@media (max-width: 1155.98px) {
+	.header__categories .categories__item {
+		padding-left: 20px;
+	}
+}
+
+@media (min-width: 1156px) and (max-width: 1365.98px) {
+	.header__categories .categories__item {
+		padding-left: 16px;
+	}
+}
+
+@media (max-width: 1210.98px) {
+	.header__categories .categories__list {
+		padding-top: 10px;
+		padding-bottom: 18px;
+	}
+}
+
 @media (min-width: 1366px) {
 	.header__categories.categories--navigation {
 		grid-column: 1 / 4;

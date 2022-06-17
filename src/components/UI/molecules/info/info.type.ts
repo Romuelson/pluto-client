@@ -3,6 +3,7 @@ import { InfoTypeEnums } from './info.enum';
 
 export type InfoProps = {
 	type?: InfoTypeEnums;
+	className?: string;
 };
 
 export type InfoListProps = {

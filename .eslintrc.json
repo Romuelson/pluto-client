@@ -42,6 +42,7 @@
 		"no-console": "off",
 		"no-restricted-exports": "off",
 		"class-methods-use-this": "off",
+		"react/no-children-prop": "off",
 		"react/react-in-jsx-scope": "off",
 		"react/require-default-props": "off",
 		"react/jsx-props-no-spreading": "off",

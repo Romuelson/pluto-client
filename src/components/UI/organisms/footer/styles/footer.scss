@@ -1,6 +1,31 @@
 .footer {
-	display: flex;
-
 	flex-direction: column;
+	justify-content: center;
 	align-items: center;
+}
+
+.footer__logo {
+	justify-self: center;
+	grid-column: 1 / 5;
+	width: min-content;
+}
+
+@media (max-width: 639.98px) {
+	.footer {
+		display: flex;
+
+		padding-top: 20px;
+	}
+}
+
+@media (min-width: 640px) {
+	.footer {
+		display: grid;
+
+		grid-template-columns: 1fr min-content 434px 1fr;
+
+		padding-top: 40px;
+
+		border-top: 1px solid $color-timber;
+	}
 }

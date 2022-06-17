@@ -16,21 +16,21 @@ function withSVG<T>(Component: ComponentType<T>, icon: BrowserSpriteSymbol) {
 	const { id, viewBox } = icon;
 
 	function WithSVG(props: ComponentProps) {
-		const { children, className, ...otherProps } = props;
+		// const { children, className, ...otherProps } = props;
 
-		const setClassName = otherPropsToString(
-			otherProps,
-			undefined,
-			className
-		);
+		// const setClassName = otherPropsToString(
+		// 	otherProps,
+		// 	undefined,
+		// 	className
+		// );
 
 		return (
 			<Component
 				{...props}
 				glyph={id}
 				viewBox={viewBox}
-				className={setClassName}
-				children={children}
+				// className={setClassName}
+				// children={children}
 			/>
 		);
 	}

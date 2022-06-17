@@ -9,7 +9,9 @@ import { InfoTypeEnums } from './info.enum';
 import InfoList from './elements/info-list/info-list.comp';
 import InfoAddress from './elements/info-address/info-address.comp';
 
-function Info({ type = InfoTypeEnums.navigation }: InfoProps) {
+function Info(props: InfoProps) {
+	const { className, type = InfoTypeEnums.navigation } = props;
+
 	useInfoMount(type);
 
 	const { currentAddress } = useInfoSelector();
@@ -32,7 +34,7 @@ function Info({ type = InfoTypeEnums.navigation }: InfoProps) {
 		}
 	};
 
-	return <div className="navigation__info info">{defineType()}</div>;
+	return <div className={[className, 'info'].join(' ')}>{defineType()}</div>;
 }
 
 export default Info;

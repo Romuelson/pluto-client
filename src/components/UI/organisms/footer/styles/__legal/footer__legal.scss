@@ -1,0 +1,39 @@
+@media (max-width: 639.98px) {
+	.footer__legal {
+		padding-top: 8px;
+		padding-bottom: 32px;
+		text-align: center;
+	}
+
+	.footer__legal .text {
+		line-height: 32px;
+	}
+}
+
+@media (min-width: 640px) {
+	.footer__legal {
+		grid-column: 1 / 5;
+
+		margin-top: 40px;
+
+		border-top: 1px solid $color-timber;
+	}
+
+	.footer__legal .legal__container {
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+	}
+
+	.footer__legal .text {
+		line-height: 40px;
+	}
+}
+
+@media (min-width: 1188px) {
+	.footer__legal .legal__container {
+		width: min-content;
+		min-width: 1156px;
+		// padding: 0 16px;
+	}
+}

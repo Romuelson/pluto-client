@@ -1,0 +1,24 @@
+.footer__categories .categories__list {
+	text-align: center;
+}
+
+@media (max-width: 639.98px) {
+	.footer__categories {
+		width: 100%;
+	}
+
+	.footer__categories .categories__list {
+		padding-top: 10px;
+		padding-bottom: 18px;
+	}
+}
+
+@media (min-width: 640px) {
+	.footer__categories {
+		justify-self: center;
+		grid-column: 1 / 5;
+
+		width: min-content;
+		min-width: 585px;
+	}
+}

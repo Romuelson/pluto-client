@@ -36,6 +36,7 @@ export const enum TextLineHeightEnum {
 	M = 'text-line-height--m',
 	ML = 'text-line-height--ml',
 	L = 'text-line-height--l',
+	LX = 'text-line-height--lx',
 	LXL = 'text-line-height--lxl',
 }
 
