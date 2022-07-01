@@ -1,0 +1,26 @@
+// .tab {}
+
+// .tab__link {}
+
+.tab__link--active .tab__text {
+	color: $color-black;
+}
+
+.tab .tab__text {
+	position: relative;
+}
+
+.tab__link:not(.tab__link--active) .tab__text {
+	color: $color-tooltip;
+
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.18s;
+}
+
+.tab__link:not(.tab__link--active) .tab__text:hover {
+	color: $color-black;
+
+	border-color: $color-hover;
+}
+
+// .tab__text {}

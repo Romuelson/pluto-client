@@ -1,0 +1,12 @@
+// .tabs {}
+
+.tabs__tablist {
+	position: relative;
+
+	display: flex;
+	width: 320px;
+}
+
+.tabs__tab {
+	flex-grow: 1;
+}

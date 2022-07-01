@@ -1,7 +1,7 @@
 import * as TextEnum from './text.enum';
 
 export type TextProps = {
-	children: string;
+	children?: string;
 	className?: string;
 	as?: TextEnum.TextAsEnum;
 	display?: TextEnum.TextDisplayEnum;

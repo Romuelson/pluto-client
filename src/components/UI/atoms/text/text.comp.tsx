@@ -6,7 +6,12 @@ import { TextProps } from './text.type';
 import { TextAsEnum } from './text.enum';
 
 function Text(props: TextProps) {
-	const { children, as = TextAsEnum.div, className, ...otherProps } = props;
+	const {
+		children = 'default',
+		as = TextAsEnum.div,
+		className,
+		...otherProps
+	} = props;
 
 	const Tag = as;
 

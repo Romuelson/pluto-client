@@ -1,0 +1,10 @@
+.promo {
+	display: block;
+}
+
+@media (min-width: 1920px) {
+	.swiper-slide > .text {
+		width: min-content;
+		min-width: 307px;
+	}
+}

@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+
 /* Styles */
 import './styles/index.scss';
 
@@ -15,49 +17,50 @@ function Link(props: LinkProps) {
 	const {
 		children,
 		as,
-		to,
+		to = '#!',
 		className,
 		linkDecoration = LinkDecoration.none,
 		linkColor = LinkColor.inherit,
 		...otherProps
 	} = props;
 
-	const setTag = () => {
-		switch (as) {
-			case LinkAsEnum.a:
-				return LinkAsEnum.a;
-			case LinkAsEnum.Link:
-				return RouterLink;
-			case LinkAsEnum.NavLink:
-				return NavLink;
-			default:
-				return LinkAsEnum.a;
-		}
-	};
-
-	const Tag = setTag();
-
 	const defaultProps = ['link', linkDecoration, linkColor];
-	const setClassName = otherPropsToString(
-		otherProps,
-		defaultProps,
-		className
-	);
+	const setClassName = (activeClassName?: string) =>
+		otherPropsToString(
+			otherProps,
+			defaultProps,
+			className,
+			activeClassName
+		);
 
 	const setContent = () => {
-		if (Tag === LinkAsEnum.a) {
-			return (
-				<Tag href={to} className={setClassName}>
-					{children}
-				</Tag>
-			);
+		switch (as) {
+			case LinkAsEnum.Link:
+				return (
+					<RouterLink to={to} className={setClassName()}>
+						{children}
+					</RouterLink>
+				);
+			case LinkAsEnum.NavLink:
+				return (
+					<NavLink
+						to={to}
+						className={(isActive) => {
+							if (typeof className === 'function') {
+								return setClassName(className(isActive));
+							}
+						}}
+					>
+						{children}
+					</NavLink>
+				);
+			default:
+				return (
+					<LinkAsEnum.a href={to} className={setClassName()}>
+						{children}
+					</LinkAsEnum.a>
+				);
 		}
-
-		return (
-			<Tag to={to} className={setClassName}>
-				{children}
-			</Tag>
-		);
 	};
 
 	return setContent();

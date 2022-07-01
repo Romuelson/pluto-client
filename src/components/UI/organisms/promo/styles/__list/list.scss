@@ -1,0 +1,71 @@
+@media (min-width: 580px) {
+	.promo__list {
+		display: grid;
+
+		grid-template-rows: 1fr 1fr;
+
+		height: min-content;
+		min-height: calc(12.9851vw + 390.686px);
+	}
+}
+
+@media (min-width: 580px) and (max-width: 1365.98px) {
+	.promo__list {
+		grid-template-columns: calc(77.3537vw + (-88.6509px)) 1fr;
+		gap: 1px;
+	}
+}
+
+@media (min-width: 1366px) {
+	.promo__list {
+		grid-template-columns: calc(18.4116vw + 716.498px) 1fr;
+	}
+}
+
+@media (min-width: 1366px) and (max-width: 1642.98px) {
+	.promo__list {
+		gap: 2px;
+	}
+}
+
+@media (min-width: 1643px) and (max-width: 1919.98px) {
+	.promo__list {
+		gap: 5px;
+	}
+}
+
+@media (min-width: 1920px) {
+	.promo__list {
+		gap: 10px;
+	}
+
+	.promo__list .swiper {
+		height: 100%;
+	}
+
+	.promo__list .swiper-slide {
+		display: flex;
+
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		gap: 14px;
+
+		background-color: $color-carousel;
+	}
+
+	.promo__list .swiper-pagination-bullet {
+		background-color: $color-tooltip;
+		opacity: 1;
+	}
+
+	.promo__list .swiper-pagination-bullet-active {
+		background-color: $color-black;
+	}
+
+	.promo__list .swiper-button-prev,
+	.promo__list .swiper-button-next {
+		color: $color-tooltip;
+	}
+}

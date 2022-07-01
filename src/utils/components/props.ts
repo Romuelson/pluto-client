@@ -1,12 +1,17 @@
 export const otherPropsToString = (
 	otherProps?: object,
 	defaultProps?: string[],
-	className?: string
+	className?: string | ((props: { isActive: boolean }) => string | undefined),
+	activeClassName?: string
 ): string => {
 	const initialArray = [];
 
-	if (className) {
+	if (typeof className === 'string') {
 		initialArray.push(className);
+	}
+
+	if (activeClassName) {
+		initialArray.push(activeClassName);
 	}
 
 	if (defaultProps) {

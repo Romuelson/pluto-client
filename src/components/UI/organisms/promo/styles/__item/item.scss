@@ -1,0 +1,99 @@
+/* stylelint-disable value-no-vendor-prefix */
+
+.promo__item {
+	background-size: cover;
+}
+
+.promo__item:nth-child(1) {
+	justify-content: center;
+	align-items: center;
+}
+
+.promo__item:nth-child(2),
+.promo__item:nth-child(3) {
+	justify-content: end;
+	align-items: flex-start;
+}
+
+@media (max-width: 579.98px) {
+	.promo__item {
+		aspect-ratio: 1 / 0.875;
+	}
+
+	.promo__item:not(:last-child) {
+		margin-bottom: 1px;
+	}
+}
+
+@media (min-width: 580px) {
+	.promo__item:nth-child(1) {
+		grid-column: 1 / 2;
+		grid-row: 1 / 3;
+	}
+
+	.promo__item:nth-child(2),
+	.promo__item:nth-child(3) {
+		grid-column: 2 / 3;
+	}
+}
+
+@media (max-width: 1919.98px) {
+	.promo__item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.promo__item:nth-child(1) {
+		padding-right: 28px;
+		padding-left: 28px;
+
+		background-image: -webkit-image-set(
+			url('../../../../../../public/assets/images/mobile/promo/promo-wom/promo-wom.jpg')
+				1x
+		);
+		background-image: image-set(
+			url('../../../../../../public/assets/images/mobile/promo/promo-wom/promo-wom.webp')
+				type('image/wepb') 1x,
+			url('../../../../../../public/assets/images/mobile/promo/promo-wom/promo-wom.jpg')
+				1x
+		);
+	}
+
+	.promo__item:not(:first-child) {
+		padding-bottom: 20px;
+		padding-left: 20px;
+	}
+
+	.promo__item:nth-child(2) {
+		background-image: -webkit-image-set(
+			url('../../../../../../public/assets/images/mobile/promo/promo-men/promo-men.jpg')
+				1x
+		);
+		background-image: image-set(
+			url('../../../../../../public/assets/images/mobile/promo/promo-men/promo-men.webp')
+				type('image/wepb') 1x,
+			url('../../../../../../public/assets/images/mobile/promo/promo-men/promo-men.jpg')
+				1x
+		);
+	}
+
+	.promo__item:nth-child(3) {
+		background-image: -webkit-image-set(
+			url('../../../../../../public/assets/images/mobile/promo/promo-tec/promo-tec.jpg')
+				1x
+		);
+		background-image: image-set(
+			url('../../../../../../public/assets/images/mobile/promo/promo-tec/promo-tec.webp')
+				type('image/wepb') 1x,
+			url('../../../../../../public/assets/images/mobile/promo/promo-tec/promo-tec.jpg')
+				1x
+		);
+	}
+}
+
+@media (min-width: 1920px) {
+	.promo__item {
+		position: relative;
+		background-color: $color-carousel;
+	}
+}

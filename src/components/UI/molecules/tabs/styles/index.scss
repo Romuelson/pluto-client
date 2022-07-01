@@ -1,0 +1,9 @@
+@use '../../../../../assets/styles/forwarded' as *;
+
+@import './tabs-line/tabs-line';
+@import './tabs-direction/tabs-direction';
+
+@import './tabs';
+@import './tab/tabs__tab';
+@import './tablist/tabs__tablist';
+@import './mark/tab__mark';
