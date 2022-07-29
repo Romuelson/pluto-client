@@ -12,4 +12,13 @@ function CarouselList({ data, views }: CarouselListProps) {
 	));
 }
 
+// function CarouselList({ data, views }: CarouselListProps) {
+// 	const CarouselListContext = (item: CarouselObject) =>
+// 		CarouselListDefault(item);
+
+// 	return data.map((item) => (
+// 		<SwiperSlide key={item.id}>{CarouselListContext(item)}</SwiperSlide>
+// 	));
+// }
+
 export default CarouselList;

@@ -1,7 +1,8 @@
+import './styles/index.scss';
+
 import Tabs from '@components/UI/molecules/tabs/tabs.comp';
 
-import PersonalRoute from '@routes/personal/personal.route';
-
+import PersonalRoute from './routes/personal.route';
 import { personalMock } from './mocks/personal.mock';
 
 function Personal() {

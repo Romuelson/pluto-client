@@ -3,6 +3,9 @@
 
 	align-items: center;
 	gap: 10px;
+
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.15s;
 }
 
 .button:hover > svg {

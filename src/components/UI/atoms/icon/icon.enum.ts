@@ -11,3 +11,8 @@ export const enum IconColorEnum {
 	Gold = 'icon-color--gold',
 	Valencia = 'icon-color--valencia',
 }
+
+export const enum IconCursorEnum {
+	default = 'icon-cursor--default',
+	pointer = 'icon-cursor--pointer',
+}

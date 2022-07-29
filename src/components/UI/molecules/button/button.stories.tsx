@@ -1,7 +1,8 @@
-/* Modules */
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-/* Components */
+import Text from '@components/UI/atoms/text/text.comp';
+import { TextAsEnum, TextSizeEnum } from '@components/UI/atoms/text/text.enum';
+
 import Button from './button.comp';
 import * as ButtonEnum from './button.enum';
 
@@ -10,7 +11,13 @@ export default {
 	component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+	<Button {...args}>
+		<Text as={TextAsEnum.span} size={TextSizeEnum.XXS}>
+			Пример
+		</Text>
+	</Button>
+);
 
 export const Playground = Template.bind({});
 

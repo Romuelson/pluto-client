@@ -9,6 +9,7 @@ import heart from '@icons/svg/heart.svg';
 import heartFull from '@icons/svg/heart-full.svg';
 import shop from '@icons/svg/shop.svg';
 import inbox from '@icons/svg/inbox.svg';
+import ellipse from '@icons/svg/ellipse.svg';
 
 import withSVG from '@hocs/svg/with.svg';
 import Icon from '@components/UI/atoms/icon/icon.comp';
@@ -26,6 +27,7 @@ const useIcons = () => {
 		HeartFull: withSVG(Icon, heartFull),
 		Shop: withSVG(Icon, shop),
 		Inbox: withSVG(Icon, inbox),
+		Ellipse: withSVG(Icon, ellipse),
 	};
 
 	return collections;

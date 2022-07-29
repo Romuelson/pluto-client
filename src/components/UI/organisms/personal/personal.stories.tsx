@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 
 import { store } from '@store/store';
-import { infoRouter } from '@mocks/components/info/info.router';
+
+import { cardRouter } from '@components/UI/molecules/card/mocks/card.router';
 
 import Personal from './personal.comp';
 
@@ -31,6 +32,6 @@ Playground.args = {};
 Playground.parameters = {
 	layout: 'fullscreen',
 	msw: {
-		handlers: [],
+		handlers: cardRouter,
 	},
 };

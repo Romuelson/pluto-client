@@ -1,15 +1,12 @@
-/* eslint-disable import/no-cycle */
-
-/* Modules */
 import { configureStore } from '@reduxjs/toolkit';
+import { enableMapSet } from 'immer';
 
-/* Services */
-import { createAxiosAPI } from '../services/api/axios/axios.api';
-
-/* Reducers */
+import { createAxiosAPI } from '@services/api/axios/axios.api';
 import { rootReducer } from './reducers/root/root.reducer';
 
 const api = createAxiosAPI();
+
+enableMapSet();
 
 export const createStore = (initialState = {}) => {
 	return configureStore({
@@ -20,6 +17,7 @@ export const createStore = (initialState = {}) => {
 				thunk: {
 					extraArgument: api,
 				},
+				serializableCheck: false,
 			}),
 	});
 };

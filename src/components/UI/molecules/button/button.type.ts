@@ -5,4 +5,6 @@ export type ButtonProps = {
 	className?: string;
 	view?: ButtonEnum.ButtonViewEnum;
 	size?: ButtonEnum.ButtonSizeEnum;
+	cursor?: ButtonEnum.ButtonCursorEnum;
+	clickHandler?: () => void;
 };

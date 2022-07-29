@@ -12,6 +12,7 @@ export type BrowserSpriteSymbol = {
 export type BrowserSVG = {
 	size?: IconEnum.IconSizeEnum | LogoSizeEnum;
 	color?: IconEnum.IconColorEnum;
+	cursor?: IconEnum.IconCursorEnum;
 	glyph?: string;
 	className?: string;
 };

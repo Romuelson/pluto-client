@@ -1,3 +1,5 @@
+import { ELabelSections } from '@components/UI/molecules/card/mocks/card.mock.enum';
+
 export type PersonalItem = {
 	id: string;
 	title: string;
@@ -5,3 +7,9 @@ export type PersonalItem = {
 };
 
 export type PersonalData = PersonalItem[];
+
+// ---
+
+export type PresonalSectionProps = {
+	type: ELabelSections;
+};

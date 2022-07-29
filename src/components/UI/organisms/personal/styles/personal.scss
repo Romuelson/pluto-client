@@ -1,0 +1,75 @@
+.personal__section {
+	// width: fn-linear(320, 1196);
+	// height: fn-linear(398, 531);
+
+	margin-top: 20px;
+
+	overflow: hidden;
+}
+
+// tabs
+
+.personal__tabs {
+	width: fn-linear(320, 333);
+
+	margin: 0 auto;
+}
+
+.personal__tabs .tabs__tablist {
+	width: 100%;
+}
+
+// swiper
+
+.personal__section .swiper {
+	min-width: 368px;
+
+	max-width: 1056px;
+	max-height: 531px;
+}
+
+@media (max-width: 1055.98px) {
+	.personal__section .swiper {
+		margin-right: 16px;
+		margin-left: 16px;
+	}
+}
+
+@media (min-width: 1056px) and (max-width: 1119.98px) {
+	.personal__section .swiper {
+		margin-right: 32px;
+		margin-left: 32px;
+	}
+}
+
+@media (min-width: 1120px) {
+	.personal__section .swiper {
+		margin: 0 auto;
+	}
+}
+
+.personal__section .swiper-slide {
+	// min-width: 184px;
+}
+
+.personal__section .swiper-button-prev,
+.personal__section .swiper-button-next {
+	width: 38px;
+	height: 54px;
+
+	background-color: $color-smoky;
+}
+
+.personal__section .swiper-button-prev::after,
+.personal__section .swiper-button-next::after {
+	font-size: 17px;
+	color: $color-black;
+}
+
+.personal__section .swiper-button-prev-unique,
+.personal__section .swiper-button-next-unique {
+	width: 38px;
+	height: 54px;
+
+	background-color: $color-smoky;
+}

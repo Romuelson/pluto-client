@@ -6,6 +6,7 @@ export enum ReducerType {
 	favorite = 'favorite',
 	info = 'info',
 	categories = 'categories',
+	card = 'card',
 }
 
 export enum LoadingStatus {
@@ -13,6 +14,17 @@ export enum LoadingStatus {
 	loading = 'loading',
 	succeeded = 'succeeded',
 	failed = 'failed',
+}
+
+export enum LoadingActions {
+	setLoadingStatus = 'setLoadingStatus',
+	setLoadingError = 'setLoadingError',
+}
+
+export enum ReduxStatus {
+	pending = 'pending',
+	fulfilled = 'fulfilled',
+	rejected = 'rejected',
 }
 
 export enum ActionType {

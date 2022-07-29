@@ -26,8 +26,9 @@ export const categoriesSlice = createSlice({
 	reducers: {},
 	extraReducers: (builder) => {
 		builder
-			.addCase(getHeaderDataThunk.pending, (state) => {
+			.addCase(getHeaderDataThunk.pending, (state, action) => {
 				state.responce.header.loading.status = LoadingStatus.loading;
+				// action.type = ... enum
 			})
 			.addCase(getHeaderDataThunk.fulfilled, (state, action) => {
 				state.responce.header.data = action.payload.data;

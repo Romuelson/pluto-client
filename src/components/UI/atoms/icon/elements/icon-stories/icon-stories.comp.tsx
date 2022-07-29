@@ -18,6 +18,7 @@ function IconStories(props: BrowserSVG) {
 			<Icons.HeartFull {...props} />
 			<Icons.Shop {...props} />
 			<Icons.Inbox {...props} />
+			<Icons.Ellipse {...props} />
 		</div>
 	);
 }

@@ -1,0 +1,40 @@
+.card {
+	position: relative;
+
+	// width: 100%;
+}
+
+.card img {
+	min-width: 100%;
+}
+
+.card__icon {
+	position: absolute;
+
+	top: 20px;
+	right: 20px;
+}
+
+.card__control {
+	display: flex;
+	gap: 6px;
+}
+
+.card__button {
+	flex-grow: 1;
+	justify-content: center;
+}
+
+.card__color {
+	display: flex;
+
+	align-items: center;
+	gap: 6px;
+
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.card__svg {
+	cursor: pointer;
+}

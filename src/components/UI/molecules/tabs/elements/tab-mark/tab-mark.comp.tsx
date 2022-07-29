@@ -5,7 +5,7 @@ import { SwitchTransition, Transition } from 'react-transition-group';
 import { TabMarkProps } from '../../tabs.type';
 
 function TabMark({ activeWidth, offset }: TabMarkProps) {
-	const duration = 350;
+	const duration = 300;
 
 	const [prevOffset, setPrevOffset] = useState(offset);
 	const [prevActiveWidth, setPrevActiveWidth] = useState(activeWidth);

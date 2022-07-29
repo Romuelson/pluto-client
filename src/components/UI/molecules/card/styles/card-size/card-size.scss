@@ -1,0 +1,24 @@
+// 184px (320vw)
+.card-size--s {
+	width: 100%;
+	// width: 57.5vw;
+	// min-width: 184px;
+}
+
+// 240px (1366vw)
+.card-size--m {
+	width: 17.5vw;
+	min-width: 240px;
+}
+
+// 288px (320vw)
+.card-size--l {
+	width: 90vw;
+	min-width: 288px;
+}
+
+// 370px (1366vw)
+.card-size--xl {
+	width: 27vw;
+	min-width: 370px;
+}

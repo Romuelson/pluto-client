@@ -1,9 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
-/* Components */
 import PersonalSection from '../../components/personal/elements/personal-section/personal-section.comp';
 
-/* Enums */
 import { PersonalRouteApp } from './personal.enum';
 import { ELabelSections } from '../../types/data/product-card/product-card.enum';
 
