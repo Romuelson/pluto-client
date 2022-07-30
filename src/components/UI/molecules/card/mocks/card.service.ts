@@ -7,10 +7,14 @@ import { cardMock } from './card.mock';
 const { getCardBras, getCardUnderpants } = cardMock();
 
 class CardService {
+	// getId({ id }: CardGetId) {
+	// 	return id.map((idCurrent) =>
+	// 		this.getAll({}).find((card) => card.id === idCurrent)
+	// 	);
+	// }
+
 	getId({ id }: CardGetId) {
-		return id.map((idCurrent) =>
-			this.getAll({}).find((card) => card.id === idCurrent)
-		);
+		return this.getAll({}).find((card) => card.id === id);
 	}
 
 	getAll({ limit }: CardGetAll) {

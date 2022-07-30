@@ -1,3 +1,4 @@
+import { nanoid } from '@reduxjs/toolkit';
 /* eslint-disable react-hooks/rules-of-hooks */
 
 import { useEffect } from 'react';
@@ -20,6 +21,7 @@ import { CardPropsDisplay, UseCardProps } from './card.type';
 import { IProductCard } from './mocks/card.mock.type';
 
 export const useCard = (props: UseCardProps) => {
+	console.log('useCard');
 	const { type, id, display } = props;
 
 	const dispatch = useAppDispatch();
@@ -45,11 +47,10 @@ export const useCard = (props: UseCardProps) => {
 		}
 	}, [dispatch, status, cards, type, id]);
 
-	console.log(display);
-
-	return useList<IProductCard, CardPropsDisplay>({
-		Component: withCard,
-		data: cards,
-		config: display,
-	});
+	// return useList<IProductCard, CardPropsDisplay>({
+	// 	Component: withCard,
+	// 	data: cards,
+	// 	config: display,
+	// });
+	return cards ? withCard({ children: cards, key: nanoid() }) : null;
 };

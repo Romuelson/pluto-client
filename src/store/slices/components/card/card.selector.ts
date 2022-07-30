@@ -4,15 +4,18 @@ import { LoadingStatus } from '@store/store.enum';
 import { ProductCardList } from '@components/UI/molecules/card/mocks/card.mock.type';
 import { ELabelSections } from '@components/UI/molecules/card/mocks/card.mock.enum';
 
-export const takeCard = (
-	state: AppStore,
-	type: ELabelSections,
-	id: string[]
-) => {
-	return id.map((currentId) =>
-		state.card.cards[type].data.find((card) => card.id === currentId)
-	);
-};
+// export const takeCard = (
+// 	state: AppStore,
+// 	type: ELabelSections,
+// 	id: string[]
+// ) => {
+// 	return id.map((currentId) =>
+// 		state.card.cards[type].data.find((card) => card.id === currentId)
+// 	);
+// };
+
+export const takeCard = (state: AppStore, type: ELabelSections, id: string) =>
+	state.card.cards[type].data.find((card) => card.id === id);
 
 export const takeCards = (
 	state: AppStore,

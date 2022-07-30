@@ -83,7 +83,8 @@ export interface IProductCard {
 // ---
 
 export type PayloadCardId = {
-	data: IProductCard[];
+	// data: IProductCard[];
+	data: IProductCard;
 };
 
 export type ProductCardList = IProductCard[];
@@ -100,7 +101,8 @@ export type ResponceCardList = {
 // ---
 
 export type CardGetId = {
-	id: string[];
+	// id: string[];
+	id: string;
 };
 
 export type CardGetAll = {
@@ -114,5 +116,6 @@ export type CardGetSection = {
 // ---
 
 export type CardPostREQBodyId = {
-	id: string[];
+	// id: string[];
+	id: string;
 };

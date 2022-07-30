@@ -49,12 +49,17 @@ export const cardSlice = createSlice({
 	},
 	extraReducers: (builder) => {
 		builder.addCase(getCardIdThunk.fulfilled, (state, action) => {
-			action.payload.data.forEach((card) => {
-				const type = card.properties.labelList.sections;
+			// action.payload.data.forEach((card) => {
+			// 	const type = card.properties.labelList.sections;
 
-				state.cards[type].data.push(card);
-				state.cards[type].loading.status = LoadingStatus.succeeded;
-			});
+			// 	state.cards[type].data.push(card);
+			// 	state.cards[type].loading.status = LoadingStatus.succeeded;
+			// });
+			const card = action.payload.data;
+			const type = card.properties.labelList.sections;
+
+			state.cards[type].data.push(card);
+			state.cards[type].loading.status = LoadingStatus.succeeded;
 		});
 
 		builder.addCase(getCardSectionThunk.fulfilled, (state, action) => {

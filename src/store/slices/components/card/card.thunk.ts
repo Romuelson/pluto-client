@@ -29,7 +29,7 @@ export const getCardIdThunk = createAsyncThunk<
 			.post(`${CardAPI.getCardId}`, {
 				[ECardServiceType.id]: id,
 			})
-			.then(({ data }: { data: IProductCard[] }) => ({ data }));
+			.then(({ data }: { data: IProductCard }) => ({ data }));
 	} catch (error) {
 		throw new Error(`Message: ${error}`);
 	}

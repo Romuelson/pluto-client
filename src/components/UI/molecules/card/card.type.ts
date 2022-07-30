@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { CardSizeEnum } from './card.enum';
 import { ELabelSections } from './mocks/card.mock.enum';
 
@@ -15,13 +16,23 @@ export type CardChildrenProp = {
 	colorList: CardColorList;
 };
 
+export type CardConfig = {
+	type: ELabelSections;
+	id: string[];
+	display: {
+		size: CardSizeEnum;
+	};
+};
+
 export type CardPropsDisplay = {
 	size?: CardSizeEnum;
+	// config?: CardConfig;
 };
 
 export type CardProps = CardPropsDisplay & {
 	className?: string;
-	children: CardChildrenProp;
+	// config: CardChildrenProp;
+	children: ReactNode;
 };
 
 // ---
@@ -63,7 +74,8 @@ export type UseCardType = {
 };
 
 export type UseCardProps = UseCardType & {
-	id: string[];
+	// id: string[];
+	id: string;
 };
 
 export type UseCardListProps = UseCardType;

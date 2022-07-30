@@ -6,7 +6,8 @@ import { ProductCardList } from '@components/UI/molecules/card/mocks/card.mock.t
 
 export type GetCardIdThunk = {
 	// type: ELabelSections;
-	id: string[];
+	// id: string[];
+	id: string;
 };
 
 export type GetCardAllThunk = {

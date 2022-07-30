@@ -20,6 +20,7 @@ import { IProductCard } from './mocks/card.mock.type';
 import withCard from './with.card';
 
 export const useCardList = (props: UseCardListProps) => {
+	console.log('useCardList');
 	const { type, display } = props;
 
 	const dispatch = useAppDispatch();
