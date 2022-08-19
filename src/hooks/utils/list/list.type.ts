@@ -1,10 +1,10 @@
-export type ComponentProps<T, K = undefined> = {
+export type ComponentProps<T, K> = {
 	children: T;
 	key: string;
-	display?: K;
+	config?: K;
 };
 
-export type UseListComponentProp<T, K = undefined> = (
+export type UseListComponentProp<T, K> = (
 	props: ComponentProps<T, K>
 ) => () => JSX.Element;
 

@@ -1,3 +1,4 @@
+import { CardPropsDisplay } from '@components/UI/molecules/card/card.type';
 import { ELabelSections } from '@components/UI/molecules/card/mocks/card.mock.enum';
 
 export type PersonalItem = {
@@ -12,4 +13,5 @@ export type PersonalData = PersonalItem[];
 
 export type PresonalSectionProps = {
 	type: ELabelSections;
+	display?: CardPropsDisplay;
 };

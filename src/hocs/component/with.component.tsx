@@ -1,10 +1,10 @@
 import { WithComponentArgs } from './component.type';
 
-function withComponent<T, K>(args: WithComponentArgs<T, K>) {
+function withComponent<T, K = undefined>(args: WithComponentArgs<T, K>) {
 	const { Component, children, key, config } = args;
 
 	function WithComponent() {
-		return Component({ children, key, ...config })();
+		return Component({ children, key, config })();
 	}
 
 	return WithComponent;

@@ -41,9 +41,11 @@ export type CardColorCurrent = {
 export type VendorList = {
 	id: string;
 	color: CardColorCurrent;
+	sections: ELabelSections;
 };
 
 export type CardColorList = {
+	activeColor: string;
 	current: CardColorCurrent;
 	vendorList: VendorList[];
 };
@@ -91,7 +93,7 @@ export type ProductCardList = IProductCard[];
 
 export type PayloadCardList = {
 	data: ProductCardList;
-	type: ELabelSections;
+	section: ELabelSections | string;
 };
 
 export type ResponceCardList = {

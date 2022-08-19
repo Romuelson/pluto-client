@@ -13,7 +13,7 @@ export type CarouselObject = {
 export type CarouselDataType = CarouselObject[];
 export type CarouselSlideType = React.VoidFunctionComponent<SwiperSlideProps>;
 
-export type CarouselDataProp = JSX.Element | null;
+export type CarouselDataProp = JSX.Element;
 
 export type CarouselProps = {
 	// data: CarouselDataType;

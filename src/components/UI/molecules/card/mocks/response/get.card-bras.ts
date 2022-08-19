@@ -67,6 +67,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Mint,
 					rgb: ECardColorRGB.Mint,
@@ -78,6 +79,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Pink,
 							rgb: ECardColorRGB.Pink,
 						},
+						sections: ELabelSections.novelties,
 					},
 				],
 			},
@@ -140,6 +142,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Pink,
 					rgb: ECardColorRGB.Pink,
@@ -151,6 +154,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Mint,
 							rgb: ECardColorRGB.Mint,
 						},
+						sections: ELabelSections.collections,
 					},
 				],
 			},
@@ -242,6 +246,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Zephyr,
 					rgb: ECardColorRGB.Zephyr,
@@ -253,6 +258,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Cherry,
 							rgb: ECardColorRGB.Cherry,
 						},
+						sections: ELabelSections.collections,
 					},
 					{
 						id: '7346e703-9d18-4f59-b925-6669389c65c3',
@@ -260,6 +266,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Blue,
 							rgb: ECardColorRGB.Blue,
 						},
+						sections: ELabelSections.sale,
 					},
 				],
 			},
@@ -335,6 +342,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Cherry,
 					rgb: ECardColorRGB.Cherry,
@@ -346,6 +354,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Zephyr,
 							rgb: ECardColorRGB.Zephyr,
 						},
+						sections: ELabelSections.novelties,
 					},
 					{
 						id: '7346e703-9d18-4f59-b925-6669389c65c3',
@@ -353,6 +362,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Blue,
 							rgb: ECardColorRGB.Blue,
 						},
+						sections: ELabelSections.sale,
 					},
 				],
 			},
@@ -424,6 +434,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Blue,
 					rgb: ECardColorRGB.Blue,
@@ -435,6 +446,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Zephyr,
 							rgb: ECardColorRGB.Zephyr,
 						},
+						sections: ELabelSections.novelties,
 					},
 					{
 						id: '8042b7c6-9e71-402b-aaff-fb92faef3a25',
@@ -442,6 +454,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Cherry,
 							rgb: ECardColorRGB.Cherry,
 						},
+						sections: ELabelSections.collections,
 					},
 				],
 			},
@@ -501,6 +514,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Black,
 					rgb: ECardColorRGB.Black,
@@ -512,6 +526,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.White,
 							rgb: ECardColorRGB.White,
 						},
+						sections: ELabelSections.novelties,
 					},
 				],
 			},
@@ -571,6 +586,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.White,
 					rgb: ECardColorRGB.White,
@@ -582,6 +598,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Black,
 							rgb: ECardColorRGB.Black,
 						},
+						sections: ELabelSections.collections,
 					},
 				],
 			},
@@ -649,6 +666,7 @@ export const getCardBras: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Black,
 					rgb: ECardColorRGB.Black,

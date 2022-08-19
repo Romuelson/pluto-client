@@ -1,56 +1,44 @@
-import { nanoid } from '@reduxjs/toolkit';
-/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import { useEffect } from 'react';
 
-import useList from '@hooks/utils/list/use.list';
-import { useAppDispatch, useAppSelector } from '@hooks/store/redux/use.redux';
+import { useCardDispatch } from './use.card.dispatch';
+import { useCardSelector } from './use.card.selector';
 
-import {
-	takeCard,
-	takeCardsStatus,
-} from '@store/slices/components/card/card.selector';
-
-import { LoadingStatus } from '@store/store.enum';
-import { getCardIdThunk } from '@store/slices/components/card/card.thunk';
-import { setLoadingStatus } from '@store/slices/components/card/card.slice';
+import { CardConfigCallback, UseCard } from './card.type';
 
 import withCard from './with.card';
 
-import { CardPropsDisplay, UseCardProps } from './card.type';
-import { IProductCard } from './mocks/card.mock.type';
+export const useCard = (props: UseCard) => {
+	const { id, section } = props;
 
-export const useCard = (props: UseCardProps) => {
-	console.log('useCard');
-	const { type, id, display } = props;
+	const dispatch = useCardDispatch();
+	const selector = useCardSelector();
 
-	const dispatch = useAppDispatch();
+	const activeId = selector.activeId({ id });
+	const activeSection = selector.activeSection({ id, section });
 
-	const cards = useAppSelector((state) => takeCard(state, type, id));
-	const status = useAppSelector((state) => takeCardsStatus(state, type));
+	const card = selector.card({ id, section });
+	const cardActive = selector.card({ id: activeId, section: activeSection });
+
+	const activeColor = selector.activeColor(props);
 
 	useEffect(() => {
-		if (status === LoadingStatus.idle) {
-			dispatch(setLoadingStatus({ type, status: LoadingStatus.loading }));
-			dispatch(getCardIdThunk({ id }));
-			// .unwrap()
-			// .then(({ data }) => console.log(data));
-		}
+		if (!cardActive)
+			dispatch.getId({ id: activeId, section: activeSection });
+	}, [dispatch, card, props]);
 
-		if (status === LoadingStatus.succeeded) {
-			if (!cards) {
-				dispatch(
-					setLoadingStatus({ type, status: LoadingStatus.loading })
-				);
-				dispatch(getCardIdThunk({ id }));
-			}
-		}
-	}, [dispatch, status, cards, type, id]);
+	const configWithCard: CardConfigCallback = ({ initCard, activeCard }) => ({
+		children: activeCard,
+		key: initCard.id,
+		config: {
+			initCard,
+			activeCard,
+			indexActiveColor: activeColor,
+		},
+	});
 
-	// return useList<IProductCard, CardPropsDisplay>({
-	// 	Component: withCard,
-	// 	data: cards,
-	// 	config: display,
-	// });
-	return cards ? withCard({ children: cards, key: nanoid() }) : null;
+	return cardActive && card
+		? withCard(configWithCard({ initCard: card, activeCard: cardActive }))()
+		: null;
 };

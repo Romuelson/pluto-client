@@ -4,13 +4,16 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { store } from '@store/store';
 
-import CardStories from './elements/card-stories/card-stories.comp';
+import CardWrapper from './elements/card-wrapper/card-wrapper.comp';
 
 import { cardRouter } from './mocks/card.router';
+import { useCard } from './use.card';
+import { ELabelSections } from './mocks/card.mock.enum';
+import { CardSizeEnum } from './card.enum';
 
 export default {
 	title: 'Components/Molecules/Card',
-	component: CardStories,
+	component: CardWrapper,
 	decorators: [
 		(Story) => (
 			<Provider store={store}>
@@ -20,12 +23,18 @@ export default {
 			</Provider>
 		),
 	],
-} as ComponentMeta<typeof CardStories>;
+} as ComponentMeta<typeof CardWrapper>;
 
-const Template: ComponentStory<typeof CardStories> = (args) => <CardStories />;
+const Template: ComponentStory<typeof CardWrapper> = (args) => (
+	<CardWrapper {...args} />
+);
 
 export const Playground = Template.bind({});
-Playground.args = {};
+Playground.args = {
+	id: '94d17faa-ae31-4a2c-9b54-d2f465d294ca',
+	section: ELabelSections.collections,
+	display: { size: CardSizeEnum.S },
+};
 
 Playground.parameters = {
 	msw: {

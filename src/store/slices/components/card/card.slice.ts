@@ -3,10 +3,16 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LoadingStatus, ReducerType } from '@store/store.enum';
 
 import { CardActions } from './card.enum';
-import { ICardSlice, SetCardLoadingStatus } from './card.type';
+import {
+	ICardSlice,
+	CardLoadingStatus,
+	CardActiveColor,
+	CardActiveId,
+} from './card.type';
 import { getCardIdThunk, getCardSectionThunk } from './card.thunk';
 
 const initialState: ICardSlice = {
+	card: {},
 	cards: {
 		novelties: {
 			page: 0,
@@ -41,10 +47,32 @@ export const cardSlice = createSlice({
 	reducers: {
 		[CardActions.setLoadingStatus]: (
 			state,
-			action: PayloadAction<SetCardLoadingStatus>
+			action: PayloadAction<CardLoadingStatus>
 		) => {
-			state.cards[action.payload.type].loading.status =
+			state.cards[action.payload.section].loading.status =
 				action.payload.status;
+		},
+		[CardActions.setCardActiveColor]: (
+			state,
+			action: PayloadAction<CardActiveColor>
+		) => {
+			const activeIndex = state.cards[action.payload.section].data.find(
+				(card) => card.id === action.payload.id
+			);
+
+			if (activeIndex) {
+				activeIndex.properties.colorList.activeColor =
+					action.payload.index;
+			}
+		},
+		[CardActions.setCardActiveId]: (
+			state,
+			action: PayloadAction<CardActiveId>
+		) => {
+			state.card[action.payload.id] = {
+				activeId: action.payload.activeId,
+				activeSection: action.payload.section,
+			};
 		},
 	},
 	extraReducers: (builder) => {
@@ -56,6 +84,7 @@ export const cardSlice = createSlice({
 			// 	state.cards[type].loading.status = LoadingStatus.succeeded;
 			// });
 			const card = action.payload.data;
+
 			const type = card.properties.labelList.sections;
 
 			state.cards[type].data.push(card);
@@ -63,12 +92,13 @@ export const cardSlice = createSlice({
 		});
 
 		builder.addCase(getCardSectionThunk.fulfilled, (state, action) => {
-			state.cards[action.payload.type].data = action.payload.data;
-			state.cards[action.payload.type].page += 1;
-			state.cards[action.payload.type].loading.status =
+			state.cards[action.payload.section].data = action.payload.data;
+			state.cards[action.payload.section].page += 1;
+			state.cards[action.payload.section].loading.status =
 				LoadingStatus.succeeded;
 		});
 	},
 });
 
-export const { setLoadingStatus } = cardSlice.actions;
+export const { setLoadingStatus, setCardActiveColor, setCardActiveId } =
+	cardSlice.actions;

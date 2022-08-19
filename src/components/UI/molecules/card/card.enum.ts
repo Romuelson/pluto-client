@@ -4,3 +4,9 @@ export const enum CardSizeEnum {
 	L = 'card-size--l',
 	XL = 'card-size--xl',
 }
+
+export const enum UseCardType {
+	card = 'card',
+	page = 'page',
+	section = 'section',
+}

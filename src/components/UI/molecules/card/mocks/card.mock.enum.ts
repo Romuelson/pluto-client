@@ -42,6 +42,12 @@ export const enum ECardColor {
 	White = 'Белый',
 }
 
+const enum ECardColorTest {
+	Mint,
+	Pink,
+	Zephyr,
+}
+
 export const enum ECardColorRGB {
 	Mint = '#e3efe2',
 	Pink = '#eea5a7',

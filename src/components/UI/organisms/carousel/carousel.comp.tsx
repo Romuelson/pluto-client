@@ -2,24 +2,11 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
-import { Swiper, SwiperSlide, SwiperSlideProps } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import useList from '@hooks/utils/list/use.list';
-
-import CarouselList from './elements/carousel-list/carousel-list.comp';
-
-import {
-	CarouselDataProp,
-	CarouselProps,
-	CarouselSlideType,
-} from './carousel.type';
-import { CarouselViews } from './carousel.enum';
-import withCarousel from './with.carousel';
-
-// SwiperSlide();
-// {/* <React.VoidFunctionComponent<SwiperSlideProps>></React.VoidFunctionComponent> */}
-// {CarouselList({ data, views })}
+import { nanoid } from '@reduxjs/toolkit';
+import { CarouselProps } from './carousel.type';
 
 function Carousel(props: CarouselProps) {
 	const {
@@ -31,11 +18,6 @@ function Carousel(props: CarouselProps) {
 		slidesPerView,
 	} = props;
 
-	const list = useList<CarouselDataProp>({
-		Component: withCarousel,
-		data,
-	});
-
 	return (
 		<Swiper
 			spaceBetween={spaceBetween}
@@ -45,7 +27,9 @@ function Carousel(props: CarouselProps) {
 			loop={loop}
 			modules={[Navigation, Pagination]}
 		>
-			{list}
+			{data.map((item) => (
+				<SwiperSlide key={nanoid()}>{item}</SwiperSlide>
+			))}
 		</Swiper>
 	);
 }

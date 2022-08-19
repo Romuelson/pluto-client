@@ -2,21 +2,13 @@
 
 import { useMediaQuery } from 'react-responsive';
 
-import useIcons from '@hooks/components/icons/use.icons';
-
-import Carousel from '@components/UI/organisms/carousel/carousel.comp';
-
 import { useCardList } from '@components/UI/molecules/card/use.card-list';
-import { CardSizeEnum } from '@components/UI/molecules/card/card.enum';
+import Carousel from '@components/UI/organisms/carousel/carousel.comp';
 
 import { PresonalSectionProps } from '../../personal.type';
 
-// создать кастомный control для swiper
-
-function PersonalSection({ type }: PresonalSectionProps) {
-	const cardList = useCardList({ type, display: { size: CardSizeEnum.S } });
-
-	const { Chevron } = useIcons();
+function PersonalSection({ type, display }: PresonalSectionProps) {
+	const cardList = useCardList({ section: type, display });
 
 	const isCarouselLow = useMediaQuery({ minWidth: 552 });
 	const isCarouselMedium = useMediaQuery({ minWidth: 736 });

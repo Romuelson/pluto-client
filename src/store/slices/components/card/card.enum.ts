@@ -17,4 +17,7 @@ export const enum CardPrefixType {
 export const enum CardActions {
 	setLoadingStatus = 'setLoadingStatus',
 	setLoadingError = 'setLoadingError',
+
+	setCardActiveColor = 'setCardActiveColor',
+	setCardActiveId = 'setCardActiveId',
 }

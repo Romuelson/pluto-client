@@ -1,25 +1,41 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 
-import { useState } from 'react';
 import { CardColorProps } from '../../card.type';
+import { useCardDispatch } from '../../use.card.dispatch';
 
 function CardColor(props: CardColorProps) {
-	const { className, colorList } = props;
+	const { className, colorList, id, initId, sectionType, activeIndex } =
+		props;
 
-	const [indexSVG, setIndexSVG] = useState('0');
+	const dispatch = useCardDispatch();
+
+	const changeCardHandler = (evt: React.SyntheticEvent<EventTarget>) => {
+		const target = evt.target as Element;
+
+		const targetId = target.getAttribute('data-id') || '';
+		const targetIndex = target.getAttribute('data-index');
+		const targetSection =
+			target.getAttribute('data-section') || sectionType;
+
+		if (targetId !== id) {
+			dispatch.setActiveId({
+				id: initId,
+				section: targetSection,
+				activeId: targetId,
+			});
+		}
+
+		if (targetIndex)
+			dispatch.setActiveColor({
+				id: initId,
+				section: sectionType,
+				index: targetIndex,
+			});
+	};
 
 	return (
-		<div
-			className={className}
-			onClick={(evt) => {
-				const target = evt.target as Element;
-				const index = target.getAttribute('data-index');
-
-				if (index) setIndexSVG(index);
-			}}
-		>
+		<div className={className} onClick={(evt) => changeCardHandler(evt)}>
 			<svg
 				className="card__svg"
 				width="18"
@@ -33,9 +49,10 @@ function CardColor(props: CardColorProps) {
 					cy="10"
 					r="8"
 					fill={colorList.current.rgb}
+					data-id={`${initId}`}
 					data-index="0"
 				/>
-				{indexSVG === '0' ? (
+				{activeIndex === '0' ? (
 					<circle
 						cx="10"
 						cy="10"
@@ -61,9 +78,11 @@ function CardColor(props: CardColorProps) {
 							cy="10"
 							r="8"
 							fill={vendor.color.rgb}
+							data-id={vendor.id}
 							data-index={`${index + 1}`}
+							data-section={vendor.sections}
 						/>
-						{indexSVG === `${index + 1}` ? (
+						{activeIndex === `${index + 1}` ? (
 							<circle
 								cx="10"
 								cy="10"

@@ -1,44 +1,42 @@
-import { useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import { createElement, useEffect } from 'react';
 
 import { LoadingStatus } from '@store/store.enum';
-import { setLoadingStatus } from '@store/slices/components/card/card.slice';
-import { getCardSectionThunk } from '@store/slices/components/card/card.thunk';
+import { ELabelSections } from '@components/UI/molecules/card/mocks/card.mock.enum';
 
-import {
-	takeCards,
-	takeCardsStatus,
-	takeSectionPage,
-} from '@store/slices/components/card/card.selector';
+import { useCardDispatch } from './use.card.dispatch';
+import { useCardSelector } from './use.card.selector';
 
-import { useAppDispatch, useAppSelector } from '@hooks/store/redux/use.redux';
+import { CardPropsDisplay } from './card.type';
 
-import useList from '@hooks/utils/list/use.list';
+import CardWrapper from './elements/card-wrapper/card-wrapper.comp';
 
-import { CardPropsDisplay, UseCardListProps } from './card.type';
-import { IProductCard } from './mocks/card.mock.type';
+export type UseCardList = {
+	section: ELabelSections;
+	display?: CardPropsDisplay;
+};
 
-import withCard from './with.card';
+export const useCardList = ({ section, display }: UseCardList) => {
+	const dispatch = useCardDispatch();
+	const selector = useCardSelector();
 
-export const useCardList = (props: UseCardListProps) => {
-	console.log('useCardList');
-	const { type, display } = props;
-
-	const dispatch = useAppDispatch();
-
-	const cards = useAppSelector((state) => takeCards(state, type));
-	const status = useAppSelector((state) => takeCardsStatus(state, type));
-	const page = useAppSelector((state) => takeSectionPage(state, type));
+	const page = selector.page({ section });
+	const cards = selector.cards({ section });
+	const status = selector.status({ section });
 
 	useEffect(() => {
-		if (status === LoadingStatus.idle || !page) {
-			dispatch(setLoadingStatus({ type, status: LoadingStatus.loading }));
-			dispatch(getCardSectionThunk({ type }));
-		}
-	}, [dispatch, type, status, cards, page]);
+		if (status === LoadingStatus.idle || !page)
+			dispatch.getSection({ section });
+	}, [section]);
 
-	return useList<IProductCard, CardPropsDisplay>({
-		Component: withCard,
-		data: cards,
-		config: display,
+	return cards.map((card) => {
+		const createProps = {
+			id: card.id,
+			section: card.properties.labelList.sections,
+			display,
+		};
+
+		return createElement(CardWrapper, createProps);
 	});
 };

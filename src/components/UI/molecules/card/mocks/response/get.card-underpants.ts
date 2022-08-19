@@ -68,6 +68,7 @@ export const getCardUnderpants: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Mint,
 					rgb: ECardColorRGB.Mint,
@@ -79,6 +80,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Pink,
 							rgb: ECardColorRGB.Pink,
 						},
+						sections: ELabelSections.novelties,
 					},
 				],
 			},
@@ -142,6 +144,7 @@ export const getCardUnderpants: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Pink,
 					rgb: ECardColorRGB.Pink,
@@ -153,6 +156,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Mint,
 							rgb: ECardColorRGB.Mint,
 						},
+						sections: ELabelSections.sale,
 					},
 				],
 			},
@@ -216,6 +220,7 @@ export const getCardUnderpants: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Zephyr,
 					rgb: ECardColorRGB.Zephyr,
@@ -227,6 +232,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Cherry,
 							rgb: ECardColorRGB.Cherry,
 						},
+						sections: ELabelSections.sale,
 					},
 				],
 			},
@@ -290,6 +296,7 @@ export const getCardUnderpants: IProductCard[] = [
 				},
 			},
 			colorList: {
+				activeColor: '0',
 				current: {
 					label: ECardColor.Cherry,
 					rgb: ECardColorRGB.Cherry,
@@ -301,6 +308,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Zephyr,
 							rgb: ECardColorRGB.Zephyr,
 						},
+						sections: ELabelSections.collections,
 					},
 				],
 			},

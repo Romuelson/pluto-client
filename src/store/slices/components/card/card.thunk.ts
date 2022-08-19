@@ -1,27 +1,24 @@
 import { AxiosInstance } from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import { ReducerType } from '@store/store.enum';
+import { AppDispatch, AppStore } from '@store/store';
+
+import { ECardServiceType } from '@components/UI/molecules/card/mocks/card.mock.enum';
+
 import {
 	IProductCard,
 	PayloadCardId,
 	PayloadCardList,
 	ResponceCardList,
 } from '@components/UI/molecules/card/mocks/card.mock.type';
-import { ECardServiceType } from '@components/UI/molecules/card/mocks/card.mock.enum';
 
-import { ReducerType } from '@store/store.enum';
-import { AppDispatch, AppStore } from '@store/store';
-
-import {
-	GetCardAllThunk,
-	GetCardIdThunk,
-	GetCardSectionThunk,
-} from './card.type';
 import { CardAPI, CardPrefixType } from './card.enum';
+import { CardIdThunk, CardSectionThunk } from './card.type';
 
 export const getCardIdThunk = createAsyncThunk<
 	PayloadCardId,
-	GetCardIdThunk,
+	CardIdThunk,
 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
 >(`${CardPrefixType.getCardId}`, async ({ id }, api) => {
 	try {
@@ -35,35 +32,17 @@ export const getCardIdThunk = createAsyncThunk<
 	}
 });
 
-// export const getCardAllThunk = createAsyncThunk<
-// 	PayloadCardList,
-// 	GetCardAllThunk,
-// 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
-// >(`${ReducerType.card}`, async ({ type }, api) => {
-// 	try {
-// 		return await api.extra
-// 			.get(`${CardAPI.getCardAll}`, {
-// 				params: {
-// 					[ECardServiceType.ids]: ids,
-// 				},
-// 			})
-// 			.then(({ data }: ResponceCardList) => ({ data, type }));
-// 	} catch (error) {
-// 		throw new Error(`Message: ${error}`);
-// 	}
-// });
-
 export const getCardSectionThunk = createAsyncThunk<
 	PayloadCardList,
-	GetCardSectionThunk,
+	CardSectionThunk,
 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
->(`${ReducerType.card}`, async ({ type }, api) => {
+>(`${ReducerType.card}`, async ({ section }, api) => {
 	try {
 		return await api.extra
 			.get(`${CardAPI.getCardSection}`, {
-				params: { [ECardServiceType.section]: type },
+				params: { [ECardServiceType.section]: section },
 			})
-			.then(({ data }: ResponceCardList) => ({ data, type }));
+			.then(({ data }: ResponceCardList) => ({ data, section }));
 	} catch (error) {
 		throw new Error(`Message: ${error}`);
 	}
