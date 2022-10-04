@@ -1,13 +1,14 @@
 import Carousel from '@components/UI/organisms/carousel/carousel.comp';
 
-import { CarouselViews } from '@components/UI/organisms/carousel/carousel.enum';
+import { PromoCarouselProps } from './promo-carousel.type';
 
-import { promoMock } from '../../mocks/promo.mock';
-
-function PromoCarousel() {
-	const { promoCarouselData } = promoMock();
-
-	return <Carousel data={promoCarouselData} views={CarouselViews.default} />;
+function PromoCarousel({ config }: PromoCarouselProps) {
+	return (
+		<Carousel
+			config={config}
+			display={{ loop: true, pagination: true, navigation: true }}
+		/>
+	);
 }
 
 export default PromoCarousel;

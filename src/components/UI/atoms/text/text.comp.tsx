@@ -7,9 +7,11 @@ import { TextAsEnum } from './text.enum';
 
 function Text(props: TextProps) {
 	const {
+		id,
 		children = 'default',
 		as = TextAsEnum.div,
 		className,
+		onClick,
 		...otherProps
 	} = props;
 
@@ -22,7 +24,15 @@ function Text(props: TextProps) {
 		className
 	);
 
-	return <Tag className={setClassName}>{children}</Tag>;
+	return (
+		<Tag
+			key={id}
+			className={setClassName}
+			onClick={() => !onClick || onClick()}
+		>
+			{children}
+		</Tag>
+	);
 }
 
 export default Text;

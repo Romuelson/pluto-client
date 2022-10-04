@@ -1,26 +1,32 @@
 import { useEffect } from 'react';
 
+import { LoadingStatus } from '@store/store.enum';
+
+import {
+	setListType,
+	setState,
+} from '@store/slices/components/info/info.slice';
+
+import { useAppDispatch } from '@hooks/store/redux/use.redux';
 import { InfoTypeEnums } from '@components/UI/molecules/info/info.enum';
 
 import { getListAddressThunk } from '../../../store/slices/components/info/info.thunk';
 
-import { useAppDispatch } from '../../store/redux/use.redux';
-
-import { InfoTypeStyle } from '../../../components/info/info.enum';
-import { setListType } from '../../../store/slices/components/info/info.slice';
-
 import { useInfoSelector } from './use.info.selector';
-import { LoadingStatus } from '../../../store/store.enum';
 
-export const useInfoMount = (type: InfoTypeEnums) => {
-	const { loading } = useInfoSelector();
+export const useInfoMount = (recipient: string, type: InfoTypeEnums) => {
 	const dispath = useAppDispatch();
+	const { repecientState, loading } = useInfoSelector({ recipient });
 
 	useEffect(() => {
-		if (loading.status === LoadingStatus.idle) {
-			dispath(getListAddressThunk());
+		if (!repecientState) {
+			dispath(setState({ recipient }));
 		}
 
-		dispath(setListType(type));
-	}, [dispath, loading.status, type]);
+		if (loading.status === LoadingStatus.idle) {
+			dispath(getListAddressThunk({ recipient }));
+		}
+
+		dispath(setListType({ recipient, type }));
+	}, [dispath, loading.status, type, recipient, repecientState]);
 };

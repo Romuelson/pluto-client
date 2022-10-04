@@ -27,7 +27,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.collections,
+				section: ELabelSections.collections,
 			},
 			priceList: {
 				price: 1799,
@@ -46,24 +46,24 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: ['cf592b8b-0668-4304-8d89-419805ddeb30'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382923591,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923591',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382923607,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923607',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 4680382923621,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923621',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382923607,
-					amount: 0,
+					barcode: '4680382923607',
+					amount: '0',
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382923638,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923638',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 			},
 			colorList: {
@@ -79,7 +79,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Pink,
 							rgb: ECardColorRGB.Pink,
 						},
-						sections: ELabelSections.novelties,
+						section: ELabelSections.novelties,
 					},
 				],
 			},
@@ -102,7 +102,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.novelties,
+				section: ELabelSections.novelties,
 			},
 			priceList: {
 				price: 1799,
@@ -121,24 +121,24 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: ['3d301ec4-52b6-42ea-ba63-67e132eeb256'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382923560,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923560',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382923577,
-					amount: 0,
+					barcode: '4680382923577',
+					amount: '0',
 				},
 				[ECardSize.S]: {
-					barcode: 4680382923584,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923584',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382949959,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382949959',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382949966,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382949966',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 			},
 			colorList: {
@@ -154,7 +154,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Mint,
 							rgb: ECardColorRGB.Mint,
 						},
-						sections: ELabelSections.collections,
+						section: ELabelSections.collections,
 					},
 				],
 			},
@@ -177,7 +177,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.novelties,
+				section: ELabelSections.novelties,
 			},
 			priceList: {
 				price: 1999,
@@ -197,52 +197,52 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: ['94d17faa-ae31-4a2c-9b54-d2f465d294ca'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382890671,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890671',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382890688,
-					amount: 0,
+					barcode: '4680382890688',
+					amount: '0',
 				},
 				[ECardSize.S]: {
-					barcode: 4680382890695,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890695',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382890701,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890701',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382890718,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890718',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.M]: {
-					barcode: 4680382890558,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890558',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.ML]: {
-					barcode: 4680382890732,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890732',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.L]: {
-					barcode: 4680382890565,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890565',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XL]: {
-					barcode: 4680382890572,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890572',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XXL]: {
-					barcode: 4680382890589,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890589',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XXL]: {
-					barcode: 4680382890596,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890596',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XXXL]: {
-					barcode: 4680382890725,
-					amount: 0,
+					barcode: '4680382890725',
+					amount: '0',
 				},
 			},
 			colorList: {
@@ -258,7 +258,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Cherry,
 							rgb: ECardColorRGB.Cherry,
 						},
-						sections: ELabelSections.collections,
+						section: ELabelSections.collections,
 					},
 					{
 						id: '7346e703-9d18-4f59-b925-6669389c65c3',
@@ -266,7 +266,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Blue,
 							rgb: ECardColorRGB.Blue,
 						},
-						sections: ELabelSections.sale,
+						section: ELabelSections.sale,
 					},
 				],
 			},
@@ -289,7 +289,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.collections,
+				section: ELabelSections.collections,
 			},
 			priceList: {
 				price: 1999,
@@ -309,36 +309,36 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: ['3175ec45-31ed-4745-8e68-a0587f0a8151'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382890664,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890664',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382890510,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382890510',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 4680382890602,
-					amount: 0,
+					barcode: '4680382890602',
+					amount: '0',
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382890619,
-					amount: 0,
+					barcode: '4680382890619',
+					amount: '0',
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382890626,
-					amount: 0,
+					barcode: '4680382890626',
+					amount: '0',
 				},
 				[ECardSize.M]: {
-					barcode: 4680382890633,
-					amount: 0,
+					barcode: '4680382890633',
+					amount: '0',
 				},
 				[ECardSize.ML]: {
-					barcode: 4680382890640,
-					amount: 0,
+					barcode: '4680382890640',
+					amount: '0',
 				},
 				[ECardSize.L]: {
-					barcode: 4680382890657,
-					amount: 0,
+					barcode: '4680382890657',
+					amount: '0',
 				},
 			},
 			colorList: {
@@ -354,7 +354,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Zephyr,
 							rgb: ECardColorRGB.Zephyr,
 						},
-						sections: ELabelSections.novelties,
+						section: ELabelSections.novelties,
 					},
 					{
 						id: '7346e703-9d18-4f59-b925-6669389c65c3',
@@ -362,7 +362,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Blue,
 							rgb: ECardColorRGB.Blue,
 						},
-						sections: ELabelSections.sale,
+						section: ELabelSections.sale,
 					},
 				],
 			},
@@ -385,7 +385,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.sale,
+				section: ELabelSections.sale,
 			},
 			priceList: {
 				price: 1999,
@@ -405,32 +405,32 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: [],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382803114,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382803114',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382793590,
-					amount: 0,
+					barcode: '4680382793590',
+					amount: '0',
 				},
 				[ECardSize.S]: {
-					barcode: 4680382793606,
-					amount: 0,
+					barcode: '4680382793606',
+					amount: '0',
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382793613,
-					amount: 0,
+					barcode: '4680382793613',
+					amount: '0',
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382793620,
-					amount: 0,
+					barcode: '4680382793620',
+					amount: '0',
 				},
 				[ECardSize.M]: {
-					barcode: 4680382793637,
-					amount: 0,
+					barcode: '4680382793637',
+					amount: '0',
 				},
 				[ECardSize.ML]: {
-					barcode: 4680382793644,
-					amount: 0,
+					barcode: '4680382793644',
+					amount: '0',
 				},
 			},
 			colorList: {
@@ -446,7 +446,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Zephyr,
 							rgb: ECardColorRGB.Zephyr,
 						},
-						sections: ELabelSections.novelties,
+						section: ELabelSections.novelties,
 					},
 					{
 						id: '8042b7c6-9e71-402b-aaff-fb92faef3a25',
@@ -454,7 +454,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Cherry,
 							rgb: ECardColorRGB.Cherry,
 						},
-						sections: ELabelSections.collections,
+						section: ELabelSections.collections,
 					},
 				],
 			},
@@ -477,7 +477,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.collections,
+				section: ELabelSections.collections,
 			},
 			priceList: {
 				price: 1899,
@@ -497,20 +497,20 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: [],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382804135,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804135',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382804142,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804142',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 4680382804159,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804159',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382804166,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804166',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 			},
 			colorList: {
@@ -526,7 +526,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.White,
 							rgb: ECardColorRGB.White,
 						},
-						sections: ELabelSections.novelties,
+						section: ELabelSections.novelties,
 					},
 				],
 			},
@@ -549,7 +549,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.novelties,
+				section: ELabelSections.novelties,
 			},
 			priceList: {
 				price: 1899,
@@ -569,20 +569,20 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: [],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382804098,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804098',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382804104,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804104',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 4680382804111,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804111',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382804128,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382804128',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 			},
 			colorList: {
@@ -598,7 +598,7 @@ export const getCardBras: IProductCard[] = [
 							label: ECardColor.Black,
 							rgb: ECardColorRGB.Black,
 						},
-						sections: ELabelSections.collections,
+						section: ELabelSections.collections,
 					},
 				],
 			},
@@ -621,7 +621,7 @@ export const getCardBras: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.sale,
+				section: ELabelSections.sale,
 			},
 			priceList: {
 				price: 2299,
@@ -641,28 +641,28 @@ export const getCardBras: IProductCard[] = [
 			productsFromKit: [],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382921160,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382921160',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382921177,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382921177',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 4680382921184,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382921184',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382921191,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382921191',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.M]: {
-					barcode: 4680382921207,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382921207',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.ML]: {
-					barcode: 4680382921214,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382921214',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 			},
 			colorList: {

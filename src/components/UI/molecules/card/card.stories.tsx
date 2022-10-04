@@ -7,7 +7,6 @@ import { store } from '@store/store';
 import CardWrapper from './elements/card-wrapper/card-wrapper.comp';
 
 import { cardRouter } from './mocks/card.router';
-import { useCard } from './use.card';
 import { ELabelSections } from './mocks/card.mock.enum';
 import { CardSizeEnum } from './card.enum';
 
@@ -33,7 +32,7 @@ export const Playground = Template.bind({});
 Playground.args = {
 	id: '94d17faa-ae31-4a2c-9b54-d2f465d294ca',
 	section: ELabelSections.collections,
-	display: { size: CardSizeEnum.S },
+	display: { picture: { page: false, carousel: false } },
 };
 
 Playground.parameters = {

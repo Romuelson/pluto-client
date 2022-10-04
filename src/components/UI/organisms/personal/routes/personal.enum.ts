@@ -1,6 +1,8 @@
 export enum PersonalRouteApp {
-	Novelties = '/',
-	Collections = '/home/collections',
-	Sale = '/home/sale',
+	Main = '/home',
+	Collections = '/collections',
+	Sale = '/sale',
+	// Collections = '/home/collections',
+	// Sale = '/home/sale',
 	Root = '/:personal',
 }

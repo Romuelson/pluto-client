@@ -13,5 +13,8 @@ export type PersonalData = PersonalItem[];
 
 export type PresonalSectionProps = {
 	type: ELabelSections;
-	display?: CardPropsDisplay;
+};
+
+export type PersonalProps = {
+	className: string;
 };

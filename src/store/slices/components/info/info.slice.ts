@@ -1,51 +1,62 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LoadingStatus, ReducerType } from '@store/store.enum';
 
 import { InfoTypeEnums } from '@components/UI/molecules/info/info.enum';
-import { InfoSlice } from './info.type';
 
-import { LoadingStatus, ReducerType } from '../../../store.enum';
 import { InfoActions } from './info.enum';
+import { infoBuilder } from './info.builder';
 
-import { getListAddressThunk } from './info.thunk';
+import {
+	InfoActiveIndexPayload,
+	InfoListTypePayload,
+	InfoRecipient,
+	InfoSetStatePayload,
+	InfoSlice,
+} from './info.type';
 
-const initialState: InfoSlice = {
+export const createInfoState: InfoSlice = () => ({
 	loading: { status: LoadingStatus.idle, error: undefined },
 	listType: InfoTypeEnums.categories,
 	listAddress: [],
 	activeButton: 0,
-};
+});
+
+const initialState: InfoRecipient = {};
 
 export const infoSlice = createSlice({
 	name: ReducerType.info,
 	initialState,
 	reducers: {
+		[InfoActions.setState]: (
+			state,
+			{ payload }: PayloadAction<InfoSetStatePayload>
+		) => {
+			state[payload.recipient] = createInfoState();
+		},
 		[InfoActions.setActiveButton]: (
 			state,
-			action: PayloadAction<number>
+			{ payload }: PayloadAction<InfoActiveIndexPayload>
 		) => {
-			state.activeButton = action.payload;
+			const { recipient, value } = payload;
+			const recipientState = state?.[recipient];
+
+			if (recipientState) {
+				recipientState.activeButton = value;
+			}
 		},
 		[InfoActions.setListType]: (
 			state,
-			action: PayloadAction<InfoTypeEnums>
+			{ payload }: PayloadAction<InfoListTypePayload>
 		) => {
-			state.listType = action.payload;
+			const { recipient, type } = payload;
+			const recipientState = state?.[recipient];
+
+			if (recipientState) {
+				recipientState.listType = type;
+			}
 		},
 	},
-	extraReducers: (builder) => {
-		builder
-			.addCase(getListAddressThunk.pending, (state) => {
-				state.loading.status = LoadingStatus.loading;
-			})
-			.addCase(getListAddressThunk.fulfilled, (state, action) => {
-				state.loading.status = LoadingStatus.succeeded;
-				state.listAddress = action.payload;
-			})
-			.addCase(getListAddressThunk.rejected, (state, action) => {
-				state.loading.status = LoadingStatus.failed;
-				state.loading.error = action.error.message;
-			});
-	},
+	extraReducers: infoBuilder,
 });
 
-export const { setActiveIndex, setListType } = infoSlice.actions;
+export const { setState, setActiveIndex, setListType } = infoSlice.actions;

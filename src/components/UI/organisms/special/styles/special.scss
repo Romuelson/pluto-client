@@ -1,0 +1,10 @@
+.special {
+	padding-bottom: 20px;
+}
+
+@media (min-width: 1366px) {
+	.special {
+		max-width: 1920px;
+		margin: 0 auto;
+	}
+}

@@ -19,18 +19,23 @@ import {
 import {
 	ButtonCursorEnum,
 	ButtonSizeEnum,
+	ButtonTypeEnum,
 	ButtonViewEnum,
 } from '@components/UI/molecules/button/button.enum';
 
 import {
 	IconColorEnum,
-	IconCursorEnum,
 	IconSizeEnum,
 } from '@components/UI/atoms/icon/icon.enum';
 
 import { CardControlProps } from '../../card.type';
+import { CardRouteApp } from '../../routes/card.enum';
+import { CardControlLabelEnum } from '../../card.enum';
 
-function CardControl({ className, id }: CardControlProps) {
+function CardControl({ className, config, display }: CardControlProps) {
+	const { id, section } = config;
+	const { page } = display;
+
 	const { Heart, HeartFull } = useIcons();
 
 	const dispatch = useAppDispatch();
@@ -42,6 +47,7 @@ function CardControl({ className, id }: CardControlProps) {
 	return (
 		<div className={className}>
 			<Button
+				className="button__favorite"
 				view={ButtonViewEnum.white}
 				size={ButtonSizeEnum.SXS}
 				cursor={ButtonCursorEnum.pointer}
@@ -64,8 +70,31 @@ function CardControl({ className, id }: CardControlProps) {
 				)}
 			</Button>
 
+			{!page || (
+				<Button
+					className="card__button button__free"
+					type={ButtonTypeEnum.link}
+					to={`${CardRouteApp.Root}/${id}${CardRouteApp.Section}/${section}`}
+					view={ButtonViewEnum.white}
+					size={ButtonSizeEnum.S}
+					cursor={ButtonCursorEnum.pointer}
+				>
+					<Text
+						as={TextAsEnum.span}
+						font={TextFontEnum.TypeTypeNorms}
+						size={TextSizeEnum.XXS}
+						lineHeight={TextLineHeightEnum.SXXS}
+						textAlign={TextAlignEnum.center}
+					>
+						{CardControlLabelEnum.free}
+					</Text>
+				</Button>
+			)}
+
 			<Button
-				className="card__button"
+				className="card__button button__select"
+				type={ButtonTypeEnum.link}
+				to={`${CardRouteApp.Root}/${id}${CardRouteApp.Section}/${section}`}
 				view={ButtonViewEnum.brand}
 				size={ButtonSizeEnum.S}
 				cursor={ButtonCursorEnum.pointer}
@@ -77,7 +106,9 @@ function CardControl({ className, id }: CardControlProps) {
 					lineHeight={TextLineHeightEnum.SXXS}
 					textAlign={TextAlignEnum.center}
 				>
-					Выбрать
+					{page
+						? CardControlLabelEnum.add
+						: CardControlLabelEnum.select}
 				</Text>
 			</Button>
 		</div>

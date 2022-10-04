@@ -1,7 +1,6 @@
 import { nanoid } from '@reduxjs/toolkit';
 
-import { PromoListData } from '../promo.type';
-import { CarouselDataType } from '../../carousel/carousel.type';
+import type { PromoList } from '../elements/promo-list/promo-list.type';
 
 export const promoMock = () => {
 	const promoListData = [
@@ -27,7 +26,7 @@ export const promoMock = () => {
 			link: '#!',
 			linkTitle: 'Узнать больше',
 		},
-	] as PromoListData;
+	] as PromoList;
 
 	const promoCarouselData = [
 		{
@@ -48,7 +47,7 @@ export const promoMock = () => {
 			link: '#!',
 			linkTitle: 'Подробнее',
 		},
-	] as CarouselDataType;
+	] as PromoList;
 
 	return { promoListData, promoCarouselData };
 };

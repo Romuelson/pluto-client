@@ -1,0 +1,11 @@
+.special__info {
+	background-color: $color-smoky;
+	box-shadow: 0 0 10px 0 rgba($color: $color-ford, $alpha: 30%);
+}
+
+@media (min-width: 1024px) {
+	.special__info {
+		margin-top: 80px;
+		margin-left: 80px;
+	}
+}

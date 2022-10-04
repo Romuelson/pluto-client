@@ -1,8 +1,9 @@
 /* Browser Routes */
+import Default from '@components/UI/templates/default/default.comp';
 import DefaultRoute from '../../routes/default/default.route';
 
 function App() {
-	return <DefaultRoute />;
+	return <Default routes={<DefaultRoute />} />;
 }
 
 export default App;

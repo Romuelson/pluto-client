@@ -4,9 +4,9 @@ import { InfoTypeEnums } from '../../info.enum';
 
 import { InfoTitleProps } from '../../info.type';
 
-function InfoTitle({ item, index }: InfoTitleProps) {
+function InfoTitle({ item, index, recipient }: InfoTitleProps) {
 	const { dispatchActiveIndex } = useInfoDispath();
-	const { listType, activeButton } = useInfoSelector();
+	const { listType, activeButton } = useInfoSelector({ recipient });
 
 	const defineListType = () => {
 		switch (listType) {
@@ -21,7 +21,7 @@ function InfoTitle({ item, index }: InfoTitleProps) {
 								: 'info__button button'
 						}
 						type="button"
-						onClick={() => dispatchActiveIndex(index)}
+						onClick={() => dispatchActiveIndex(recipient, index)}
 					>
 						{item.title}
 					</button>

@@ -21,7 +21,9 @@ export default {
 	],
 } as ComponentMeta<typeof Promo>;
 
-const Template: ComponentStory<typeof Promo> = (args) => <Promo />;
+const Template: ComponentStory<typeof Promo> = (args) => (
+	<Promo className="promo__stories promo" />
+);
 
 export const Playground = Template.bind({});
 

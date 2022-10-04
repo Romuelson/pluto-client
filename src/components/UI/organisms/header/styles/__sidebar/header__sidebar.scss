@@ -1,11 +1,6 @@
 .header__sidebar {
-	z-index: -1;
-}
-
-@media (max-width: 639.98px) {
-	.header__sidebar {
-		margin-bottom: 48px;
-	}
+	position: relative;
+	z-index: 10;
 }
 
 @media (max-width: 1155.98px) {

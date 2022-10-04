@@ -11,9 +11,18 @@ import { InfoAxiosAPI, InfoPrefixThunk } from './info.enum';
 /* Types */
 import { InfoListAddress, ResponseDataInfo } from './info.type';
 
+export const enum InfoListRecipientEnum {
+	header = 'header',
+	footer = 'footer',
+}
+
+export type InfoListArgs = {
+	recipient: string;
+};
+
 export const getListAddressThunk = createAsyncThunk<
 	InfoListAddress,
-	undefined,
+	InfoListArgs,
 	{ dispath: AppDispatch; state: AppStore; extra: AxiosInstance }
 >(InfoPrefixThunk.getListAddress, async (_args, api) => {
 	try {

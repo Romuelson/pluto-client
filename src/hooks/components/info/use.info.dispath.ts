@@ -1,15 +1,21 @@
-/* Hooks */
-import { useAppDispatch } from '../../store/redux/use.redux';
+import { useAppDispatch, useAppSelector } from '@hooks/store/redux/use.redux';
 
-/* Actions */
-import { setActiveIndex } from '../../../store/slices/components/info/info.slice';
+import {
+	setActiveIndex,
+	setState,
+} from '@store/slices/components/info/info.slice';
+import { useInfoSelector } from './use.info.selector';
 
 export const useInfoDispath = () => {
 	const dispatch = useAppDispatch();
 
-	const dispatchActiveIndex = (index: number) => {
-		dispatch(setActiveIndex(index));
+	const dispatchSetState = (recipient: string) => {
+		dispatch(setState({ recipient }));
 	};
 
-	return { dispatchActiveIndex };
+	const dispatchActiveIndex = (recipient: string, index: number) => {
+		dispatch(setActiveIndex({ recipient, value: index }));
+	};
+
+	return { dispatchSetState, dispatchActiveIndex };
 };

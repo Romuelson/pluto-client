@@ -7,6 +7,7 @@ import { CategoriesViewEnum } from '@components/UI/organisms/categories/categori
 import { SidebarPositionEnum } from '@components/UI/organisms/sidebar/sidebar.enum';
 
 import { useSingleMediaQuery } from '@hooks/utils/single-media-query/use.single-media-query';
+import { InfoListRecipientEnum } from '@store/slices/components/info/info.thunk';
 
 function HeaderSidebar() {
 	const { isMaxSwitchMedium, isUnionSwitchMedium } = useSingleMediaQuery();
@@ -23,6 +24,7 @@ function HeaderSidebar() {
 						<Info
 							className="header__info"
 							type={InfoTypeEnums.categories}
+							recipient={InfoListRecipientEnum.header}
 						/>
 					</Categories>
 				</Sidebar>
@@ -40,6 +42,7 @@ function HeaderSidebar() {
 						<Info
 							className="header__info"
 							type={InfoTypeEnums.categories}
+							recipient={InfoListRecipientEnum.header}
 						/>
 					</Categories>
 				</Sidebar>

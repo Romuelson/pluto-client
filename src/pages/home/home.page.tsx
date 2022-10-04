@@ -1,27 +1,18 @@
-/* Styles */
 import './styles/index.scss';
 
-/* Hooks */
-import Button from 'src/components/UI/molecules/button/button.comp';
-import useLogos from '@hooks/components/logos/use.logos';
-import useIcons from '../../hooks/components/icons/use.icons';
-import { IconSizeEnum } from '../../components/UI/atoms/icon/icon.enum';
+import Promo from '@components/UI/organisms/promo/promo.comp';
+import Personal from '@components/UI/organisms/personal/personal.comp';
 
-/* Components */
-// import Personal from '../../components/personal/personal.comp';
-// import Promo from '../../components/promo/promo.comp';
-// import Special from '../../components/special/special.comp';
+import { useHomeSpecial } from './elements/home-special/use.home-special';
 
 function HomePage() {
-	const { Brand } = useLogos();
+	const HomeSpecial = useHomeSpecial();
 
 	return (
 		<main className="container__home home">
-			<h1 className="home__title visually-hidden">Домашняя страница</h1>
-			<Brand />
-			{/* <Promo />
-			<Personal />
-			<Special /> */}
+			<Promo className="home__promo" />
+			<Personal className="home__personal" />
+			<HomeSpecial className="home__special" />
 		</main>
 	);
 }

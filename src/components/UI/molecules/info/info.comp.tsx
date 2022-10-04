@@ -10,24 +10,24 @@ import InfoList from './elements/info-list/info-list.comp';
 import InfoAddress from './elements/info-address/info-address.comp';
 
 function Info(props: InfoProps) {
-	const { className, type = InfoTypeEnums.navigation } = props;
+	const { className, type = InfoTypeEnums.navigation, recipient } = props;
 
-	useInfoMount(type);
+	useInfoMount(recipient, type);
 
-	const { currentAddress } = useInfoSelector();
+	const { currentAddress } = useInfoSelector({ recipient });
 
 	const defineType = () => {
 		switch (type) {
 			case InfoTypeEnums.categories:
 				return (
-					<InfoList>
+					<InfoList recipient={recipient}>
 						<InfoAddress />
 					</InfoList>
 				);
 			default:
 				return (
 					<>
-						<InfoList />
+						<InfoList recipient={recipient} />
 						<InfoAddress currentAddress={currentAddress} />
 					</>
 				);

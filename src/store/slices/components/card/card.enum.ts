@@ -20,4 +20,5 @@ export const enum CardActions {
 
 	setCardActiveColor = 'setCardActiveColor',
 	setCardActiveId = 'setCardActiveId',
+	setCardActiveSize = 'setCardActiveSize',
 }

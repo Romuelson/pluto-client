@@ -2,32 +2,17 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
+import { nanoid } from '@reduxjs/toolkit';
+
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { nanoid } from '@reduxjs/toolkit';
 import { CarouselProps } from './carousel.type';
 
-function Carousel(props: CarouselProps) {
-	const {
-		data,
-		navigation,
-		pagination,
-		loop,
-		spaceBetween = 0,
-		slidesPerView,
-	} = props;
-
+function Carousel({ config, display }: CarouselProps) {
 	return (
-		<Swiper
-			spaceBetween={spaceBetween}
-			slidesPerView={slidesPerView}
-			navigation={navigation}
-			pagination={pagination}
-			loop={loop}
-			modules={[Navigation, Pagination]}
-		>
-			{data.map((item) => (
+		<Swiper {...display} modules={[Navigation, Pagination]}>
+			{config.list.map((item) => (
 				<SwiperSlide key={nanoid()}>{item}</SwiperSlide>
 			))}
 		</Swiper>

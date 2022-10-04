@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { ELabelSections } from '@components/UI/molecules/card/mocks/card.mock.enum';
+
 import { PersonalRouteApp } from './personal.enum';
 import PersonalSection from '../elements/personal-section/personal-section.comp';
 

@@ -1,3 +1,3 @@
 export type FooterProps = {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 };

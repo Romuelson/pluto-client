@@ -23,7 +23,9 @@ export default {
 	],
 } as ComponentMeta<typeof Personal>;
 
-const Template: ComponentStory<typeof Personal> = (args) => <Personal />;
+const Template: ComponentStory<typeof Personal> = (args) => (
+	<Personal className="personal__stories personal" />
+);
 
 export const Playground = Template.bind({});
 

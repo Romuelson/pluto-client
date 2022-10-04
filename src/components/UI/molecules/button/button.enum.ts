@@ -17,3 +17,8 @@ export const enum ButtonCursorEnum {
 	default = 'button-cursor--default',
 	pointer = 'button-cursor--pointer',
 }
+
+export const enum ButtonTypeEnum {
+	button = 'button',
+	link = 'link',
+}

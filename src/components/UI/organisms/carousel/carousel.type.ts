@@ -1,41 +1,36 @@
-import { SwiperSlideProps } from 'swiper/react';
+// import { SwiperSlideProps } from 'swiper/react';
 import { NavigationOptions } from 'swiper/types';
 
-import { CarouselViews } from './carousel.enum';
+// export type CarouselObject = {
+// 	id: string;
+// 	title: string;
+// 	link: string;
+// 	linkTitle: string;
+// };
 
-export type CarouselObject = {
-	id: string;
-	title: string;
-	link: string;
-	linkTitle: string;
+// export type CarouselSlideType = React.VoidFunctionComponent<SwiperSlideProps>;
+
+export type CarouselItem = JSX.Element;
+export type CarouselList = CarouselItem[];
+
+export type CarouselConfig = {
+	list: CarouselList;
 };
 
-export type CarouselDataType = CarouselObject[];
-export type CarouselSlideType = React.VoidFunctionComponent<SwiperSlideProps>;
-
-export type CarouselDataProp = JSX.Element;
-
-export type CarouselProps = {
-	// data: CarouselDataType;
-	data: CarouselDataProp[];
-	// views: CarouselViews;
-	navigation: boolean | NavigationOptions;
-	pagination: boolean;
+export type CarouselDisplay = {
 	loop: boolean;
+	navigation?: boolean | NavigationOptions;
+	pagination?: boolean;
 	spaceBetween?: number;
 	slidesPerView?: number;
 };
 
-export type CarouselListProps = {
-	data: CarouselDataType;
-	views: CarouselViews;
+export type CarouselProps = {
+	config: CarouselConfig;
+	display: CarouselDisplay;
 };
 
-export type CarouselListDefaultProps = CarouselObject;
-
-// ---
-
-export type WithArgsType = {
-	children: React.ReactNode;
-	key: string;
-};
+// export type WithArgsType = {
+// 	children: React.ReactNode;
+// 	key: string;
+// };

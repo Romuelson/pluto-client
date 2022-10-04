@@ -3,6 +3,7 @@ export enum InfoAxiosAPI {
 }
 
 export enum InfoActions {
+	setState = 'setState',
 	setActiveButton = 'setActiveIndex',
 	setDataInfo = 'setDataInfo',
 	setListType = 'setListType',

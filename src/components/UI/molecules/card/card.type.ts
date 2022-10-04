@@ -1,4 +1,6 @@
-import { Props, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
+
+import { TextProps } from '@components/UI/atoms/text/text.type';
 
 import type {
 	takeCard,
@@ -20,6 +22,7 @@ import {
 	CardActiveColor,
 	CardActiveId,
 	CardTakeActiveSectionProps,
+	CardActiveSize,
 } from '@store/slices/components/card/card.type';
 
 import { ELabelSections } from './mocks/card.mock.enum';
@@ -29,6 +32,7 @@ import {
 	IProductCard,
 	CardColorList,
 	ProductCardId,
+	ProductCardImages,
 } from './mocks/card.mock.type';
 
 export type CardChildrenProp = {
@@ -48,12 +52,12 @@ export type CardConfig = {
 };
 
 export type CardPropsDisplay = {
-	size?: CardSizeEnum;
+	picture: TCardPictureDisplay;
+	// size?: CardSizeEnum;
 };
 
-export type CardProps = CardPropsDisplay & {
+export type CardProps = {
 	className?: string;
-	// config: CardChildrenProp;
 	children: ReactNode;
 };
 
@@ -68,43 +72,103 @@ export type WithCardConfig = (props: WithCardProps) => {
 	initCard: IProductCard;
 	activeCard: IProductCard;
 	indexActiveColor: string;
-	display?: CardPropsDisplay;
+	// viewType: UseCard['viewType'];
 };
 
 export type WithCardArgs = {
 	children: IProductCard;
 	key: string;
 	config: ReturnType<WithCardConfig>;
+	display: CardPropsDisplay;
 };
 
 export type CardConfigCallback = (props: WithCardProps) => WithCardArgs;
 
 //---
 
-export type CardContextProps = {
-	className: string;
+export type CardContextConfig = {
 	price: number;
-	title: string | undefined;
+	title: string;
+	page: boolean;
+	section: ELabelSections;
 };
 
-export type CardPictureProps = {
-	id: string | undefined;
-	path: string;
+export type CardContextProps = {
 	className: string;
+	children: React.ReactNode;
+	config: CardContextConfig;
+};
+
+export type CardPictureTransferProps<T> = {
+	className: string;
+	config: T;
+	display: TCardPictureDisplay;
+};
+
+export type CardPictureProps = CardPictureTransferProps<
+	Omit<TCardPictureConfig, 'paths'>
+>;
+export type CardPictureListProps = CardPictureTransferProps<
+	Omit<TCardPictureConfig, 'path'>
+>;
+
+export type CardControlConfig = {
+	id: ProductCardId;
+	section: ELabelSections;
+};
+
+export type CardControlDisplay = {
+	page: boolean;
 };
 
 export type CardControlProps = {
 	className: string;
-	id: ProductCardId | undefined;
+	config: CardControlConfig;
+	display: CardControlDisplay;
+};
+
+// export type CardColorProps = {
+// 	className: string;
+// 	id: ProductCardId;
+// 	initId: ProductCardId;
+// 	initColorList: CardColorList;
+// 	colorList: CardColorList;
+// 	sectionType: ELabelSections;
+// 	activeIndex: string;
+// 	page: boolean;
+// };
+
+export type ColorConfigArgs = {
+	id: ProductCardId;
+	section: ELabelSections;
+	colorList: CardColorList;
+};
+
+export type ColorConfigInit = ColorConfigArgs;
+export type ColorConfigCurrent = ColorConfigArgs;
+
+export type CardColorConfig = {
+	init: ColorConfigInit;
+	current: ColorConfigCurrent;
+};
+
+export type CardColorDisplay = {
+	page: boolean;
 };
 
 export type CardColorProps = {
 	className: string;
-	colorList: CardColorList;
-	id: ProductCardId;
-	initId: ProductCardId;
-	sectionType: ELabelSections;
-	activeIndex: string;
+	config: CardColorConfig;
+	display: CardColorDisplay;
+};
+
+export type CardMainInfoProps = CardContextConfig & {
+	className: string;
+};
+
+export type CardFeatureProps = {
+	className: string;
+	children: React.ReactNode;
 };
 
 // ---
@@ -117,8 +181,13 @@ export type UseCardActiveCard = {
 export type UseCard = {
 	id: ProductCardId;
 	section: ELabelSections | string;
-	display?: CardPropsDisplay;
-	// activeCard: UseCardActiveCard;
+	display: CardPropsDisplay;
+	// viewType: UseCardType;
+};
+
+export type UseCardList = {
+	section: ELabelSections;
+	display: CardPropsDisplay;
 };
 
 // export type UseCardType = {
@@ -147,6 +216,7 @@ export type UseCardDispatchReturn = {
 	getSection: (props: CardTakeCardsProps) => void;
 	setActiveColor: (props: CardActiveColor) => void;
 	setActiveId: (props: CardActiveId) => void;
+	setActiveSize: (props: CardActiveSize) => void;
 };
 
 export type UseCardSelectorReturn = {
@@ -167,3 +237,64 @@ export type UseCardSelectorReturn = {
 		props: CardTakeActiveSectionProps
 	) => ReturnType<typeof takeActiveSection>;
 };
+
+/** */
+
+export type CardFieldsetItem = {
+	key: string;
+	value: string;
+	section?: ELabelSections;
+	labelStyle?: React.CSSProperties;
+	amount?: string;
+};
+
+export type CardFieldsetList = {
+	name: string;
+	values: CardFieldsetItem[];
+};
+
+export type CardFieldsetLegendItem = {
+	className: string;
+	children: string;
+};
+
+export type CardFieldsetLegend = CardFieldsetLegendItem[];
+
+export type CardFieldsetConfig = {
+	id: ProductCardId;
+	list: CardFieldsetList;
+	legend: CardFieldsetLegend;
+	keyChecked: string;
+	page: boolean;
+};
+
+export type CardFieldsetDisplay = {
+	disableLabel?: boolean;
+};
+
+export type CardFieldsetProps = {
+	className: string;
+	fieldsetClickHandler: (evt: React.SyntheticEvent<EventTarget>) => void;
+	config: CardFieldsetConfig;
+	display: CardFieldsetDisplay;
+};
+
+export type CraeteLegendContext = (
+	props: CardFieldsetLegendItem
+) => React.FunctionComponentElement<TextProps>;
+
+/** */
+
+export type TCardPictureConfig = {
+	id: ProductCardId;
+	path: string;
+	paths: ProductCardImages;
+	vendor: string;
+};
+
+export type TCardPictureDisplay = {
+	page: boolean;
+	carousel: boolean;
+};
+
+export type UseCardPicture = CardPictureTransferProps<TCardPictureConfig>;

@@ -1,12 +1,17 @@
 export enum ReducerType {
 	app = 'app',
-	user = 'user',
 	auth = 'auth',
+	user = 'user',
 	data = 'data',
+
 	favorite = 'favorite',
 	info = 'info',
 	categories = 'categories',
 	card = 'card',
+	header = 'header',
+	footer = 'footer',
+
+	home = 'home',
 }
 
 export enum LoadingStatus {

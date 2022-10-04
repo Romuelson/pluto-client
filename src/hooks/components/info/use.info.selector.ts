@@ -1,25 +1,39 @@
-/* Hooks */
-import { useAppSelector } from '../../store/redux/use.redux';
+import { useAppSelector } from '@hooks/store/redux/use.redux';
 
-/* Selectors */
 import {
 	takeListAddress,
 	takeActiveButton,
 	takeListType,
 	takeLoading,
-} from '../../../store/slices/components/info/info.selector';
+	takeRecipientState,
+} from '@store/slices/components/info/info.selector';
 
-import { takeNavigationStatus } from '../../../store/slices/app/app.selectors';
+type UseInfoProps = {
+	recipient: string;
+};
 
-export const useInfoSelector = () => {
-	const loading = useAppSelector(takeLoading);
-	const addressList = useAppSelector(takeListAddress);
-	const activeButton = useAppSelector(takeActiveButton);
-	const listType = useAppSelector(takeListType);
+export const useInfoSelector = ({ recipient }: UseInfoProps) => {
+	const repecientState = useAppSelector((state) =>
+		takeRecipientState(state, { recipient })
+	);
+
+	const loading = useAppSelector((state) =>
+		takeLoading(state, { recipient })
+	);
+	const addressList = useAppSelector((state) =>
+		takeListAddress(state, { recipient })
+	);
+	const activeButton = useAppSelector((state) =>
+		takeActiveButton(state, { recipient })
+	);
+	const listType = useAppSelector((state) =>
+		takeListType(state, { recipient })
+	);
 
 	const currentAddress = addressList[activeButton];
 
 	return {
+		repecientState,
 		loading,
 		addressList,
 		activeButton,

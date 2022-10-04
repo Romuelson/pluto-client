@@ -1,5 +1,7 @@
+import { Loading } from '@store/store.type';
 import { InfoTypeEnums } from '@components/UI/molecules/info/info.enum';
-import { Loading } from '../../../store.type';
+
+import type { InfoListRecipientEnum } from './info.thunk';
 
 export type InfoAddressData = {
 	street: string;
@@ -21,9 +23,31 @@ export type ResponseDataInfo = {
 	data: InfoListAddress;
 };
 
-export type InfoSlice = {
+export type InfoState = {
 	loading: Loading;
 	listType: InfoTypeEnums;
 	listAddress: InfoListAddress;
 	activeButton: InfoActiveButton;
+};
+
+export type InfoRecipient = {
+	[key in string]?: InfoState;
+};
+
+export type InfoSlice = () => InfoState;
+
+/** */
+
+export type InfoWithRecipient = {
+	recipient: string;
+};
+
+export type InfoSetStatePayload = Pick<InfoWithRecipient, 'recipient'>;
+
+export type InfoActiveIndexPayload = InfoWithRecipient & {
+	value: number;
+};
+
+export type InfoListTypePayload = InfoWithRecipient & {
+	type: InfoTypeEnums;
 };

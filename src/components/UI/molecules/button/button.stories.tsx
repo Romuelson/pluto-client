@@ -1,3 +1,4 @@
+import { MemoryRouter } from 'react-router-dom';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import Text from '@components/UI/atoms/text/text.comp';
@@ -9,6 +10,13 @@ import * as ButtonEnum from './button.enum';
 export default {
 	title: 'Components/Molecules/Button',
 	component: Button,
+	decorators: [
+		(Story) => (
+			<MemoryRouter>
+				<Story />
+			</MemoryRouter>
+		),
+	],
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => (

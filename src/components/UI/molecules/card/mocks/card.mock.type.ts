@@ -10,7 +10,7 @@ export type ProductCardId = string;
 
 export type LabelList = {
 	current: ELabelCurrent;
-	sections: ELabelSections;
+	section: ELabelSections;
 };
 
 export type CardPriceList = {
@@ -26,11 +26,13 @@ export type CardCompound = {
 	cotton?: string;
 };
 
+export type CardSizeItem = {
+	barcode: string;
+	amount: string;
+};
+
 export type CardSizeList = {
-	[key: string]: {
-		barcode: number;
-		amount: number;
-	};
+	[key: string]: CardSizeItem;
 };
 
 export type CardColorCurrent = {
@@ -41,7 +43,7 @@ export type CardColorCurrent = {
 export type VendorList = {
 	id: string;
 	color: CardColorCurrent;
-	sections: ELabelSections;
+	section: ELabelSections;
 };
 
 export type CardColorList = {
@@ -54,7 +56,7 @@ export type CardProperties = {
 	labelList: LabelList;
 	priceList: CardPriceList;
 	inStock: boolean;
-	compound?: CardCompound;
+	compound: CardCompound;
 	vendor: string;
 	collection: string;
 	manufacturer: string;
@@ -65,12 +67,12 @@ export type CardProperties = {
 };
 
 export type ProductCardImages = {
-	mainFront: string;
-	mainBack: string;
-	front: string;
-	back: string;
-	productFront: string;
-	productBack: string;
+	mainFront?: string;
+	mainBack?: string;
+	front?: string;
+	back?: string;
+	productFront?: string;
+	productBack?: string;
 };
 
 export interface IProductCard {

@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
-import { LoadingStatus } from '@store/store.enum';
-
 import {
 	CardTakeCard,
 	CardTakeCards,
@@ -10,6 +8,7 @@ import {
 	CardTakeActiveColor,
 	CardTakeSectionPage,
 	CardTakeActiveSection,
+	CardTakeActiveSize,
 } from './card.type';
 
 export const takeCard: CardTakeCard = (state, { id, section }) =>
@@ -34,3 +33,6 @@ export const takeActiveSection: CardTakeActiveSection = (
 	state,
 	{ id, section }
 ) => state.card.card[id]?.activeSection || section;
+
+export const takeActiveSize: CardTakeActiveSize = (state, { id }) =>
+	state.card.card[id]?.activeSize;

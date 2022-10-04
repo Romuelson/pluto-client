@@ -3,6 +3,10 @@
 	box-shadow: 0 2px 12px rgb(0 0 0 / 16%);
 }
 
+.header .menu {
+	z-index: 5;
+}
+
 @media (max-width: 639.98px) {
 	.header .menu {
 		position: fixed;

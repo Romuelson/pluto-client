@@ -4,6 +4,8 @@ import { Loading, SelectorState } from '@store/store.type';
 import { ELabelSections } from '@components/UI/molecules/card/mocks/card.mock.enum';
 
 import {
+	CardSizeItem,
+	CardSizeList,
 	IProductCard,
 	ProductCardId,
 	ProductCardList,
@@ -22,6 +24,7 @@ export type ICards = {
 export type ICardType = {
 	activeId: string;
 	activeSection: ELabelSections | string;
+	activeSize?: CardSizeItem;
 	// activeIndex: string;
 };
 
@@ -42,6 +45,7 @@ export interface CardReducerProps {
 	status: LoadingStatus;
 	index: string;
 	activeId: ProductCardId;
+	activeSize: CardSizeItem;
 }
 
 /* Action */
@@ -57,6 +61,8 @@ export type CardActiveColor = Pick<
 	CardReducerProps,
 	'id' | 'section' | 'index'
 >;
+
+export type CardActiveSize = Pick<CardReducerProps, 'id' | 'activeSize'>;
 
 /* Thunk */
 
@@ -77,6 +83,8 @@ export type CardTakeActiveSectionProps = Pick<
 	CardReducerProps,
 	'id' | 'section'
 >;
+
+export type CardTakeActiveSizeProps = Pick<CardReducerProps, 'id'>;
 
 /* Selector */
 
@@ -107,3 +115,7 @@ export type CardTakeActiveId = (
 export type CardTakeActiveSection = (
 	...args: SelectorState<CardTakeActiveSectionProps>
 ) => ICardType['activeSection'];
+
+export type CardTakeActiveSize = (
+	...args: SelectorState<CardTakeActiveSizeProps>
+) => ICardType['activeSize'];

@@ -1,0 +1,14 @@
+.special__control {
+	display: flex;
+	flex-wrap: wrap;
+
+	gap: 10px;
+}
+
+.special__control .button {
+	width: 100%;
+}
+
+.special__control .text {
+	width: inherit;
+}

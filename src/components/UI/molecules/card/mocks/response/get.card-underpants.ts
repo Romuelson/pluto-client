@@ -27,7 +27,7 @@ export const getCardUnderpants: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.underpants,
-				sections: ELabelSections.sale,
+				section: ELabelSections.sale,
 			},
 			priceList: {
 				price: 799,
@@ -47,24 +47,24 @@ export const getCardUnderpants: IProductCard[] = [
 			productsFromKit: ['42eceaee-2687-4488-bc9e-0e5ed8b11b9e'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382924291,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382924291',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382924307,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382924307',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 4680382924314,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382924314',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382924406,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382924406',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382924413,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382924413',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 			},
 			colorList: {
@@ -80,7 +80,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Pink,
 							rgb: ECardColorRGB.Pink,
 						},
-						sections: ELabelSections.novelties,
+						section: ELabelSections.novelties,
 					},
 				],
 			},
@@ -103,7 +103,7 @@ export const getCardUnderpants: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.novelties,
+				section: ELabelSections.novelties,
 			},
 			priceList: {
 				price: 799,
@@ -123,24 +123,24 @@ export const getCardUnderpants: IProductCard[] = [
 			productsFromKit: ['0ccb4c6c-1f73-447f-9e98-0a4dc86c2ac4'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382923560,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923560',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382923577,
-					amount: 0,
+					barcode: '4680382923577',
+					amount: '0',
 				},
 				[ECardSize.S]: {
-					barcode: 4680382923584,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382923584',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382949959,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382949959',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382949966,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382949966',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 			},
 			colorList: {
@@ -156,7 +156,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Mint,
 							rgb: ECardColorRGB.Mint,
 						},
-						sections: ELabelSections.sale,
+						section: ELabelSections.sale,
 					},
 				],
 			},
@@ -179,7 +179,7 @@ export const getCardUnderpants: IProductCard[] = [
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.collections,
+				section: ELabelSections.collections,
 			},
 			priceList: {
 				price: 799,
@@ -199,24 +199,24 @@ export const getCardUnderpants: IProductCard[] = [
 			productsFromKit: ['ee62588f-4c00-4c39-a1eb-00e25e097948'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 4680382891159,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382891159',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 4680382891166,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382891166',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 4680382891173,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382891173',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382891180,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '4680382891180',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 4680382891197,
-					amount: 0,
+					barcode: '4680382891197',
+					amount: '0',
 				},
 			},
 			colorList: {
@@ -232,7 +232,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Cherry,
 							rgb: ECardColorRGB.Cherry,
 						},
-						sections: ELabelSections.sale,
+						section: ELabelSections.sale,
 					},
 				],
 			},
@@ -249,13 +249,12 @@ export const getCardUnderpants: IProductCard[] = [
 			mainBack: 'main-back',
 			front: 'front',
 			back: 'back',
-			productFront: 'product-front',
 			productBack: 'product-back',
 		},
 		properties: {
 			labelList: {
 				current: ELabelCurrent.bras,
-				sections: ELabelSections.sale,
+				section: ELabelSections.sale,
 			},
 			priceList: {
 				price: 799,
@@ -275,24 +274,24 @@ export const getCardUnderpants: IProductCard[] = [
 			productsFromKit: ['8042b7c6-9e71-402b-aaff-fb92faef3a25'],
 			sizeList: {
 				[ECardSize.XXS]: {
-					barcode: 46803828911591,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '46803828911591',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.XS]: {
-					barcode: 46803828911661,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '46803828911661',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.S]: {
-					barcode: 46803828911731,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '46803828911731',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 46803828911801,
-					amount: faker.datatype.number({ min: 1, max: 300 }),
+					barcode: '46803828911801',
+					amount: String(faker.datatype.number({ min: 1, max: 300 })),
 				},
 				[ECardSize.SM]: {
-					barcode: 46803828911971,
-					amount: 0,
+					barcode: '46803828911971',
+					amount: '0',
 				},
 			},
 			colorList: {
@@ -308,7 +307,7 @@ export const getCardUnderpants: IProductCard[] = [
 							label: ECardColor.Zephyr,
 							rgb: ECardColorRGB.Zephyr,
 						},
-						sections: ELabelSections.collections,
+						section: ELabelSections.collections,
 					},
 				],
 			},

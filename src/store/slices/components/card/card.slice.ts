@@ -1,13 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { LoadingStatus, ReducerType } from '@store/store.enum';
 
 import { CardActions } from './card.enum';
+
 import {
 	ICardSlice,
 	CardLoadingStatus,
 	CardActiveColor,
 	CardActiveId,
+	CardActiveSize,
 } from './card.type';
 import { getCardIdThunk, getCardSectionThunk } from './card.thunk';
 
@@ -74,6 +77,16 @@ export const cardSlice = createSlice({
 				activeSection: action.payload.section,
 			};
 		},
+		[CardActions.setCardActiveSize]: (
+			state,
+			action: PayloadAction<CardActiveSize>
+		) => {
+			const initCard = state.card[action.payload.id];
+
+			if (initCard) {
+				initCard.activeSize = action.payload.activeSize;
+			}
+		},
 	},
 	extraReducers: (builder) => {
 		builder.addCase(getCardIdThunk.fulfilled, (state, action) => {
@@ -85,7 +98,7 @@ export const cardSlice = createSlice({
 			// });
 			const card = action.payload.data;
 
-			const type = card.properties.labelList.sections;
+			const type = card.properties.labelList.section;
 
 			state.cards[type].data.push(card);
 			state.cards[type].loading.status = LoadingStatus.succeeded;
@@ -100,5 +113,9 @@ export const cardSlice = createSlice({
 	},
 });
 
-export const { setLoadingStatus, setCardActiveColor, setCardActiveId } =
-	cardSlice.actions;
+export const {
+	setLoadingStatus,
+	setCardActiveColor,
+	setCardActiveId,
+	setCardActiveSize,
+} = cardSlice.actions;

@@ -1,7 +1,8 @@
 import * as TextEnum from './text.enum';
 
 export type TextProps = {
-	children?: string;
+	id?: string;
+	children?: string | string[];
 	className?: string;
 	as?: TextEnum.TextAsEnum;
 	display?: TextEnum.TextDisplayEnum;
@@ -16,6 +17,8 @@ export type TextProps = {
 	textCursor?: TextEnum.TextCursorEnum;
 	textAlign?: TextEnum.TextAlignEnum;
 	textDecoration?: TextEnum.TextDecorationEnum;
+
+	onClick?: () => void;
 };
 
 export type TextSizeType = typeof TextEnum.TextSizeEnum;

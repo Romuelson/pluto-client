@@ -1,8 +1,7 @@
-/* Modules */
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Provider } from 'react-redux';
-
 import { MemoryRouter } from 'react-router-dom';
+
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { store } from '@store/store';
 
 import Carousel from './carousel.comp';

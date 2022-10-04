@@ -6,14 +6,18 @@ import { cloneElement } from 'react';
 import { InfoListProps } from '../../info.type';
 import InfoTitle from '../info-title/info-title.comp';
 
-function InfoList({ children }: InfoListProps) {
-	const { addressList } = useInfoSelector();
+function InfoList({ children, recipient }: InfoListProps) {
+	const { addressList } = useInfoSelector({ recipient });
 
 	return (
 		<ul className="info__list list">
 			{addressList.map((item, index) => (
 				<li key={item.id} className="info__item list__item">
-					<InfoTitle item={item} index={index} />
+					<InfoTitle
+						item={item}
+						index={index}
+						recipient={recipient}
+					/>
 					{children
 						? cloneElement(children, {
 								currentAddress: addressList[index],

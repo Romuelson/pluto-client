@@ -23,7 +23,7 @@ class CardService {
 
 	getSection({ section }: CardGetSection) {
 		return this.getAll({}).filter(
-			(card) => card.properties.labelList.sections === section
+			(card) => card.properties.labelList.section === section
 		);
 	}
 }

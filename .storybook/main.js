@@ -8,7 +8,8 @@ const config = {
 		'../src/**/*.docs.mdx',
 		'../src/**/*.stories.@(js|jsx|ts|tsx)'
 	],
-	staticDirs: [{from: '../public', to: 'public/'}],
+	staticDirs: ['../public'],
+	// staticDirs: [{from: '../public', to: 'public/'}],
 	addons: [
 		'@storybook/addon-a11y',
 		'@storybook/addon-docs',

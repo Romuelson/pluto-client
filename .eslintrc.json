@@ -47,6 +47,7 @@
 		"react/require-default-props": "off",
 		"react/jsx-props-no-spreading": "off",
 		"react/jsx-no-useless-fragment": "off",
+		"react/destructuring-assignment": "off",
 		"react/function-component-definition": "off",
 		"import/no-named-as-default": "off",
 		"import/prefer-default-export": "off",

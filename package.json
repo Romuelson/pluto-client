@@ -15,7 +15,7 @@
     "lint:scripts": "eslint src",
     "lint:scripts:fix": "eslint src --fix",
     "test": "jest",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --no-open",
     "build-storybook": "build-storybook"
   },
   "repository": {

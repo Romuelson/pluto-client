@@ -3,9 +3,10 @@ import Menu from '@components/UI/organisms/menu/menu.comp';
 import Hamburger from '@components/UI/molecules/hamburger/hamburger.comp';
 import Categories from '@components/UI/organisms/categories/categories.comp';
 
-import { CategoriesDisplayEnum } from '@components/UI/organisms/categories/categories.enum';
 import { useSingleMediaQuery } from '@hooks/utils/single-media-query/use.single-media-query';
+import { CategoriesDisplayEnum } from '@components/UI/organisms/categories/categories.enum';
 
+import { InfoListRecipientEnum } from '@store/slices/components/info/info.thunk';
 import HeaderLogo from '../header-logo/header-logo.comp';
 
 function HeaderNavigation() {
@@ -18,7 +19,12 @@ function HeaderNavigation() {
 
 	return (
 		<nav className="header__navigation">
-			{!isMinMedium || <Info className="header__info" />}
+			{!isMinMedium || (
+				<Info
+					className="header__info"
+					recipient={InfoListRecipientEnum.header}
+				/>
+			)}
 
 			<HeaderLogo />
 
@@ -28,7 +34,9 @@ function HeaderNavigation() {
 			)}
 
 			{/* min-width: 640, maxWidth: 1155.98 */}
-			<Menu children={isUnionSwitchLow ? Hamburger : undefined} />
+			<Menu
+				children={isUnionSwitchLow ? () => <Hamburger /> : undefined}
+			/>
 
 			{!isMinMedium || (
 				<Categories
