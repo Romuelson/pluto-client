@@ -1,6 +1,9 @@
 /* stylelint-disable no-descending-specificity */
 
 .card--page {
+	margin-top: 48px;
+	margin-bottom: 48px;
+
 	overflow: hidden;
 }
 
@@ -57,6 +60,7 @@
 
 .feature__fieldset .feature__list {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 6px;
 }
 
@@ -227,6 +231,14 @@
 
 /* global grid */
 
+.card--page .picture__item {
+	background-color: $color-timber;
+}
+
+.card--page .swiper-wrapper {
+	height: min-content;
+}
+
 @media (min-width: 722px) {
 	.card--page {
 		display: grid;
@@ -269,11 +281,14 @@
 
 @media (min-width: 1366px) {
 	.card--page {
+		left: 50%;
+
 		grid-template-columns: 1fr 770px 400px 1fr;
 		gap: 30px;
 
 		max-width: 1366px;
-		margin: 0 auto;
+
+		transform: translate(-50%, 0);
 	}
 
 	.card--page .card__picture {

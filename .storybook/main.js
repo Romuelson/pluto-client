@@ -42,6 +42,7 @@ const config = {
 			},
 			{
 				test: /\.svg$/i,
+				issuer: /\.[jt]sx?$/,
 				loader: require.resolve('svg-sprite-loader')
 			},
 			{

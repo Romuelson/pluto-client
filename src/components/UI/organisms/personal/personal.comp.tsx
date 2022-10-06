@@ -6,6 +6,8 @@ import PersonalRoute from './routes/personal.route';
 import { personalMock } from './mocks/personal.mock';
 import { PersonalProps } from './personal.type';
 
+// Баг: при роутинке не меняется положение секции
+
 function Personal({ className }: PersonalProps) {
 	const { data } = personalMock();
 

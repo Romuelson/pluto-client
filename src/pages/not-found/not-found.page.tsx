@@ -1,7 +1,13 @@
+import './styles/index.scss';
+
+import { useNotFound } from './use.not-found';
+
 function NotFound() {
+	const NotFoundContext = useNotFound();
+
 	return (
-		<main>
-			<h1>404. Страница не найдена</h1>
+		<main className="not-found">
+			<NotFoundContext className="not-found__context" />
 		</main>
 	);
 }

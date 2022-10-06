@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import { CardRouteApp } from '@components/UI/molecules/card/routes/card.enum';
 import CardPage from '@components/UI/molecules/card/elements/card-page/card-page.comp';
+import { CardRouteApp } from '@components/UI/molecules/card/routes/card.enum';
 
 import HomePage from '@pages/home/home.page';
 import NotFound from '@pages/not-found/not-found.page';

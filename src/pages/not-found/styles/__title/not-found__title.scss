@@ -1,0 +1,22 @@
+.not-found__title {
+	width: 90.53%;
+	// width: 459px;
+}
+
+@media (max-width: 767.98px) {
+	.not-found__title {
+		font-size: fn-rem(22);
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+	.not-found__title {
+		font-size: fn-rem(28);
+	}
+}
+
+@media (min-width: 1024px) {
+	.not-found__title {
+		font-size: fn-rem(36);
+	}
+}

@@ -1,8 +1,6 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable import/no-cycle */
 
-import CardRoute from '@components/UI/molecules/card/routes/card.route';
-
 import Card from './card.comp';
 
 import { CardColorConfig, CardColorDisplay, WithCardArgs } from './card.type';

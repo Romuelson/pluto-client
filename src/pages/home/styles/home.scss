@@ -1,4 +1,15 @@
 .home {
+	display: grid;
+
+	justify-content: center;
+
+	grid-template-areas: 'promo' 'personal' 'special';
+	grid-template-columns: minmax(#{$grid-min-low}px, #{$grid-max-high}px);
+	grid-template-rows: auto auto;
+
+	gap: 40px;
+
+	padding-bottom: 48px;
 	background-color: $color-white;
 }
 
@@ -20,17 +31,16 @@
 	}
 }
 
-@include mix-media(low) {
-	.home {
-		display: grid;
-		grid-template-areas: 'promo' 'personal' 'special';
-		grid-template-columns: minmax(
-			#{$grid-min-low}px,
-			#{$grid-max-medium}px
-		);
-		grid-template-rows: auto auto;
+// @include mix-media(low) {
+// 	.home {
+// 		display: grid;
+// 		grid-template-areas: 'promo' 'personal' 'special';
+// 		grid-template-columns: minmax(
+// 			#{$grid-min-low}px,
+// 			#{$grid-max-medium}px
+// 		);
+// 		grid-template-rows: auto auto;
 
-		gap: 40px;
-		padding-bottom: 48px;
-	}
-}
+// 		padding-bottom: 48px;
+// 	}
+// }

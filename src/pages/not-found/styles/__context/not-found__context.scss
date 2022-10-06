@@ -1,0 +1,34 @@
+.not-found__context {
+	display: grid;
+
+	justify-content: center;
+	align-items: center;
+
+	max-width: 1003px;
+	margin: 0 auto;
+
+	background-image: url('./../../../../public/assets/images/common/not-found/marilyn.svg');
+}
+
+@media (max-width: 767.98px) {
+	.not-found__context {
+		padding-bottom: 250px;
+
+		background-position: center bottom;
+		background-size: 240px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1365.98px) {
+	.not-found__context {
+		grid-template-columns: 49.45% 50.55%;
+		grid-template-rows: fn-linear(240, 434);
+	}
+}
+
+@media (min-width: 1366px) {
+	.not-found__context {
+		grid-template-columns: 49.45% 50.55%;
+		grid-template-rows: 434px;
+	}
+}
