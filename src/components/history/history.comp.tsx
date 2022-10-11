@@ -1,9 +1,5 @@
-/* eslint-disable react/require-default-props */
-
-/* Core */
 import { useLayoutEffect, useState } from 'react';
 
-/* Browser Routes */
 import { BrowserHistory } from 'history';
 import { Router } from 'react-router-dom';
 

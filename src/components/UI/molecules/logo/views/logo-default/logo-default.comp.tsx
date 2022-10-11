@@ -13,6 +13,7 @@ import {
 
 import { IconColorEnum } from '@components/UI/atoms/icon/icon.enum';
 
+import { LinkAsEnum } from '@components/UI/atoms/link/link.enum';
 import { LogoSizeEnum } from '../../logo.enum';
 import { LogoProps } from '../../logo.type';
 
@@ -35,7 +36,7 @@ function LogoDefault(props: LogoProps) {
 	} = props;
 
 	return (
-		<Link to="/" className="logo__link">
+		<Link as={LinkAsEnum.Link} to="/" className="logo__link">
 			<>
 				<Icon
 					glyph={glyph}

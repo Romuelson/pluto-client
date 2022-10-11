@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 const REQUEST_TIMEOUT = 5000;
-const PORT = process.env.APP_PORT || 1488;
+const PORT = process.env.APP_PORT || 80;
 
-const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost';
-const BASE_URL = `${BACKEND_URL}:${PORT}/`;
+const BACKEND_URL =
+	process.env.BACKEND_URL || 'https://pluto-score.herokuapp.com';
+const BASE_URL = `${BACKEND_URL}:${PORT}`;
 
 export const createAxiosAPI = () => {
 	const api = axios.create({

@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-const APP_PORT = process.env.APP_PORT || 6006;
+const APP_PORT = process.env.APP_PORT || 80;
 const SERVE = process.env.SERVE || false;
 
 const pluginService = (SERVE) => {
