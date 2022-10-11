@@ -9,7 +9,7 @@ const BASE_URL = `${BACKEND_URL}:${PORT}`;
 
 export const createAxiosAPI = () => {
 	const api = axios.create({
-		baseURL: BASE_URL,
+		baseURL: BACKEND_URL,
 		timeout: REQUEST_TIMEOUT,
 	});
 
