@@ -1,10 +1,12 @@
+import { DefaultRequestBody } from 'msw';
+
 import { IMockServiceWorker } from '../../../../../types/services/msw/msw.type';
 import { SpecialGetInfo } from './mock/special.mock.type';
 
 import SpecialService from './special.service';
 
 class SpecialController {
-	getInfo<T>(
+	getInfo<T extends DefaultRequestBody>(
 		{ recipient }: SpecialGetInfo,
 		{ req, res, ctx }: IMockServiceWorker<T>
 	) {

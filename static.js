@@ -10,7 +10,7 @@ app.use(express.static(path.resolve(__dirname, 'dist')));
 app.get('*', (req, res) => {
 	res.sendFile(
 		path.join(
-			__dirname, 'dist', 'index.f28ff85885ba025603d6.min.html'
+			__dirname, 'dist', 'index.45cf0890280b51747c21.min.html'
 		)
 	);
 });

@@ -1,4 +1,3 @@
-import { IMockServiceWorker } from '../../../../../types/services/msw/msw.type';
 import {
 	ECardColor,
 	ECardColorRGB,
