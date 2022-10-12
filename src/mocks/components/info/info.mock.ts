@@ -1,13 +1,11 @@
-/* Modules */
-import { nanoid } from '@reduxjs/toolkit';
+import toolkit from '@reduxjs/toolkit';
 
-/* Types */
 import { InfoListAddress } from '../../../store/slices/components/info/info.type';
 
 export const infoMock = () => {
 	const data: InfoListAddress = [
 		{
-			id: nanoid(),
+			id: toolkit.nanoid(),
 			title: 'Магазин',
 			link: '0',
 			address: {
@@ -16,7 +14,7 @@ export const infoMock = () => {
 			},
 		},
 		{
-			id: nanoid(),
+			id: toolkit.nanoid(),
 			title: 'Шоурум',
 			link: '0',
 			address: {

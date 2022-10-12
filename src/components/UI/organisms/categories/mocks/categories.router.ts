@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-import { CategoriesAxiosAPI } from '@store/slices/components/categories/categories.enum';
+import { CategoriesAxiosAPI } from '../../../../../store/slices/components/categories/categories.enum';
 
 import CategoriesController from './categories.controller';
 

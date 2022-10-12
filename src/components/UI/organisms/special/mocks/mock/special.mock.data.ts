@@ -1,4 +1,4 @@
-import { nanoid } from '@reduxjs/toolkit';
+import toolkit from '@reduxjs/toolkit';
 
 import { SpecialListInfo } from '../../special.type';
 
@@ -10,6 +10,8 @@ import {
 } from './special.mock.enum';
 
 export const createSpecialData = (): SpecialListInfo => {
+	const { nanoid } = toolkit;
+
 	return [
 		{
 			id: nanoid(),

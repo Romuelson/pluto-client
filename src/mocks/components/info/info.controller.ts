@@ -1,5 +1,5 @@
 import {
-	DefaultRequestBody,
+	DefaultBodyType,
 	PathParams,
 	ResponseComposition,
 	RestContext,
@@ -11,7 +11,7 @@ import InfoService from './info.service';
 class InfoController {
 	getListAddress(
 		req: RestRequest<never, PathParams>,
-		res: ResponseComposition<DefaultRequestBody>,
+		res: ResponseComposition<DefaultBodyType>,
 		ctx: RestContext
 	) {
 		const data = InfoService.getData();

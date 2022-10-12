@@ -6,6 +6,7 @@
 			"dom.iterable",
 			"esnext"
 		],
+		// "outDir": "dist",
 		"baseUrl": "./",
 		"paths": {
 			"@src/": ["./src/"],
@@ -38,6 +39,11 @@
 		"jsx": "react-jsx",
 		"locale": "en"
 	},
+	"ts-node": {
+        "esm": true,
+		"require": ["tsconfig-paths/register"],
+		"experimentalSpecifierResolution": "node"
+    },
 	"include": ["./src/assets.d.ts", "**/*.ts", "**/*.tsx"],
 	"exclude": ["configs", "dist", "node_modules", "public"]
 }

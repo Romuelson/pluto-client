@@ -1,5 +1,5 @@
 import {
-	DefaultRequestBody,
+	DefaultBodyType,
 	PathParams,
 	ResponseComposition,
 	RestContext,
@@ -12,7 +12,7 @@ import { CategoriesDataEnum } from '../categories.enum';
 class CategoriesController {
 	getList(
 		req: RestRequest<never, PathParams>,
-		res: ResponseComposition<DefaultRequestBody>,
+		res: ResponseComposition<DefaultBodyType>,
 		ctx: RestContext
 	) {
 		const section = req.url.searchParams.get(

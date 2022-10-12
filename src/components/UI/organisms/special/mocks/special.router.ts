@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-import { SpecialAPI } from '@store/slices/components/special/special.enum';
+import { SpecialAPI } from '../../../../../store/slices/components/special/special.enum';
 
 import { SpecialPostInfo } from './special.type';
 import SpecialController from './special.controller';

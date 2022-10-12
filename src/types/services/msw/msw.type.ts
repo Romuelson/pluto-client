@@ -1,13 +1,13 @@
 import {
-	DefaultRequestBody,
+	DefaultBodyType,
 	PathParams,
 	ResponseComposition,
 	RestContext,
 	RestRequest,
 } from 'msw';
 
-export type IMockServiceWorker<T extends DefaultRequestBody> = {
+export type IMockServiceWorker<T extends DefaultBodyType> = {
 	req: RestRequest<T, PathParams>;
-	res: ResponseComposition<DefaultRequestBody>;
+	res: ResponseComposition<DefaultBodyType>;
 	ctx: RestContext;
 };

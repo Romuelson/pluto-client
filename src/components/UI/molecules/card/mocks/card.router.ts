@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-import { CardAPI } from '@store/slices/components/card/card.enum';
+import { CardAPI } from '../../../../../store/slices/components/card/card.enum';
 
 import CardController from './card.controller';
 

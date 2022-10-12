@@ -1,6 +1,8 @@
-import { nanoid } from '@reduxjs/toolkit';
+import toolkit from '@reduxjs/toolkit';
 
 export const categoriesMock = () => {
+	const { nanoid } = toolkit;
+
 	const responce = {
 		header: [
 			{ id: nanoid(), title: 'Нижнее бельё', link: '!#' },
